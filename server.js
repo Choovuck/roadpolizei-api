@@ -3,6 +3,7 @@ var app = express(); // define our app using express
 var mongoose = require('mongoose'); //mongoose for mongo Db
 var multer  = require('multer'); // multer
 var Imagemin = require('imagemin'); //image compressing
+var fs = require('fs'); //filesystem
 //var AWS = require('aws-sdk'); //amazon web service sdk for uploading binary data
 
 //setup multer
@@ -20,7 +21,8 @@ var ReportSchema = new mongoose.Schema({
 	fileName : String,
     encoding : String,
     mimetype : String,
-    size : Number
+    size : Number,
+    data : Buffer
 });
 var Report = mongoose.model('Report', ReportSchema);
 
@@ -41,33 +43,14 @@ app.post('/api/report', function(req, res){
       fileName: req.files.image.name,
       encoding: req.files.image.encoding,
       mimetype: req.files.image.mimetype,
-      size: req.files.image.size
+      size: req.files.image.size,
+      data: fs.readFileSync(req.files.image.path)
     }, function(err, file){
         if(err){console.log(err)}
         console.log(file)
     })
 
-    var imagemin = new Imagemin().src(req.files.image.path).use(Imagemin.jpegtran({progressive: true}));
-    imagemin.run(function(err, files){
-        if (err) {
-            console.log(err);
-            return next(err);
-        }
-        var imageSchema = new mongoose.Schema({image : String, fileName : String})
-        var imageModel = mongoose.model('imageModel',imageSchema)
-        var imageToMongo = new imageModel({
-            image: req.files.image.contents,
-            fileName : req.files.image.name
-        });
-        imageToMongo.save(function(err){
-            console.log(req.files);
-            console.log(req.files.image);
-            if (err) {
-                console.log(err);
-                return next(err);
-            }
-        });
-    });
+
 
     //fuckers want my credit card and address
     /*var s3 = new AWS.S3();
