@@ -2,6 +2,8 @@ var express = require('express'); // call express
 var app = express(); // define our app using express
 var mongoose = require('mongoose'); //mongoose for mongo Db
 var multer  = require('multer'); // multer
+var Imagemin = require('imagemin'); //image compressing
+//var AWS = require('aws-sdk'); //amazon web service sdk for uploading binary data
 
 //setup multer
 app.use(multer({ dest: './uploads/', //upload dir
@@ -12,9 +14,13 @@ app.use(multer({ dest: './uploads/', //upload dir
 var port = process.env.PORT || 8080; // set our port
 
 mongoose.connect("mongodb://server:nicepassword@ds049219.mongolab.com:49219/road_polizei_uploads");
+//AWS.config.update({accessKeyId: 'akid', secretAccessKey: 'secret'});
 
 var ReportSchema = new mongoose.Schema({
-	fileName : String
+	fileName : String,
+    encoding : String,
+    mimetype : String,
+    size : Number
 });
 var Report = mongoose.model('Report', ReportSchema);
 
@@ -32,13 +38,49 @@ app.get('/', function (req, res) {
 app.post('/api/report', function(req, res){
     console.log(req.files.image) //Log the info about the uploaded image
     Report.create({
-      fileName: req.files.image.name
+      fileName: req.files.image.name,
+      encoding: req.files.image.encoding,
+      mimetype: req.files.image.mimetype,
+      size: req.files.image.size
     }, function(err, file){
         if(err){console.log(err)}
         console.log(file)
     })
+
+    var imagemin = new Imagemin().src(req.files.image.path).use(Imagemin.jpegtran({progressive: true}));
+    imagemin.run(function(err, files){
+        if (err) {
+            console.log(err);
+            return next(err);
+        }
+        var imageSchema = new mongoose.Schema({image : String, fileName : String})
+        var imageModel = mongoose.model('imageModel',imageSchema)
+        var imageToMongo = new imageModel({
+            image: req.files.image.contents,
+            fileName : req.files.image.name
+        });
+        imageToMongo.save(function(err){
+            console.log(req.files);
+            console.log(req.files.image);
+            if (err) {
+                console.log(err);
+                return next(err);
+            }
+        });
+    });
+
+    //fuckers want my credit card and address
+    /*var s3 = new AWS.S3();
+    s3.createBucket({Bucket: 'myBucket'}, function() {
+        var params = {Bucket: 'myBucket', Key: 'myKey', Body: 'Hello!'};
+          s3.putObject(params, function(err, data) {
+            if (err) console.log(err)   
+            else console.log("Successfully uploaded data to myBucket/myKey");  
+    });*/
+
+
     res.sendStatus(201);
-})
+});
 
 app.listen(port, function(){
     console.log('Magic happens on port ' + port);
