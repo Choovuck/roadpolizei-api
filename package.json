@@ -1,0 +1,10 @@
+{
+  "name": "roadpolizei-api",
+  "main": "server.js",
+  "dependencies" : {
+    "express" : "latest",           
+    "mongoose" : "latest",          
+    "ejs":"latest",
+    "multer":"latest"
+  }
+}
