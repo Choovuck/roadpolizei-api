@@ -29,8 +29,6 @@ var Report = mongoose.model('Report', ReportSchema);
 
 app.use(express.static(__dirname + '/public'));
 
-//Mongoose code ll be here
-
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 app.get('/', function (req, res) {
@@ -38,17 +36,24 @@ app.get('/', function (req, res) {
 })
 
 app.post('/api/report', function(req, res){
-    console.log(req.files.data) //Log the info about the uploaded image
-    Report.create({
-      fileName: req.files.data.name,
-      encoding: req.files.data.encoding,
-      mimetype: req.files.data.mimetype,
-      size: req.files.data.size,
-      data: fs.readFileSync(req.files.data.path)
-    }, function(err, file){
-        if(err){console.log(err)}
-        console.log(file)
-    })
+    if(req.files.data.mimetype.match('image/*') || req.files.data.mimetype.match('video/*')) {
+        console.log(req.files.data) //Log the info about the uploaded data
+        
+        Report.create({
+          fileName: req.files.data.name,
+          encoding: req.files.data.encoding,
+          mimetype: req.files.data.mimetype,
+          size: req.files.data.size,
+          data: fs.readFileSync(req.files.data.path)
+        }, function(err, file){
+          if(err){console.log(err);}
+        console.log(file);
+        });
+    }
+    else {
+        console.log("Invalid uploading data mimetype");
+    }
+    
 
 
 
