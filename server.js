@@ -38,13 +38,13 @@ app.get('/', function (req, res) {
 })
 
 app.post('/api/report', function(req, res){
-    console.log(req.files.image) //Log the info about the uploaded image
+    console.log(req.files.data) //Log the info about the uploaded image
     Report.create({
-      fileName: req.files.image.name,
-      encoding: req.files.image.encoding,
-      mimetype: req.files.image.mimetype,
-      size: req.files.image.size,
-      data: fs.readFileSync(req.files.image.path)
+      fileName: req.files.data.name,
+      encoding: req.files.data.encoding,
+      mimetype: req.files.data.mimetype,
+      size: req.files.data.size,
+      data: fs.readFileSync(req.files.data.path)
     }, function(err, file){
         if(err){console.log(err)}
         console.log(file)
