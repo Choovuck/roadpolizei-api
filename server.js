@@ -1,12 +1,11 @@
 var express = require('express'); // call express
 var app = express(); // define our app using express
 var mongoose = require('mongoose'); //mongoose for mongo Db
-//var mongooseFS = require('mongoose-fs'); //for storing large files to mongo
+var streamifier = require('streamifier');
 var Grid = require('gridfs-stream');
 var multer  = require('multer'); // multer
 var Imagemin = require('imagemin'); //image compressing
 var fs = require('fs'); //filesystem
-//var AWS = require('aws-sdk'); //amazon web service sdk for uploading binary data
 
 //setup multer
 app.use(multer({ dest: './uploads/', //upload dir
@@ -16,23 +15,19 @@ app.use(multer({ dest: './uploads/', //upload dir
 
 var port = process.env.PORT || 8080; // set our port
 
-mongoose.connect("mongodb://server:nicepassword@ds049219.mongolab.com:49219/road_polizei_uploads");
-//AWS.config.update({accessKeyId: 'akid', secretAccessKey: 'secret'});
-
+Grid.mongo = mongoose.mongo;
+var conn = mongoose.createConnection("mongodb://server:nicepassword@ds049219.mongolab.com:49219/road_polizei_uploads");
+conn.once('open', function () {
+    var gfs = Grid(conn.db);
+    app.set('gridfs', gfs);
+    // all set!
+  });
 //solving 16mb mongo filelimit
-var GridFS = Grid(mongoose.connection.db, mongoose.mongo);
-function putFile(path, name, callback) {
-  var writestream = GridFS.createWriteStream({
-    filename: name
-  });
-  writestream.on('close', function(file){
-    callback(null, file);
-  });
-  fs.createReadStream(path).pipe(writestream);
-}
+
+
 
 var ReportSchema = new mongoose.Schema({
-	fileName : String,
+	  fileName : String,
     encoding : String,
     mimetype : String,
     size : Number,
@@ -52,14 +47,28 @@ app.get('/', function (req, res) {
 
 app.post('/api/report', function(req, res){
     if(req.files.data.mimetype.match('image/*') || req.files.data.mimetype.match('video/*')) {
-        console.log(req.files.data) //Log the info about the uploaded data
+        //console.log(req.files.data) //Log the info about the uploaded data
         
         //for testing purposes
         if (req.files.data.size > 16000){
-          putFile(req.files.data.path, "VIDOS", function(){
-            console.log("Callback on putFile");
-          })
-        }
+          var is;
+          var os;
+          var gridfs = app.get('gridfs');        
+
+          //get the extenstion of the file
+          var extension = req.files.data.path.split(/[. ]+/).pop();
+          is = fs.createReadStream(req.files.data.path);
+          os = gridfs.createWriteStream({ filename: req.files.data.name +'.'+extension });
+          is.pipe(os);
+
+          os.on('close', function (file) {
+          //delete file from temp folder
+            fs.unlink(req.files.data.path, function() {
+              //res.json(201, file);
+              console.log("unlinked file probably");
+            });
+          });
+        } else {
 
         Report.create({
           fileName: req.files.data.name,
@@ -72,6 +81,7 @@ app.post('/api/report', function(req, res){
         }
         console.log(file);
         });
+      }
     }
     else {
         console.log("Invalid uploading data mimetype");

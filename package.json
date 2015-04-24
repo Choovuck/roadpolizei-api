@@ -8,6 +8,7 @@
     "ejs" : "latest",
     "multer": "latest",
     "mongoose-fs" : "latest",
-    "gridfs-stream" : "latest"
+    "gridfs-stream" : "latest",
+    "streamifier" : "latest"
   }
 }
