@@ -9,33 +9,36 @@ var fs = require('fs'); //filesystem
 
 //setup multer
 app.use(multer({ dest: './uploads/', //upload dir
-    rename: function (fieldname, filename) {	
+  rename: function (fieldname, filename) {	
     return filename+Date.now(); //return name
-}}));
+  }}));
 
 var port = process.env.PORT || 8080; // set our port
 
 Grid.mongo = mongoose.mongo;
 var conn = mongoose.createConnection("mongodb://server:nicepassword@ds049219.mongolab.com:49219/road_polizei_uploads");
 conn.once('open', function () {
-    var gfs = Grid(conn.db);
-    app.set('gridfs', gfs);
+  var gfs = Grid(conn.db);
+  app.set('gridfs', gfs);
     // all set!
   });
 //solving 16mb mongo filelimit
 
-
+var Schema = mongoose.Schema;
 
 var ReportSchema = new mongoose.Schema({
-	  fileName : String,
-    encoding : String,
-    mimetype : String,
-    size : Number,
-    data : Buffer
+ location : Schema.Types.Mixed,
+ deviceId : String,
+ fixationTime : Date,
+ recievedTime : { type: Date, default: Date.now },
+ fileName : String,
+ encoding : String,
+ mimetype : String,
+ size : Number,
+ gridfsFileId : Schema.Types.ObjectId
 });
 //ReportSchema.plugin(mongooseFS, {keys : ['data'], mongoose : mongoose});
 var Report = mongoose.model('Report', ReportSchema);
-
 
 app.use(express.static(__dirname + '/public'));
 
@@ -46,49 +49,52 @@ app.get('/', function (req, res) {
 })
 
 app.post('/api/report', function(req, res){
-    if(req.files.data.mimetype.match('image/*') || req.files.data.mimetype.match('video/*')) {
+  if(req.files.data.mimetype.match('image/*') || req.files.data.mimetype.match('video/*')) {
         //console.log(req.files.data) //Log the info about the uploaded data
-        
-        //for testing purposes
-        if (req.files.data.size > 16000){
-          var is;
-          var os;
-          var gridfs = app.get('gridfs');        
+        var is;
+        var os;
+        var gridfs = app.get('gridfs');     
+        var fileId = new mongoose.Types.ObjectId();
+        console.log(req.body);
 
-          //get the extenstion of the file
-          var extension = req.files.data.path.split(/[. ]+/).pop();
-          is = fs.createReadStream(req.files.data.path);
-          os = gridfs.createWriteStream({ filename: req.files.data.name +'.'+extension });
-          is.pipe(os);
+                  //save the report!~
+          var report = new Report({
+                fileName: req.files.data.name,
+                encoding: req.files.data.encoding,
+                mimetype: req.files.data.mimetype,
+                size: req.files.data.size,
+                location : req.body.location,
+                deviceId : req.body.deviceId,
+                fixationTime : req.body.fixationTime,
+                gridfsFileId : fileId
+              });
+              report.save(function(err) {
+                if(err) { console.log(err); }
+                console.log("GR8 CALLBACK m8!~")
+              });
 
-          os.on('close', function (file) {
+        is = fs.createReadStream(req.files.data.path);
+        os = gridfs.createWriteStream({ 
+          filename: req.files.data.name,
+          _id : fileId
+        });
+        is.pipe(os);
+
+        os.on('close', function (file) {
           //delete file from temp folder
-            fs.unlink(req.files.data.path, function() {
+          fs.unlink(req.files.data.path, function() {
               //res.json(201, file);
               console.log("unlinked file probably");
             });
-          });
-        } else {
-
-        Report.create({
-          fileName: req.files.data.name,
-          encoding: req.files.data.encoding,
-          mimetype: req.files.data.mimetype,
-          size: req.files.data.size,
-          data: fs.readFileSync(req.files.data.path)
-        }, function(err, file){
-          if(err){console.log(err);
-        }
-        console.log(file);
         });
       }
-    }
-    else {
+      else {
         console.log("Invalid uploading data mimetype");
-    }
-    res.sendStatus(201);
-});
+        res.sendStatus(415); // Unsupported Media Type (http)
+      }
+      res.sendStatus(201);
+    });
 
 app.listen(port, function(){
-    console.log('Magic happens on port ' + port);
+  console.log('Magic happens on port ' + port);
 });
