@@ -4,12 +4,10 @@
   "dependencies" : {
     "express" : "latest",           
     "mongoose" : "latest",
-    "mongoose": "latest",
-    "mongoose-thumbnail": "latest",
-    "mongoose-file": "latest",  
     "imagemin" : "latest",      
-    "ejs":"latest",
-    "multer":"latest",
-    "aws-sdk" : "latest"
+    "ejs" : "latest",
+    "multer": "latest",
+    "mongoose-fs" : "latest",
+    "gridfs-stream" : "latest"
   }
 }

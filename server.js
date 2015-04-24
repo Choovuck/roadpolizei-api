@@ -1,6 +1,8 @@
 var express = require('express'); // call express
 var app = express(); // define our app using express
 var mongoose = require('mongoose'); //mongoose for mongo Db
+//var mongooseFS = require('mongoose-fs'); //for storing large files to mongo
+var Grid = require('gridfs-stream');
 var multer  = require('multer'); // multer
 var Imagemin = require('imagemin'); //image compressing
 var fs = require('fs'); //filesystem
@@ -17,6 +19,18 @@ var port = process.env.PORT || 8080; // set our port
 mongoose.connect("mongodb://server:nicepassword@ds049219.mongolab.com:49219/road_polizei_uploads");
 //AWS.config.update({accessKeyId: 'akid', secretAccessKey: 'secret'});
 
+//solving 16mb mongo filelimit
+var GridFS = Grid(mongoose.connection.db, mongoose.mongo);
+function putFile(path, name, callback) {
+  var writestream = GridFS.createWriteStream({
+    filename: name
+  });
+  writestream.on('close', function(file){
+    callback(null, file);
+  });
+  fs.createReadStream(path).pipe(writestream);
+}
+
 var ReportSchema = new mongoose.Schema({
 	fileName : String,
     encoding : String,
@@ -24,6 +38,7 @@ var ReportSchema = new mongoose.Schema({
     size : Number,
     data : Buffer
 });
+//ReportSchema.plugin(mongooseFS, {keys : ['data'], mongoose : mongoose});
 var Report = mongoose.model('Report', ReportSchema);
 
 
@@ -39,6 +54,13 @@ app.post('/api/report', function(req, res){
     if(req.files.data.mimetype.match('image/*') || req.files.data.mimetype.match('video/*')) {
         console.log(req.files.data) //Log the info about the uploaded data
         
+        //for testing purposes
+        if (req.files.data.size > 16000){
+          putFile(req.files.data.path, "VIDOS", function(){
+            console.log("Callback on putFile");
+          })
+        }
+
         Report.create({
           fileName: req.files.data.name,
           encoding: req.files.data.encoding,
@@ -46,27 +68,14 @@ app.post('/api/report', function(req, res){
           size: req.files.data.size,
           data: fs.readFileSync(req.files.data.path)
         }, function(err, file){
-          if(err){console.log(err);}
+          if(err){console.log(err);
+        }
         console.log(file);
         });
     }
     else {
         console.log("Invalid uploading data mimetype");
     }
-    
-
-
-
-    //fuckers want my credit card and address
-    /*var s3 = new AWS.S3();
-    s3.createBucket({Bucket: 'myBucket'}, function() {
-        var params = {Bucket: 'myBucket', Key: 'myKey', Body: 'Hello!'};
-          s3.putObject(params, function(err, data) {
-            if (err) console.log(err)   
-            else console.log("Successfully uploaded data to myBucket/myKey");  
-    });*/
-
-
     res.sendStatus(201);
 });
 
