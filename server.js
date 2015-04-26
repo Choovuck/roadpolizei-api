@@ -17,12 +17,12 @@ var port = process.env.PORT || 8080; // set our port
 
 Grid.mongo = mongoose.mongo;
 var conn = mongoose.createConnection("mongodb://server:nicepassword@ds049219.mongolab.com:49219/road_polizei_uploads");
+mongoose.connect("mongodb://server:nicepassword@ds049219.mongolab.com:49219/road_polizei_uploads");
 conn.once('open', function () {
   var gfs = Grid(conn.db);
   app.set('gridfs', gfs);
-    // all set!
-  });
-//solving 16mb mongo filelimit
+});
+
 
 var Schema = mongoose.Schema;
 
@@ -37,7 +37,7 @@ var ReportSchema = new mongoose.Schema({
  size : Number,
  gridfsFileId : Schema.Types.ObjectId
 });
-//ReportSchema.plugin(mongooseFS, {keys : ['data'], mongoose : mongoose});
+
 var Report = mongoose.model('Report', ReportSchema);
 
 app.use(express.static(__dirname + '/public'));
@@ -57,21 +57,20 @@ app.post('/api/report', function(req, res){
         var fileId = new mongoose.Types.ObjectId();
         console.log(req.body);
 
-                  //save the report!~
-          var report = new Report({
-                fileName: req.files.data.name,
-                encoding: req.files.data.encoding,
-                mimetype: req.files.data.mimetype,
-                size: req.files.data.size,
-                location : req.body.location,
-                deviceId : req.body.deviceId,
-                fixationTime : req.body.fixationTime,
-                gridfsFileId : fileId
-              });
-              report.save(function(err) {
-                if(err) { console.log(err); }
-                console.log("GR8 CALLBACK m8!~")
-              });
+        //save the report!~
+        var report = new Report({
+         fileName: req.files.data.name,
+         encoding: req.files.data.encoding,
+         mimetype: req.files.data.mimetype,
+         size: req.files.data.size,
+         location : JSON.parse(req.body.location),
+         deviceId : req.body.deviceId,
+         fixationTime : req.body.fixationTime,
+         gridfsFileId : fileId
+       });
+        report.save(function(err) {
+         if(err) { console.log(err); }
+       });
 
         is = fs.createReadStream(req.files.data.path);
         os = gridfs.createWriteStream({ 
@@ -83,8 +82,7 @@ app.post('/api/report', function(req, res){
         os.on('close', function (file) {
           //delete file from temp folder
           fs.unlink(req.files.data.path, function() {
-              //res.json(201, file);
-              console.log("unlinked file probably");
+              console.log("unlinked file");
             });
         });
       }
@@ -94,6 +92,12 @@ app.post('/api/report', function(req, res){
       }
       res.sendStatus(201);
     });
+
+app.get('/api/reports', function(req, res) {
+  Report.find({}, function(err, reports) {
+    res.status(200).json(reports);
+  })
+});
 
 app.listen(port, function(){
   console.log('Magic happens on port ' + port);
