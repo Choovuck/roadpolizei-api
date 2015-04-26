@@ -78,13 +78,6 @@ app.post('/api/report', function(req, res){
           _id : fileId
         });
         is.pipe(os);
-
-        os.on('close', function (file) {
-          //delete file from temp folder
-          fs.unlink(req.files.data.path, function() {
-              console.log("unlinked file");
-            });
-        });
       }
       else {
         console.log("Invalid uploading data mimetype");
@@ -98,6 +91,10 @@ app.get('/api/reports', function(req, res) {
     res.status(200).json(reports);
   })
 });
+
+app.get('/example', function (req, res){
+  res.render("client.html");
+})
 
 app.listen(port, function(){
   console.log('Magic happens on port ' + port);

@@ -1,31 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style type="text/css">
-      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-    </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSIqBc9ijkkX7ve8igM8ImhqYNPlByF0o">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: { lat: -34.397, lng: 150.644},
-          zoom: 8
-        };
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
-        console.log(map);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-  </head>
-  	<style type="text/css">
-  		html { height: 100% }
-  		body { height: 100%; margin: 0; padding: 0 }
-  		#map-canvas { height: 100% }
-	</style>
-  <body>
-<div id="map-canvas"></div>
-  </body>
+<head>
+  <style type="text/css">
+  html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+  </style>
+  <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSIqBc9ijkkX7ve8igM8ImhqYNPlByF0o">
+  </script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+  <script type="text/javascript">
+
+  function initialize(){
+    var mapOptions = {
+      center: { lat: 50.0641565, lng: 36.2022325},
+      zoom: 15
+    };
+    var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+    var roadpolizeiAPI = "http://localhost:8080/api/reports";
+    $.getJSON( roadpolizeiAPI, {
+      
+    })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        var infowindow = new google.maps.InfoWindow({
+          content : '<img src = "localhost:8080/uploads/' + item.fileName + '>' + '</img>'
+        });
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(item.location.Latitude, item.location.Longitude),
+          draggable: false,
+          map: map
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.open(map,marker);
+        });
+
+      });
+    });
+  }
+  
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+</head>
+<style type="text/css">
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+#map-canvas { height: 100% }
+</style>
+<body>
+  <div id="map-canvas"></div>
+</body>
 </html>
