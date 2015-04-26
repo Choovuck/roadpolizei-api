@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSIqBc9ijkkX7ve8igM8ImhqYNPlByF0o">
+  </script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    function initialize(){
+      var mapOptions = {
+        center: new google.maps.LatLng(50.0641565, 36.2022325),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: false,
+        zoom: 5
+      };
+
+      // init map
+      map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+      var roadpolizeiAPI = "http://localhost:8080/api/reports";
+      $.getJSON( roadpolizeiAPI, {
+
+      })
+      .done(function( data ) {       
+        for (var i = 0; i < data.length; i++) {
+          var item = data[i];
+          //console.log(item);
+
+          var marker = new google.maps.Marker({
+            position:  new google.maps.LatLng(item.location.latitude, item.location.longitude),
+            map: map,
+            title : 'OKEY'
+          });
+          // process multiple info windows
+          (function(marker, item) {
+          // add click event
+            google.maps.event.addListener(marker, 'click', function() {
+              if(item.mimetype.match("image/*")){
+                infoWindow = new google.maps.InfoWindow({
+                  content: '<img height="200" width="200" src = "/uploads/' + item.fileName + '">' + '</img>'
+                });
+              } else if (item.mimetype.match('video/*')) {
+                infoWindow = new google.maps.InfoWindow({
+                  content: '<video height="300" width="300" controls>'+
+                   '<source type ="' + item.mimetype + '"' + 'src = "/uploads/' + item.fileName + '">' + '</video>'
+                });
+              }
+              console.log(infoWindow.content);
+              infoWindow.open(map, marker);
+            });
+          })(marker, item);
+
+          };
+        });
+    }
+    initialize();
+  })
+
+</script>
+</head>
+<body>
+   <div id="map_canvas" style="width: 100%; height:500px;"></div>
+</body>
+</html>
