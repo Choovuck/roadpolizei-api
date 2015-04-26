@@ -6,6 +6,7 @@ var Grid = require('gridfs-stream');
 var multer  = require('multer'); // multer
 var Imagemin = require('imagemin'); //image compressing
 var fs = require('fs'); //filesystem
+var path = require('path'); //for sending static html
 
 //setup multer
 app.use(multer({ dest: './uploads/', //upload dir
@@ -41,6 +42,8 @@ var ReportSchema = new mongoose.Schema({
 var Report = mongoose.model('Report', ReportSchema);
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views', 'html'));
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 
@@ -93,8 +96,11 @@ app.get('/api/reports', function(req, res) {
 });
 
 app.get('/example', function (req, res){
-  res.render("client.html");
-})
+  res.sendFile(path.join(__dirname, './views', 'client.html'));
+});
+app.get('/tested', function (req, res){
+  res.sendFile(path.join(__dirname, './views', 'tested.html'));
+});
 
 app.listen(port, function(){
   console.log('Magic happens on port ' + port);
