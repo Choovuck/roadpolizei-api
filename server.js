@@ -160,6 +160,27 @@ app.get('/api/report/:id', function(req, res) {
   });
 });
 
+app.get('/api/reports/query', function(req,res) {
+  // filter by params via Report.find({...}
+  // request is like http://localhost:8080/api/reports/query?a=1&b=123&c=asd
+  var searchParams = {};
+  _.forEach(req.query, function(value, key) {
+    if (Report.schema.paths[key] !== undefined) { // schema has a requested property
+      searchParams[key] = value; //add it to the search params
+    }
+    // this will not work with location as its an object
+  })
+  //res.status(200).json(searchParams);
+  console.log(searchParams);
+  Report.find(searchParams, function(err, reports) {
+    if (err) {
+      res.status(404);
+    } else {
+      res.status(200).json(reports);
+    }
+  });
+})
+
 app.get('/api/export/:id', function(req, res) {
   var id = req.params.id;
   Report.findOne(
