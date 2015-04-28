@@ -51,6 +51,8 @@
                    '<source type ="' + item.mimetype + '"' + 'src = "/uploads/' + item.fileName + '">' + '</video>'
                 });
               }
+              infoWindow.content += '<p>' + item.description + '</p>';
+              infoWindow.content += '<br><a href="/api/export/' + item._id + '">Export</a>';
               console.log(infoWindow.content);
               infoWindow.open(map, marker);
             });

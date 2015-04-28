@@ -9,6 +9,7 @@
     "multer": "latest",
     "mongoose-fs" : "latest",
     "gridfs-stream" : "latest",
-    "streamifier" : "latest"
+    "streamifier" : "latest",
+    "lodash" : "latest"
   }
 }

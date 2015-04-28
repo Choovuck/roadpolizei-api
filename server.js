@@ -7,6 +7,7 @@ var multer  = require('multer'); // multer
 var Imagemin = require('imagemin'); //image compressing
 var fs = require('fs'); //filesystem
 var path = require('path'); //for sending static html
+var _ = require('lodash');
 
 //setup multer
 app.use(multer({ dest: './uploads/', //upload dir
@@ -15,6 +16,7 @@ app.use(multer({ dest: './uploads/', //upload dir
   }}));
 
 var port = process.env.PORT || 8080; // set our port
+var host = 'http://localhost:8080/';
 
 Grid.mongo = mongoose.mongo;
 var conn = mongoose.createConnection("mongodb://server:nicepassword@ds049219.mongolab.com:49219/road_polizei_uploads");
@@ -36,6 +38,7 @@ var ReportSchema = new mongoose.Schema({
  encoding : String,
  mimetype : String,
  size : Number,
+ description : String,
  gridfsFileId : Schema.Types.ObjectId
 });
 
@@ -69,7 +72,8 @@ app.post('/api/report', function(req, res){
          location : JSON.parse(req.body.location),
          deviceId : req.body.deviceId,
          fixationTime : req.body.fixationTime,
-         gridfsFileId : fileId
+         gridfsFileId : fileId,
+         description : req.body.description
        });
         report.save(function(err) {
          if(err) { console.log(err); }
@@ -91,8 +95,51 @@ app.post('/api/report', function(req, res){
 
 app.get('/api/reports', function(req, res) {
   Report.find({}, function(err, reports) {
-    res.status(200).json(reports);
+    if (err) { 
+      res.status(404); 
+    } else { 
+      res.status(200).json(reports);
+    }
   })
+});
+
+app.get('/api/reports/:lat/:lng/:rad', function(req, res) {
+  var point = { lat : parseInt(req.params.lat), lng : parseInt(req.params.lng)};
+  var radius = parseInt(req.params.rad);
+  console.log(req.params);
+  console.log(point);
+  console.log(radius);
+  var rad = function(x) {
+  return x * Math.PI / 180;
+  };
+
+  var getDistance = function(p1, p2) {
+    var R = 6378137; // Earth’s mean radius in meter
+    var dLat = rad(p2.lat- p1.lat);
+    var dLong = rad(p2.lng - p1.lng);
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(rad(p1.lat)) * Math.cos(rad(p2.lat)) *
+      Math.sin(dLong / 2) * Math.sin(dLong / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c;
+    return d; // returns the distance in meter
+  };
+
+  Report.find({}, function(err, reports) {
+    if (err) { 
+      res.status(404); 
+    } else {
+      var closeEnough = _.filter(reports, function(report) {
+        return getDistance(
+          { 
+            lat : report.location.latitude,
+             lng : report.location.longitude
+          }, point) < radius;
+      });
+      res.status(200).json(closeEnough);
+    }
+  });
+
 });
 
 app.get('/example', function (req, res){
@@ -100,6 +147,32 @@ app.get('/example', function (req, res){
 });
 app.get('/tested', function (req, res){
   res.sendFile(path.join(__dirname, './views', 'tested.html'));
+});
+
+app.get('/api/report/:id', function(req, res) {
+  var id = req.params.id;
+  Report.findById(id, function(err, report) {
+    if (report) {
+      res.status(200).json(report);
+    } else {
+      res.status(404);
+    }
+  });
+});
+
+app.get('/api/export/:id', function(req, res) {
+  var id = req.params.id;
+  Report.findOne(
+    { _id : id }, 
+    '-_id location deviceId fixationTime recievedTime description fileName',
+     function(err, report) {
+      if(report && !err) {
+        report.fileName = host + 'uploads/' + report.fileName;
+        res.status(200).json(report);
+      } else {
+        res.status(404);
+      }
+    });
 });
 
 app.listen(port, function(){
