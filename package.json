@@ -1,15 +1,40 @@
 {
   "name": "roadpolizei-api",
   "main": "server.js",
-  "dependencies" : {
-    "express" : "latest",           
-    "mongoose" : "latest",
-    "imagemin" : "latest",      
-    "ejs" : "latest",
+  "dependencies": {
+    "express": "latest",
+    "mongoose": "latest",
+    "imagemin": "latest",
+    "ejs": "latest",
     "multer": "latest",
-    "mongoose-fs" : "latest",
-    "gridfs-stream" : "latest",
-    "streamifier" : "latest",
-    "lodash" : "latest"
+    "mongoose-fs": "latest",
+    "gridfs-stream": "latest",
+    "streamifier": "latest",
+    "lodash": "latest"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "| DBLocation : \"mongodb://<dbuser>:<dbpassword>@ds049219.mongolab.com:49219/road_polizei_uploads\" |\r ---------------------------------------------------------------------------------------------------\r | user : \"server\"                                                                                 |\r ---------------------------------------------------------------------------------------------------\r | password : \"nicepassword\"                                                                       |\r ---------------------------------------------------------------------------------------------------",
+  "version": "1.0.0",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Choovuck/roadpolizei-api.git"
+  },
+  "keywords": [
+    "road",
+    "traffic",
+    "law",
+    "offense"
+  ],
+  "author": "pavel-mezentsev, dmitriy-shpetnyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Choovuck/roadpolizei-api/issues"
+  },
+  "homepage": "https://github.com/Choovuck/roadpolizei-api",
+  "engines":{
+    "node": "0.10.x" 
   }
 }

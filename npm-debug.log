@@ -1,0 +1,2197 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'foreman' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose cache add [ 'foreman', null ]
+5 verbose cache add name=undefined spec="foreman" args=["foreman",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'foreman',
+6 verbose parsed url   path: 'foreman',
+6 verbose parsed url   href: 'foreman' }
+7 silly lockFile faf84889-foreman foreman
+8 verbose lock foreman C:\Users\Dmitryy\AppData\Roaming\npm-cache\faf84889-foreman.lock
+9 silly lockFile faf84889-foreman foreman
+10 silly lockFile faf84889-foreman foreman
+11 verbose addNamed [ 'foreman', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 055239d3-foreman foreman@
+14 verbose lock foreman@ C:\Users\Dmitryy\AppData\Roaming\npm-cache\055239d3-foreman.lock
+15 silly addNameRange { name: 'foreman', range: '*', hasData: false }
+16 verbose request where is /foreman
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id cc9613bbe8c1c4f5
+19 verbose url raw /foreman
+20 verbose url resolving [ 'https://registry.npmjs.org/', './foreman' ]
+21 verbose url resolved https://registry.npmjs.org/foreman
+22 verbose request where is https://registry.npmjs.org/foreman
+23 info trying registry request attempt 1 at 14:44:00
+24 http GET https://registry.npmjs.org/foreman
+25 http 200 https://registry.npmjs.org/foreman
+26 silly registry.get cb [ 200,
+26 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"9GUUWZOW3Y203MQ8J7JAHPZ86"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '54192',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     date: 'Mon, 04 May 2015 11:44:02 GMT',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     connection: 'keep-alive',
+26 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1430739841.956483,VS0,VE709',
+26 silly registry.get     vary: 'Accept' } ]
+27 silly addNameRange number 2 { name: 'foreman', range: '*', hasData: true }
+28 silly addNameRange versions [ 'foreman',
+28 silly addNameRange   [ '0.0.0',
+28 silly addNameRange     '0.0.1',
+28 silly addNameRange     '0.0.2',
+28 silly addNameRange     '0.0.3',
+28 silly addNameRange     '0.0.4',
+28 silly addNameRange     '0.0.5',
+28 silly addNameRange     '0.0.6',
+28 silly addNameRange     '0.0.8',
+28 silly addNameRange     '0.0.9',
+28 silly addNameRange     '0.0.10',
+28 silly addNameRange     '0.0.11',
+28 silly addNameRange     '0.0.12',
+28 silly addNameRange     '0.0.13',
+28 silly addNameRange     '0.0.14',
+28 silly addNameRange     '0.0.15',
+28 silly addNameRange     '0.0.16',
+28 silly addNameRange     '0.0.17',
+28 silly addNameRange     '0.0.18',
+28 silly addNameRange     '0.0.19',
+28 silly addNameRange     '0.0.20',
+28 silly addNameRange     '0.0.21',
+28 silly addNameRange     '0.0.22',
+28 silly addNameRange     '0.0.23',
+28 silly addNameRange     '0.0.24',
+28 silly addNameRange     '0.0.25',
+28 silly addNameRange     '0.0.26',
+28 silly addNameRange     '0.0.27',
+28 silly addNameRange     '0.1.0',
+28 silly addNameRange     '0.1.1',
+28 silly addNameRange     '0.1.2',
+28 silly addNameRange     '0.2.0',
+28 silly addNameRange     '0.2.1',
+28 silly addNameRange     '0.3.0',
+28 silly addNameRange     '0.4.0',
+28 silly addNameRange     '0.4.1',
+28 silly addNameRange     '0.4.2',
+28 silly addNameRange     '1.0.0',
+28 silly addNameRange     '1.1.0',
+28 silly addNameRange     '1.2.0',
+28 silly addNameRange     '1.2.1',
+28 silly addNameRange     '1.3.0' ] ]
+29 verbose addNamed [ 'foreman', '1.3.0' ]
+30 verbose addNamed [ '1.3.0', '1.3.0' ]
+31 silly lockFile 73d92c4b-foreman-1-3-0 foreman@1.3.0
+32 verbose lock foreman@1.3.0 C:\Users\Dmitryy\AppData\Roaming\npm-cache\73d92c4b-foreman-1-3-0.lock
+33 silly lockFile 363dee4a-js-org-foreman-foreman-1-3-0-tgz https://registry.npmjs.org/foreman/-/foreman-1.3.0.tgz
+34 verbose lock https://registry.npmjs.org/foreman/-/foreman-1.3.0.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\363dee4a-js-org-foreman-foreman-1-3-0-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/foreman/-/foreman-1.3.0.tgz',
+35 verbose addRemoteTarball   'fa2824c0ca7d77f8fc347be5adb84a4b0c13f5a2' ]
+36 info retry fetch attempt 1 at 14:44:01
+37 verbose fetch to= C:\Users\Dmitryy\AppData\Local\Temp\npm-3684-Vq7Wu2OY\registry.npmjs.org\foreman\-\foreman-1.3.0.tgz
+38 http GET https://registry.npmjs.org/foreman/-/foreman-1.3.0.tgz
+39 http 200 https://registry.npmjs.org/foreman/-/foreman-1.3.0.tgz
+40 silly lockFile 363dee4a-js-org-foreman-foreman-1-3-0-tgz https://registry.npmjs.org/foreman/-/foreman-1.3.0.tgz
+41 silly lockFile 363dee4a-js-org-foreman-foreman-1-3-0-tgz https://registry.npmjs.org/foreman/-/foreman-1.3.0.tgz
+42 silly lockFile 73d92c4b-foreman-1-3-0 foreman@1.3.0
+43 silly lockFile 73d92c4b-foreman-1-3-0 foreman@1.3.0
+44 silly lockFile 055239d3-foreman foreman@
+45 silly lockFile 055239d3-foreman foreman@
+46 silly resolved [ { name: 'foreman',
+46 silly resolved     version: '1.3.0',
+46 silly resolved     homepage: 'http://strongloop.github.io/node-foreman/',
+46 silly resolved     description: 'Node Implementation of Foreman',
+46 silly resolved     author: { name: 'StrongLoop, Inc.' },
+46 silly resolved     license: 'MIT',
+46 silly resolved     keywords: [ 'foreman', 'upstart', 'commandline', 'env', 'Procfile' ],
+46 silly resolved     bin: { nf: 'nf.js' },
+46 silly resolved     scripts: { test: 'tap test' },
+46 silly resolved     dependencies:
+46 silly resolved      { commander: '~2.1.0',
+46 silly resolved        'http-proxy': '~1.0.3',
+46 silly resolved        mu2: '~0.5.20',
+46 silly resolved        'shell-quote': '~1.4.2' },
+46 silly resolved     repository:
+46 silly resolved      { type: 'git',
+46 silly resolved        url: 'https://github.com/strongloop/node-foreman.git' },
+46 silly resolved     bugs:
+46 silly resolved      { url: 'https://github.com/strongloop/node-foreman/issues',
+46 silly resolved        email: 'callback@strongloop.com' },
+46 silly resolved     engines: { node: '>=0.6.9' },
+46 silly resolved     preferGlobal: true,
+46 silly resolved     devDependencies: { tap: '~0.4.8', chai: '~1.9.1', rimraf: '~2.2.8' },
+46 silly resolved     gitHead: '40ca4787547138466071508d0a549857377a869f',
+46 silly resolved     _id: 'foreman@1.3.0',
+46 silly resolved     _shasum: 'fa2824c0ca7d77f8fc347be5adb84a4b0c13f5a2',
+46 silly resolved     _from: 'foreman@',
+46 silly resolved     _npmVersion: '1.4.28',
+46 silly resolved     _npmUser: { name: 'rmg', email: 'r.m.graham@gmail.com' },
+46 silly resolved     maintainers: [ [Object], [Object], [Object] ],
+46 silly resolved     dist:
+46 silly resolved      { shasum: 'fa2824c0ca7d77f8fc347be5adb84a4b0c13f5a2',
+46 silly resolved        tarball: 'http://registry.npmjs.org/foreman/-/foreman-1.3.0.tgz' },
+46 silly resolved     directories: {},
+46 silly resolved     _resolved: 'https://registry.npmjs.org/foreman/-/foreman-1.3.0.tgz' } ]
+47 info install foreman@1.3.0 into C:\Users\Dmitryy\AppData\Roaming\npm
+48 info installOne foreman@1.3.0
+49 verbose node_modules\foreman unbuild
+50 verbose tar unpack C:\Users\Dmitryy\AppData\Roaming\npm-cache\foreman\1.3.0\package.tgz
+51 silly lockFile 0b6f1ceb-Roaming-npm-node-modules-foreman tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman
+52 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman C:\Users\Dmitryy\AppData\Roaming\npm-cache\0b6f1ceb-Roaming-npm-node-modules-foreman.lock
+53 silly lockFile 0183e301--cache-foreman-1-3-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\foreman\1.3.0\package.tgz
+54 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\foreman\1.3.0\package.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\0183e301--cache-foreman-1-3-0-package-tgz.lock
+55 silly gunzTarPerm modes [ '777', '666' ]
+56 silly gunzTarPerm extractEntry package.json
+57 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+58 silly gunzTarPerm extractEntry .npmignore
+59 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+60 silly gunzTarPerm extractEntry README.md
+61 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+62 silly gunzTarPerm extractEntry LICENSE
+63 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+64 silly gunzTarPerm extractEntry forward.js
+65 silly gunzTarPerm modified mode [ 'forward.js', 420, 438 ]
+66 silly gunzTarPerm extractEntry nf.js
+67 silly gunzTarPerm modified mode [ 'nf.js', 493, 511 ]
+68 silly gunzTarPerm extractEntry proxy.js
+69 silly gunzTarPerm modified mode [ 'proxy.js', 420, 438 ]
+70 silly gunzTarPerm extractEntry .travis.yml
+71 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+72 silly gunzTarPerm extractEntry CONTRIBUTING.md
+73 silly gunzTarPerm modified mode [ 'CONTRIBUTING.md', 420, 438 ]
+74 silly gunzTarPerm extractEntry lib/colors.js
+75 silly gunzTarPerm modified mode [ 'lib/colors.js', 420, 438 ]
+76 silly gunzTarPerm extractEntry lib/envs.js
+77 silly gunzTarPerm modified mode [ 'lib/envs.js', 420, 438 ]
+78 silly gunzTarPerm extractEntry lib/exporters.js
+79 silly gunzTarPerm modified mode [ 'lib/exporters.js', 420, 438 ]
+80 silly gunzTarPerm extractEntry lib/forward.js
+81 silly gunzTarPerm modified mode [ 'lib/forward.js', 420, 438 ]
+82 silly gunzTarPerm extractEntry lib/proc.js
+83 silly gunzTarPerm modified mode [ 'lib/proc.js', 420, 438 ]
+84 silly gunzTarPerm extractEntry lib/procfile.js
+85 silly gunzTarPerm modified mode [ 'lib/procfile.js', 420, 438 ]
+86 silly gunzTarPerm extractEntry lib/console.js
+87 silly gunzTarPerm modified mode [ 'lib/console.js', 420, 438 ]
+88 silly gunzTarPerm extractEntry lib/requirements.js
+89 silly gunzTarPerm modified mode [ 'lib/requirements.js', 420, 438 ]
+90 silly gunzTarPerm extractEntry lib/proxy.js
+91 silly gunzTarPerm modified mode [ 'lib/proxy.js', 420, 438 ]
+92 silly gunzTarPerm extractEntry lib/smf/foreman-APP.xml
+93 silly gunzTarPerm modified mode [ 'lib/smf/foreman-APP.xml', 420, 438 ]
+94 silly gunzTarPerm extractEntry lib/supervisord/foreman-APP-N.conf
+95 silly gunzTarPerm modified mode [ 'lib/supervisord/foreman-APP-N.conf', 420, 438 ]
+96 silly gunzTarPerm extractEntry lib/supervisord/foreman.conf
+97 silly gunzTarPerm modified mode [ 'lib/supervisord/foreman.conf', 420, 438 ]
+98 silly gunzTarPerm extractEntry lib/systemd/foreman-APP-N.service
+99 silly gunzTarPerm modified mode [ 'lib/systemd/foreman-APP-N.service', 420, 438 ]
+100 silly gunzTarPerm extractEntry lib/systemd/foreman-APP.target
+101 silly gunzTarPerm modified mode [ 'lib/systemd/foreman-APP.target', 420, 438 ]
+102 silly gunzTarPerm extractEntry lib/systemd/foreman.target
+103 silly gunzTarPerm modified mode [ 'lib/systemd/foreman.target', 420, 438 ]
+104 silly gunzTarPerm extractEntry lib/upstart/foreman-APP-N.conf
+105 silly gunzTarPerm modified mode [ 'lib/upstart/foreman-APP-N.conf', 420, 438 ]
+106 silly gunzTarPerm extractEntry lib/upstart/foreman-APP.conf
+107 silly gunzTarPerm modified mode [ 'lib/upstart/foreman-APP.conf', 420, 438 ]
+108 silly gunzTarPerm extractEntry lib/upstart/foreman.conf
+109 silly gunzTarPerm modified mode [ 'lib/upstart/foreman.conf', 420, 438 ]
+110 silly gunzTarPerm extractEntry lib/upstart-single/foreman-APP.conf
+111 silly gunzTarPerm modified mode [ 'lib/upstart-single/foreman-APP.conf', 420, 438 ]
+112 silly gunzTarPerm extractEntry lib/upstart-single/foreman.conf
+113 silly gunzTarPerm modified mode [ 'lib/upstart-single/foreman.conf', 420, 438 ]
+114 silly gunzTarPerm extractEntry test/console-output.test.js
+115 silly gunzTarPerm modified mode [ 'test/console-output.test.js', 420, 438 ]
+116 silly gunzTarPerm extractEntry test/envs-commented.test.js
+117 silly gunzTarPerm modified mode [ 'test/envs-commented.test.js', 420, 438 ]
+118 silly gunzTarPerm extractEntry test/envs-empty.test.js
+119 silly gunzTarPerm modified mode [ 'test/envs-empty.test.js', 420, 438 ]
+120 silly gunzTarPerm extractEntry test/envs-json.test.js
+121 silly gunzTarPerm modified mode [ 'test/envs-json.test.js', 420, 438 ]
+122 silly gunzTarPerm extractEntry test/envs-quoted.test.js
+123 silly gunzTarPerm modified mode [ 'test/envs-quoted.test.js', 420, 438 ]
+124 silly gunzTarPerm extractEntry test/console-trim.test.js
+125 silly gunzTarPerm modified mode [ 'test/console-trim.test.js', 420, 438 ]
+126 silly gunzTarPerm extractEntry test/run-once.test.js
+127 silly gunzTarPerm modified mode [ 'test/run-once.test.js', 420, 438 ]
+128 silly gunzTarPerm extractEntry test/export-custom-relative.test.sh
+129 silly gunzTarPerm modified mode [ 'test/export-custom-relative.test.sh', 493, 511 ]
+130 silly gunzTarPerm extractEntry test/export-path-default.sh
+131 silly gunzTarPerm modified mode [ 'test/export-path-default.sh', 493, 511 ]
+132 silly gunzTarPerm extractEntry test/start-honours-port.test.sh
+133 silly gunzTarPerm modified mode [ 'test/start-honours-port.test.sh', 493, 511 ]
+134 silly gunzTarPerm extractEntry test/export-systemd.test.sh
+135 silly gunzTarPerm modified mode [ 'test/export-systemd.test.sh', 493, 511 ]
+136 silly gunzTarPerm extractEntry test/export-upstart-single.test.sh
+137 silly gunzTarPerm modified mode [ 'test/export-upstart-single.test.sh', 493, 511 ]
+138 silly gunzTarPerm extractEntry test/export-upstart.test.sh
+139 silly gunzTarPerm modified mode [ 'test/export-upstart.test.sh', 493, 511 ]
+140 silly gunzTarPerm extractEntry test/fixtures/env.port
+141 silly gunzTarPerm modified mode [ 'test/fixtures/env.port', 420, 438 ]
+142 silly gunzTarPerm extractEntry test/fixtures/Procfile
+143 silly gunzTarPerm modified mode [ 'test/fixtures/Procfile', 420, 438 ]
+144 silly gunzTarPerm extractEntry test/fixtures/Procfile.port
+145 silly gunzTarPerm modified mode [ 'test/fixtures/Procfile.port', 420, 438 ]
+146 silly gunzTarPerm extractEntry test/fixtures/env.empty
+147 silly gunzTarPerm modified mode [ 'test/fixtures/env.empty', 420, 438 ]
+148 silly gunzTarPerm extractEntry test/fixtures/env.env
+149 silly gunzTarPerm modified mode [ 'test/fixtures/env.env', 420, 438 ]
+150 silly gunzTarPerm extractEntry test/fixtures/env.json
+151 silly gunzTarPerm modified mode [ 'test/fixtures/env.json', 420, 438 ]
+152 silly gunzTarPerm extractEntry test/fixtures/env.path
+153 silly gunzTarPerm modified mode [ 'test/fixtures/env.path', 420, 438 ]
+154 silly gunzTarPerm extractEntry test/fixtures/Procfile.env
+155 silly gunzTarPerm modified mode [ 'test/fixtures/Procfile.env', 420, 438 ]
+156 silly gunzTarPerm extractEntry test/fixtures/procfile-comment/.env
+157 silly gunzTarPerm modified mode [ 'test/fixtures/procfile-comment/.env', 420, 438 ]
+158 silly gunzTarPerm extractEntry test/fixtures/procfile-comment/Procfile
+159 silly gunzTarPerm modified mode [ 'test/fixtures/procfile-comment/Procfile', 420, 438 ]
+160 silly gunzTarPerm extractEntry test/fixtures/procfile-comment/foreman-run.conf
+161 silly gunzTarPerm modified mode [ 'test/fixtures/procfile-comment/foreman-run.conf', 420, 438 ]
+162 silly gunzTarPerm extractEntry test/fixtures/procfile-comment/foreman.conf
+163 silly gunzTarPerm modified mode [ 'test/fixtures/procfile-comment/foreman.conf', 420, 438 ]
+164 silly gunzTarPerm extractEntry test/fixtures/supervisord/supervisord-test-api-1.conf
+165 silly gunzTarPerm modified mode [ 'test/fixtures/supervisord/supervisord-test-api-1.conf',
+165 silly gunzTarPerm   420,
+165 silly gunzTarPerm   438 ]
+166 silly gunzTarPerm extractEntry test/fixtures/supervisord/supervisord-test-log-1.conf
+167 silly gunzTarPerm modified mode [ 'test/fixtures/supervisord/supervisord-test-log-1.conf',
+167 silly gunzTarPerm   420,
+167 silly gunzTarPerm   438 ]
+168 silly gunzTarPerm extractEntry test/fixtures/supervisord/supervisord-test-web-1.conf
+169 silly gunzTarPerm modified mode [ 'test/fixtures/supervisord/supervisord-test-web-1.conf',
+169 silly gunzTarPerm   420,
+169 silly gunzTarPerm   438 ]
+170 silly gunzTarPerm extractEntry test/fixtures/supervisord/supervisord-test.conf
+171 silly gunzTarPerm modified mode [ 'test/fixtures/supervisord/supervisord-test.conf', 420, 438 ]
+172 silly gunzTarPerm extractEntry test/fixtures/systemd/systemd-test-api-1.service
+173 silly gunzTarPerm modified mode [ 'test/fixtures/systemd/systemd-test-api-1.service', 420, 438 ]
+174 silly gunzTarPerm extractEntry test/fixtures/systemd/systemd-test-api.target
+175 silly gunzTarPerm modified mode [ 'test/fixtures/systemd/systemd-test-api.target', 420, 438 ]
+176 silly gunzTarPerm extractEntry test/fixtures/systemd/systemd-test-log-1.service
+177 silly gunzTarPerm modified mode [ 'test/fixtures/systemd/systemd-test-log-1.service', 420, 438 ]
+178 silly gunzTarPerm extractEntry test/fixtures/systemd/systemd-test-log.target
+179 silly gunzTarPerm modified mode [ 'test/fixtures/systemd/systemd-test-log.target', 420, 438 ]
+180 silly gunzTarPerm extractEntry test/fixtures/systemd/systemd-test-web-1.service
+181 silly gunzTarPerm modified mode [ 'test/fixtures/systemd/systemd-test-web-1.service', 420, 438 ]
+182 silly gunzTarPerm extractEntry test/fixtures/systemd/systemd-test-web.target
+183 silly gunzTarPerm modified mode [ 'test/fixtures/systemd/systemd-test-web.target', 420, 438 ]
+184 silly gunzTarPerm extractEntry test/fixtures/systemd/systemd-test.target
+185 silly gunzTarPerm modified mode [ 'test/fixtures/systemd/systemd-test.target', 420, 438 ]
+186 silly gunzTarPerm extractEntry test/fixtures/upstart/upstart-test-api-1.conf
+187 silly gunzTarPerm modified mode [ 'test/fixtures/upstart/upstart-test-api-1.conf', 420, 438 ]
+188 silly gunzTarPerm extractEntry test/fixtures/upstart/upstart-test-api.conf
+189 silly gunzTarPerm modified mode [ 'test/fixtures/upstart/upstart-test-api.conf', 420, 438 ]
+190 silly gunzTarPerm extractEntry test/fixtures/upstart/upstart-test-log-1.conf
+191 silly gunzTarPerm modified mode [ 'test/fixtures/upstart/upstart-test-log-1.conf', 420, 438 ]
+192 silly gunzTarPerm extractEntry test/fixtures/upstart/upstart-test-log.conf
+193 silly gunzTarPerm modified mode [ 'test/fixtures/upstart/upstart-test-log.conf', 420, 438 ]
+194 silly gunzTarPerm extractEntry test/fixtures/upstart/upstart-test-web-1.conf
+195 silly gunzTarPerm modified mode [ 'test/fixtures/upstart/upstart-test-web-1.conf', 420, 438 ]
+196 silly gunzTarPerm extractEntry test/fixtures/upstart/upstart-test-web.conf
+197 silly gunzTarPerm modified mode [ 'test/fixtures/upstart/upstart-test-web.conf', 420, 438 ]
+198 silly gunzTarPerm extractEntry test/fixtures/upstart/upstart-test.conf
+199 silly gunzTarPerm modified mode [ 'test/fixtures/upstart/upstart-test.conf', 420, 438 ]
+200 silly gunzTarPerm extractEntry test/fixtures/upstart-custom/upstart-test-api-1.conf
+201 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-custom/upstart-test-api-1.conf',
+201 silly gunzTarPerm   420,
+201 silly gunzTarPerm   438 ]
+202 silly gunzTarPerm extractEntry test/fixtures/upstart-custom/upstart-test-api.conf
+203 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-custom/upstart-test-api.conf',
+203 silly gunzTarPerm   420,
+203 silly gunzTarPerm   438 ]
+204 silly gunzTarPerm extractEntry test/fixtures/upstart-custom/upstart-test-log-1.conf
+205 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-custom/upstart-test-log-1.conf',
+205 silly gunzTarPerm   420,
+205 silly gunzTarPerm   438 ]
+206 silly gunzTarPerm extractEntry test/fixtures/upstart-custom/upstart-test-log.conf
+207 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-custom/upstart-test-log.conf',
+207 silly gunzTarPerm   420,
+207 silly gunzTarPerm   438 ]
+208 silly gunzTarPerm extractEntry test/fixtures/upstart-custom/upstart-test-web-1.conf
+209 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-custom/upstart-test-web-1.conf',
+209 silly gunzTarPerm   420,
+209 silly gunzTarPerm   438 ]
+210 silly gunzTarPerm extractEntry test/fixtures/upstart-custom/upstart-test-web.conf
+211 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-custom/upstart-test-web.conf',
+211 silly gunzTarPerm   420,
+211 silly gunzTarPerm   438 ]
+212 silly gunzTarPerm extractEntry test/fixtures/upstart-custom/upstart-test.conf
+213 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-custom/upstart-test.conf', 420, 438 ]
+214 silly gunzTarPerm extractEntry test/fixtures/upstart-custom-templates/foreman-APP-N.conf
+215 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-custom-templates/foreman-APP-N.conf',
+215 silly gunzTarPerm   420,
+215 silly gunzTarPerm   438 ]
+216 silly gunzTarPerm extractEntry test/fixtures/upstart-custom-templates/foreman-APP.conf
+217 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-custom-templates/foreman-APP.conf',
+217 silly gunzTarPerm   420,
+217 silly gunzTarPerm   438 ]
+218 silly gunzTarPerm extractEntry test/fixtures/upstart-custom-templates/foreman.conf
+219 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-custom-templates/foreman.conf',
+219 silly gunzTarPerm   420,
+219 silly gunzTarPerm   438 ]
+220 silly gunzTarPerm extractEntry test/fixtures/upstart-single/upstart-single-test-api.conf
+221 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-single/upstart-single-test-api.conf',
+221 silly gunzTarPerm   420,
+221 silly gunzTarPerm   438 ]
+222 silly gunzTarPerm extractEntry test/fixtures/upstart-single/upstart-single-test-log.conf
+223 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-single/upstart-single-test-log.conf',
+223 silly gunzTarPerm   420,
+223 silly gunzTarPerm   438 ]
+224 silly gunzTarPerm extractEntry test/fixtures/upstart-single/upstart-single-test-web.conf
+225 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-single/upstart-single-test-web.conf',
+225 silly gunzTarPerm   420,
+225 silly gunzTarPerm   438 ]
+226 silly gunzTarPerm extractEntry test/fixtures/upstart-single/upstart-single-test.conf
+227 silly gunzTarPerm modified mode [ 'test/fixtures/upstart-single/upstart-single-test.conf',
+227 silly gunzTarPerm   420,
+227 silly gunzTarPerm   438 ]
+228 silly gunzTarPerm extractEntry test/procfile-comment.test.sh
+229 silly gunzTarPerm modified mode [ 'test/procfile-comment.test.sh', 493, 511 ]
+230 silly gunzTarPerm extractEntry test/export-custom-absolute.test.sh
+231 silly gunzTarPerm modified mode [ 'test/export-custom-absolute.test.sh', 493, 511 ]
+232 silly gunzTarPerm extractEntry test/start-honours-env-port.test.sh
+233 silly gunzTarPerm modified mode [ 'test/start-honours-env-port.test.sh', 493, 511 ]
+234 silly gunzTarPerm extractEntry test/export-supervisord.test.sh
+235 silly gunzTarPerm modified mode [ 'test/export-supervisord.test.sh', 493, 511 ]
+236 silly gunzTarPerm extractEntry CHANGES.md
+237 silly gunzTarPerm modified mode [ 'CHANGES.md', 420, 438 ]
+238 silly gunzTarPerm extractEntry assets/foreman-ls.png
+239 silly gunzTarPerm modified mode [ 'assets/foreman-ls.png', 420, 438 ]
+240 silly gunzTarPerm extractEntry assets/foreman-start.png
+241 silly gunzTarPerm modified mode [ 'assets/foreman-start.png', 420, 438 ]
+242 silly gunzTarPerm extractEntry demo/server.js
+243 silly gunzTarPerm modified mode [ 'demo/server.js', 420, 438 ]
+244 silly gunzTarPerm extractEntry demo/.env
+245 silly gunzTarPerm modified mode [ 'demo/.env', 420, 438 ]
+246 silly gunzTarPerm extractEntry demo/Procfile
+247 silly gunzTarPerm modified mode [ 'demo/Procfile', 420, 438 ]
+248 silly lockFile 0b6f1ceb-Roaming-npm-node-modules-foreman tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman
+249 silly lockFile 0b6f1ceb-Roaming-npm-node-modules-foreman tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman
+250 silly lockFile 0183e301--cache-foreman-1-3-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\foreman\1.3.0\package.tgz
+251 silly lockFile 0183e301--cache-foreman-1-3-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\foreman\1.3.0\package.tgz
+252 info preinstall foreman@1.3.0
+253 verbose readDependencies using package.json deps
+254 verbose readDependencies using package.json deps
+255 verbose cache add [ 'commander@~2.1.0', null ]
+256 verbose cache add name=undefined spec="commander@~2.1.0" args=["commander@~2.1.0",null]
+257 verbose parsed url { protocol: null,
+257 verbose parsed url   slashes: null,
+257 verbose parsed url   auth: null,
+257 verbose parsed url   host: null,
+257 verbose parsed url   port: null,
+257 verbose parsed url   hostname: null,
+257 verbose parsed url   hash: null,
+257 verbose parsed url   search: null,
+257 verbose parsed url   query: null,
+257 verbose parsed url   pathname: 'commander@~2.1.0',
+257 verbose parsed url   path: 'commander@~2.1.0',
+257 verbose parsed url   href: 'commander@~2.1.0' }
+258 verbose cache add [ 'http-proxy@~1.0.3', null ]
+259 verbose cache add name=undefined spec="http-proxy@~1.0.3" args=["http-proxy@~1.0.3",null]
+260 verbose parsed url { protocol: null,
+260 verbose parsed url   slashes: null,
+260 verbose parsed url   auth: null,
+260 verbose parsed url   host: null,
+260 verbose parsed url   port: null,
+260 verbose parsed url   hostname: null,
+260 verbose parsed url   hash: null,
+260 verbose parsed url   search: null,
+260 verbose parsed url   query: null,
+260 verbose parsed url   pathname: 'http-proxy@~1.0.3',
+260 verbose parsed url   path: 'http-proxy@~1.0.3',
+260 verbose parsed url   href: 'http-proxy@~1.0.3' }
+261 verbose cache add [ 'mu2@~0.5.20', null ]
+262 verbose cache add name=undefined spec="mu2@~0.5.20" args=["mu2@~0.5.20",null]
+263 verbose parsed url { protocol: null,
+263 verbose parsed url   slashes: null,
+263 verbose parsed url   auth: null,
+263 verbose parsed url   host: null,
+263 verbose parsed url   port: null,
+263 verbose parsed url   hostname: null,
+263 verbose parsed url   hash: null,
+263 verbose parsed url   search: null,
+263 verbose parsed url   query: null,
+263 verbose parsed url   pathname: 'mu2@~0.5.20',
+263 verbose parsed url   path: 'mu2@~0.5.20',
+263 verbose parsed url   href: 'mu2@~0.5.20' }
+264 verbose cache add [ 'shell-quote@~1.4.2', null ]
+265 verbose cache add name=undefined spec="shell-quote@~1.4.2" args=["shell-quote@~1.4.2",null]
+266 verbose parsed url { protocol: null,
+266 verbose parsed url   slashes: null,
+266 verbose parsed url   auth: null,
+266 verbose parsed url   host: null,
+266 verbose parsed url   port: null,
+266 verbose parsed url   hostname: null,
+266 verbose parsed url   hash: null,
+266 verbose parsed url   search: null,
+266 verbose parsed url   query: null,
+266 verbose parsed url   pathname: 'shell-quote@~1.4.2',
+266 verbose parsed url   path: 'shell-quote@~1.4.2',
+266 verbose parsed url   href: 'shell-quote@~1.4.2' }
+267 verbose cache add name="commander" spec="~2.1.0" args=["commander","~2.1.0"]
+268 verbose parsed url { protocol: null,
+268 verbose parsed url   slashes: null,
+268 verbose parsed url   auth: null,
+268 verbose parsed url   host: null,
+268 verbose parsed url   port: null,
+268 verbose parsed url   hostname: null,
+268 verbose parsed url   hash: null,
+268 verbose parsed url   search: null,
+268 verbose parsed url   query: null,
+268 verbose parsed url   pathname: '~2.1.0',
+268 verbose parsed url   path: '~2.1.0',
+268 verbose parsed url   href: '~2.1.0' }
+269 verbose addNamed [ 'commander', '~2.1.0' ]
+270 verbose addNamed [ null, '>=2.1.0-0 <2.2.0-0' ]
+271 silly lockFile 819b1264-commander-2-1-0 commander@~2.1.0
+272 verbose lock commander@~2.1.0 C:\Users\Dmitryy\AppData\Roaming\npm-cache\819b1264-commander-2-1-0.lock
+273 verbose cache add name="http-proxy" spec="~1.0.3" args=["http-proxy","~1.0.3"]
+274 verbose parsed url { protocol: null,
+274 verbose parsed url   slashes: null,
+274 verbose parsed url   auth: null,
+274 verbose parsed url   host: null,
+274 verbose parsed url   port: null,
+274 verbose parsed url   hostname: null,
+274 verbose parsed url   hash: null,
+274 verbose parsed url   search: null,
+274 verbose parsed url   query: null,
+274 verbose parsed url   pathname: '~1.0.3',
+274 verbose parsed url   path: '~1.0.3',
+274 verbose parsed url   href: '~1.0.3' }
+275 verbose addNamed [ 'http-proxy', '~1.0.3' ]
+276 verbose addNamed [ null, '>=1.0.3-0 <1.1.0-0' ]
+277 silly lockFile 71ed2df3-http-proxy-1-0-3 http-proxy@~1.0.3
+278 verbose lock http-proxy@~1.0.3 C:\Users\Dmitryy\AppData\Roaming\npm-cache\71ed2df3-http-proxy-1-0-3.lock
+279 verbose cache add name="mu2" spec="~0.5.20" args=["mu2","~0.5.20"]
+280 verbose parsed url { protocol: null,
+280 verbose parsed url   slashes: null,
+280 verbose parsed url   auth: null,
+280 verbose parsed url   host: null,
+280 verbose parsed url   port: null,
+280 verbose parsed url   hostname: null,
+280 verbose parsed url   hash: null,
+280 verbose parsed url   search: null,
+280 verbose parsed url   query: null,
+280 verbose parsed url   pathname: '~0.5.20',
+280 verbose parsed url   path: '~0.5.20',
+280 verbose parsed url   href: '~0.5.20' }
+281 verbose addNamed [ 'mu2', '~0.5.20' ]
+282 verbose addNamed [ null, '>=0.5.20-0 <0.6.0-0' ]
+283 silly lockFile 4bcb7d7d-mu2-0-5-20 mu2@~0.5.20
+284 verbose lock mu2@~0.5.20 C:\Users\Dmitryy\AppData\Roaming\npm-cache\4bcb7d7d-mu2-0-5-20.lock
+285 verbose cache add name="shell-quote" spec="~1.4.2" args=["shell-quote","~1.4.2"]
+286 verbose parsed url { protocol: null,
+286 verbose parsed url   slashes: null,
+286 verbose parsed url   auth: null,
+286 verbose parsed url   host: null,
+286 verbose parsed url   port: null,
+286 verbose parsed url   hostname: null,
+286 verbose parsed url   hash: null,
+286 verbose parsed url   search: null,
+286 verbose parsed url   query: null,
+286 verbose parsed url   pathname: '~1.4.2',
+286 verbose parsed url   path: '~1.4.2',
+286 verbose parsed url   href: '~1.4.2' }
+287 verbose addNamed [ 'shell-quote', '~1.4.2' ]
+288 verbose addNamed [ null, '>=1.4.2-0 <1.5.0-0' ]
+289 silly lockFile ce29ef93-shell-quote-1-4-2 shell-quote@~1.4.2
+290 verbose lock shell-quote@~1.4.2 C:\Users\Dmitryy\AppData\Roaming\npm-cache\ce29ef93-shell-quote-1-4-2.lock
+291 silly addNameRange { name: 'commander',
+291 silly addNameRange   range: '>=2.1.0-0 <2.2.0-0',
+291 silly addNameRange   hasData: false }
+292 silly addNameRange { name: 'http-proxy',
+292 silly addNameRange   range: '>=1.0.3-0 <1.1.0-0',
+292 silly addNameRange   hasData: false }
+293 silly addNameRange { name: 'mu2', range: '>=0.5.20-0 <0.6.0-0', hasData: false }
+294 silly addNameRange { name: 'shell-quote',
+294 silly addNameRange   range: '>=1.4.2-0 <1.5.0-0',
+294 silly addNameRange   hasData: false }
+295 verbose request where is /http-proxy
+296 verbose request registry https://registry.npmjs.org/
+297 verbose url raw /http-proxy
+298 verbose url resolving [ 'https://registry.npmjs.org/', './http-proxy' ]
+299 verbose url resolved https://registry.npmjs.org/http-proxy
+300 verbose request where is https://registry.npmjs.org/http-proxy
+301 info trying registry request attempt 1 at 14:44:02
+302 http GET https://registry.npmjs.org/http-proxy
+303 verbose request where is /mu2
+304 verbose request registry https://registry.npmjs.org/
+305 verbose url raw /mu2
+306 verbose url resolving [ 'https://registry.npmjs.org/', './mu2' ]
+307 verbose url resolved https://registry.npmjs.org/mu2
+308 verbose request where is https://registry.npmjs.org/mu2
+309 info trying registry request attempt 1 at 14:44:02
+310 http GET https://registry.npmjs.org/mu2
+311 verbose request where is /shell-quote
+312 verbose request registry https://registry.npmjs.org/
+313 verbose url raw /shell-quote
+314 verbose url resolving [ 'https://registry.npmjs.org/', './shell-quote' ]
+315 verbose url resolved https://registry.npmjs.org/shell-quote
+316 verbose request where is https://registry.npmjs.org/shell-quote
+317 info trying registry request attempt 1 at 14:44:02
+318 http GET https://registry.npmjs.org/shell-quote
+319 verbose request where is /commander
+320 verbose request registry https://registry.npmjs.org/
+321 verbose url raw /commander
+322 verbose url resolving [ 'https://registry.npmjs.org/', './commander' ]
+323 verbose url resolved https://registry.npmjs.org/commander
+324 verbose request where is https://registry.npmjs.org/commander
+325 info trying registry request attempt 1 at 14:44:02
+326 verbose etag "9Y231CNGMMEDNZ3SHN33WGXSV"
+327 http GET https://registry.npmjs.org/commander
+328 http 304 https://registry.npmjs.org/commander
+329 silly registry.get cb [ 304,
+329 silly registry.get   { date: 'Mon, 04 May 2015 11:44:03 GMT',
+329 silly registry.get     via: '1.1 varnish',
+329 silly registry.get     'last-modified': 'Mon, 04 May 2015 11:43:37 GMT',
+329 silly registry.get     'cache-control': 'max-age=60',
+329 silly registry.get     etag: '"9Y231CNGMMEDNZ3SHN33WGXSV"',
+329 silly registry.get     age: '26',
+329 silly registry.get     connection: 'keep-alive',
+329 silly registry.get     'x-served-by': 'cache-fra1233-FRA',
+329 silly registry.get     'x-cache': 'HIT',
+329 silly registry.get     'x-cache-hits': '4',
+329 silly registry.get     'x-timer': 'S1430739843.636576,VS0,VE0',
+329 silly registry.get     vary: 'Accept' } ]
+330 verbose etag https://registry.npmjs.org/commander from cache
+331 silly addNameRange number 2 { name: 'commander', range: '>=2.1.0-0 <2.2.0-0', hasData: true }
+332 silly addNameRange versions [ 'commander',
+332 silly addNameRange   [ '0.0.1',
+332 silly addNameRange     '0.0.3',
+332 silly addNameRange     '0.0.4',
+332 silly addNameRange     '0.0.5',
+332 silly addNameRange     '0.1.0',
+332 silly addNameRange     '0.2.0',
+332 silly addNameRange     '0.2.1',
+332 silly addNameRange     '0.3.0',
+332 silly addNameRange     '0.3.1',
+332 silly addNameRange     '0.3.2',
+332 silly addNameRange     '0.3.3',
+332 silly addNameRange     '0.4.0',
+332 silly addNameRange     '0.4.1',
+332 silly addNameRange     '0.4.2',
+332 silly addNameRange     '0.4.3',
+332 silly addNameRange     '0.5.0',
+332 silly addNameRange     '0.5.1',
+332 silly addNameRange     '0.6.0',
+332 silly addNameRange     '0.6.1',
+332 silly addNameRange     '0.5.2',
+332 silly addNameRange     '1.0.0',
+332 silly addNameRange     '1.0.1',
+332 silly addNameRange     '1.0.2',
+332 silly addNameRange     '1.0.3',
+332 silly addNameRange     '1.0.4',
+332 silly addNameRange     '1.0.5',
+332 silly addNameRange     '1.1.0',
+332 silly addNameRange     '1.1.1',
+332 silly addNameRange     '1.2.0',
+332 silly addNameRange     '1.3.0',
+332 silly addNameRange     '1.3.1',
+332 silly addNameRange     '1.3.2',
+332 silly addNameRange     '2.0.0',
+332 silly addNameRange     '2.1.0',
+332 silly addNameRange     '2.2.0',
+332 silly addNameRange     '2.3.0',
+332 silly addNameRange     '2.4.0',
+332 silly addNameRange     '2.5.0',
+332 silly addNameRange     '2.5.1',
+332 silly addNameRange     '2.6.0',
+332 silly addNameRange     '2.7.0',
+332 silly addNameRange     '2.7.1',
+332 silly addNameRange     '2.8.0',
+332 silly addNameRange     '2.8.1' ] ]
+333 verbose addNamed [ 'commander', '2.1.0' ]
+334 verbose addNamed [ '2.1.0', '2.1.0' ]
+335 silly lockFile 43e0ae83-commander-2-1-0 commander@2.1.0
+336 verbose lock commander@2.1.0 C:\Users\Dmitryy\AppData\Roaming\npm-cache\43e0ae83-commander-2-1-0.lock
+337 silly lockFile b1b1c0ef-rg-commander-commander-2-1-0-tgz https://registry.npmjs.org/commander/-/commander-2.1.0.tgz
+338 verbose lock https://registry.npmjs.org/commander/-/commander-2.1.0.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\b1b1c0ef-rg-commander-commander-2-1-0-tgz.lock
+339 verbose addRemoteTarball [ 'https://registry.npmjs.org/commander/-/commander-2.1.0.tgz',
+339 verbose addRemoteTarball   'd121bbae860d9992a3d517ba96f56588e47c6781' ]
+340 info retry fetch attempt 1 at 14:44:02
+341 verbose fetch to= C:\Users\Dmitryy\AppData\Local\Temp\npm-3684-Vq7Wu2OY\registry.npmjs.org\commander\-\commander-2.1.0.tgz
+342 http GET https://registry.npmjs.org/commander/-/commander-2.1.0.tgz
+343 http 200 https://registry.npmjs.org/shell-quote
+344 silly registry.get cb [ 200,
+344 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+344 silly registry.get     etag: '"DL9YS7S3YWMPYWIWBBWEYC3UU"',
+344 silly registry.get     'content-type': 'application/json',
+344 silly registry.get     'cache-control': 'max-age=60',
+344 silly registry.get     'content-length': '18098',
+344 silly registry.get     'accept-ranges': 'bytes',
+344 silly registry.get     date: 'Mon, 04 May 2015 11:44:03 GMT',
+344 silly registry.get     via: '1.1 varnish',
+344 silly registry.get     age: '48',
+344 silly registry.get     connection: 'keep-alive',
+344 silly registry.get     'x-served-by': 'cache-fra1239-FRA',
+344 silly registry.get     'x-cache': 'HIT',
+344 silly registry.get     'x-cache-hits': '3',
+344 silly registry.get     'x-timer': 'S1430739843.630110,VS0,VE0',
+344 silly registry.get     vary: 'Accept' } ]
+345 silly addNameRange number 2 { name: 'shell-quote',
+345 silly addNameRange   range: '>=1.4.2-0 <1.5.0-0',
+345 silly addNameRange   hasData: true }
+346 silly addNameRange versions [ 'shell-quote',
+346 silly addNameRange   [ '0.0.0',
+346 silly addNameRange     '0.0.1',
+346 silly addNameRange     '0.1.0',
+346 silly addNameRange     '0.1.1',
+346 silly addNameRange     '1.0.0',
+346 silly addNameRange     '1.1.0',
+346 silly addNameRange     '1.2.0',
+346 silly addNameRange     '1.3.0',
+346 silly addNameRange     '1.3.1',
+346 silly addNameRange     '1.3.2',
+346 silly addNameRange     '1.3.3',
+346 silly addNameRange     '1.4.0',
+346 silly addNameRange     '1.4.1',
+346 silly addNameRange     '1.4.2',
+346 silly addNameRange     '1.4.3' ] ]
+347 verbose addNamed [ 'shell-quote', '1.4.3' ]
+348 verbose addNamed [ '1.4.3', '1.4.3' ]
+349 silly lockFile 7d81aa7e-shell-quote-1-4-3 shell-quote@1.4.3
+350 verbose lock shell-quote@1.4.3 C:\Users\Dmitryy\AppData\Roaming\npm-cache\7d81aa7e-shell-quote-1-4-3.lock
+351 silly lockFile f9abdd1a-hell-quote-shell-quote-1-4-3-tgz https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz
+352 verbose lock https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\f9abdd1a-hell-quote-shell-quote-1-4-3-tgz.lock
+353 verbose addRemoteTarball [ 'https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz',
+353 verbose addRemoteTarball   '952c44e0b1ed9013ef53958179cc643e8777466b' ]
+354 info retry fetch attempt 1 at 14:44:02
+355 verbose fetch to= C:\Users\Dmitryy\AppData\Local\Temp\npm-3684-Vq7Wu2OY\registry.npmjs.org\shell-quote\-\shell-quote-1.4.3.tgz
+356 http GET https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz
+357 http 200 https://registry.npmjs.org/http-proxy
+358 silly registry.get cb [ 200,
+358 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+358 silly registry.get     etag: '"60WTPYG5LYL0CFY51L6KUIVOG"',
+358 silly registry.get     'content-type': 'application/json',
+358 silly registry.get     'cache-control': 'max-age=60',
+358 silly registry.get     'content-length': '114869',
+358 silly registry.get     'accept-ranges': 'bytes',
+358 silly registry.get     date: 'Mon, 04 May 2015 11:44:03 GMT',
+358 silly registry.get     via: '1.1 varnish',
+358 silly registry.get     age: '23',
+358 silly registry.get     connection: 'keep-alive',
+358 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+358 silly registry.get     'x-cache': 'HIT',
+358 silly registry.get     'x-cache-hits': '2',
+358 silly registry.get     'x-timer': 'S1430739843.630909,VS0,VE0',
+358 silly registry.get     vary: 'Accept' } ]
+359 silly addNameRange number 2 { name: 'http-proxy',
+359 silly addNameRange   range: '>=1.0.3-0 <1.1.0-0',
+359 silly addNameRange   hasData: true }
+360 silly addNameRange versions [ 'http-proxy',
+360 silly addNameRange   [ '0.5.9',
+360 silly addNameRange     '0.5.10',
+360 silly addNameRange     '0.5.11',
+360 silly addNameRange     '0.6.0',
+360 silly addNameRange     '0.6.1',
+360 silly addNameRange     '0.6.2',
+360 silly addNameRange     '0.6.4',
+360 silly addNameRange     '0.6.5',
+360 silly addNameRange     '0.6.6',
+360 silly addNameRange     '0.7.0',
+360 silly addNameRange     '0.7.2',
+360 silly addNameRange     '0.7.3',
+360 silly addNameRange     '0.7.4',
+360 silly addNameRange     '0.7.5',
+360 silly addNameRange     '0.7.6',
+360 silly addNameRange     '0.8.0',
+360 silly addNameRange     '0.8.1',
+360 silly addNameRange     '0.8.2',
+360 silly addNameRange     '0.8.3',
+360 silly addNameRange     '0.8.4',
+360 silly addNameRange     '0.8.5',
+360 silly addNameRange     '0.8.6',
+360 silly addNameRange     '0.8.7',
+360 silly addNameRange     '0.9.0',
+360 silly addNameRange     '0.9.1',
+360 silly addNameRange     '0.10.0',
+360 silly addNameRange     '0.10.1',
+360 silly addNameRange     '0.10.2',
+360 silly addNameRange     '0.10.3',
+360 silly addNameRange     '0.10.4',
+360 silly addNameRange     '1.0.0',
+360 silly addNameRange     '1.0.1',
+360 silly addNameRange     '1.0.2',
+360 silly addNameRange     '1.0.3',
+360 silly addNameRange     '1.1.0',
+360 silly addNameRange     '1.1.1',
+360 silly addNameRange     '1.1.2',
+360 silly addNameRange     '1.1.3',
+360 silly addNameRange     '1.1.4',
+360 silly addNameRange     '1.1.5',
+360 silly addNameRange     '1.1.6',
+360 silly addNameRange     '1.2.0',
+360 silly addNameRange     '1.2.1',
+360 silly addNameRange     '1.3.0',
+360 silly addNameRange     '1.4.0',
+360 silly addNameRange     '1.4.1',
+360 silly addNameRange     '1.4.2',
+360 silly addNameRange     '1.4.3',
+360 silly addNameRange     '1.5.0',
+360 silly addNameRange     '1.5.1',
+360 silly addNameRange     '1.5.2',
+360 silly addNameRange     '1.5.3',
+360 silly addNameRange     '1.6.0',
+360 silly addNameRange     '1.6.1',
+360 silly addNameRange     '1.6.2',
+360 silly addNameRange     '1.7.0',
+360 silly addNameRange     '1.7.1',
+360 silly addNameRange     '1.7.2',
+360 silly addNameRange     '1.7.3',
+360 silly addNameRange     '1.8.0',
+360 silly addNameRange     '1.8.1',
+360 silly addNameRange     '1.9.0',
+360 silly addNameRange     '1.9.1',
+360 silly addNameRange     '1.10.0',
+360 silly addNameRange     '1.10.1',
+360 silly addNameRange     '1.11.0',
+360 silly addNameRange     '1.11.1' ] ]
+361 verbose addNamed [ 'http-proxy', '1.0.3' ]
+362 verbose addNamed [ '1.0.3', '1.0.3' ]
+363 silly lockFile aebf6a91-http-proxy-1-0-3 http-proxy@1.0.3
+364 verbose lock http-proxy@1.0.3 C:\Users\Dmitryy\AppData\Roaming\npm-cache\aebf6a91-http-proxy-1-0-3.lock
+365 silly lockFile fb5bd11a--http-proxy-http-proxy-1-0-3-tgz https://registry.npmjs.org/http-proxy/-/http-proxy-1.0.3.tgz
+366 verbose lock https://registry.npmjs.org/http-proxy/-/http-proxy-1.0.3.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\fb5bd11a--http-proxy-http-proxy-1-0-3-tgz.lock
+367 verbose addRemoteTarball [ 'https://registry.npmjs.org/http-proxy/-/http-proxy-1.0.3.tgz',
+367 verbose addRemoteTarball   '3867396ab7d8fc70855fa72b55a527cc13427ea5' ]
+368 info retry fetch attempt 1 at 14:44:02
+369 verbose fetch to= C:\Users\Dmitryy\AppData\Local\Temp\npm-3684-Vq7Wu2OY\registry.npmjs.org\http-proxy\-\http-proxy-1.0.3.tgz
+370 http GET https://registry.npmjs.org/http-proxy/-/http-proxy-1.0.3.tgz
+371 http 200 https://registry.npmjs.org/mu2
+372 silly registry.get cb [ 200,
+372 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+372 silly registry.get     etag: '"AOA0DFAOB6N7NAG52P6B0IWS1"',
+372 silly registry.get     'content-type': 'application/json',
+372 silly registry.get     'cache-control': 'max-age=60',
+372 silly registry.get     'content-length': '56283',
+372 silly registry.get     'accept-ranges': 'bytes',
+372 silly registry.get     date: 'Mon, 04 May 2015 11:44:03 GMT',
+372 silly registry.get     via: '1.1 varnish',
+372 silly registry.get     age: '0',
+372 silly registry.get     connection: 'keep-alive',
+372 silly registry.get     'x-served-by': 'cache-fra1242-FRA',
+372 silly registry.get     'x-cache': 'HIT',
+372 silly registry.get     'x-cache-hits': '1',
+372 silly registry.get     'x-timer': 'S1430739843.633030,VS0,VE104',
+372 silly registry.get     vary: 'Accept' } ]
+373 http 200 https://registry.npmjs.org/commander/-/commander-2.1.0.tgz
+374 silly addNameRange number 2 { name: 'mu2', range: '>=0.5.20-0 <0.6.0-0', hasData: true }
+375 silly addNameRange versions [ 'mu2',
+375 silly addNameRange   [ '0.5.3',
+375 silly addNameRange     '0.5.4',
+375 silly addNameRange     '0.5.5',
+375 silly addNameRange     '0.5.6',
+375 silly addNameRange     '0.5.7',
+375 silly addNameRange     '0.5.8',
+375 silly addNameRange     '0.5.9',
+375 silly addNameRange     '0.5.10',
+375 silly addNameRange     '0.5.11',
+375 silly addNameRange     '0.5.12',
+375 silly addNameRange     '0.5.13',
+375 silly addNameRange     '0.5.14',
+375 silly addNameRange     '0.5.15',
+375 silly addNameRange     '0.5.16',
+375 silly addNameRange     '0.5.17',
+375 silly addNameRange     '0.5.18',
+375 silly addNameRange     '0.5.19',
+375 silly addNameRange     '0.5.20' ] ]
+376 verbose addNamed [ 'mu2', '0.5.20' ]
+377 verbose addNamed [ '0.5.20', '0.5.20' ]
+378 silly lockFile b7c3cda6-mu2-0-5-20 mu2@0.5.20
+379 verbose lock mu2@0.5.20 C:\Users\Dmitryy\AppData\Roaming\npm-cache\b7c3cda6-mu2-0-5-20.lock
+380 silly lockFile 191746c9-try-npmjs-org-mu2-mu2-0-5-20-tgz https://registry.npmjs.org/mu2/-/mu2-0.5.20.tgz
+381 verbose lock https://registry.npmjs.org/mu2/-/mu2-0.5.20.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\191746c9-try-npmjs-org-mu2-mu2-0-5-20-tgz.lock
+382 verbose addRemoteTarball [ 'https://registry.npmjs.org/mu2/-/mu2-0.5.20.tgz',
+382 verbose addRemoteTarball   '6f573ac30da85202e814b0b37ea507a2d59cbd0a' ]
+383 info retry fetch attempt 1 at 14:44:02
+384 verbose fetch to= C:\Users\Dmitryy\AppData\Local\Temp\npm-3684-Vq7Wu2OY\registry.npmjs.org\mu2\-\mu2-0.5.20.tgz
+385 silly lockFile b1b1c0ef-rg-commander-commander-2-1-0-tgz https://registry.npmjs.org/commander/-/commander-2.1.0.tgz
+386 silly lockFile b1b1c0ef-rg-commander-commander-2-1-0-tgz https://registry.npmjs.org/commander/-/commander-2.1.0.tgz
+387 http GET https://registry.npmjs.org/mu2/-/mu2-0.5.20.tgz
+388 silly lockFile 43e0ae83-commander-2-1-0 commander@2.1.0
+389 silly lockFile 43e0ae83-commander-2-1-0 commander@2.1.0
+390 silly lockFile 819b1264-commander-2-1-0 commander@~2.1.0
+391 silly lockFile 819b1264-commander-2-1-0 commander@~2.1.0
+392 http 200 https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz
+393 silly lockFile f9abdd1a-hell-quote-shell-quote-1-4-3-tgz https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz
+394 silly lockFile f9abdd1a-hell-quote-shell-quote-1-4-3-tgz https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz
+395 silly lockFile 7d81aa7e-shell-quote-1-4-3 shell-quote@1.4.3
+396 silly lockFile 7d81aa7e-shell-quote-1-4-3 shell-quote@1.4.3
+397 silly lockFile ce29ef93-shell-quote-1-4-2 shell-quote@~1.4.2
+398 silly lockFile ce29ef93-shell-quote-1-4-2 shell-quote@~1.4.2
+399 http 200 https://registry.npmjs.org/http-proxy/-/http-proxy-1.0.3.tgz
+400 http 200 https://registry.npmjs.org/mu2/-/mu2-0.5.20.tgz
+401 silly lockFile 191746c9-try-npmjs-org-mu2-mu2-0-5-20-tgz https://registry.npmjs.org/mu2/-/mu2-0.5.20.tgz
+402 silly lockFile 191746c9-try-npmjs-org-mu2-mu2-0-5-20-tgz https://registry.npmjs.org/mu2/-/mu2-0.5.20.tgz
+403 silly lockFile b7c3cda6-mu2-0-5-20 mu2@0.5.20
+404 silly lockFile b7c3cda6-mu2-0-5-20 mu2@0.5.20
+405 silly lockFile 4bcb7d7d-mu2-0-5-20 mu2@~0.5.20
+406 silly lockFile 4bcb7d7d-mu2-0-5-20 mu2@~0.5.20
+407 silly lockFile fb5bd11a--http-proxy-http-proxy-1-0-3-tgz https://registry.npmjs.org/http-proxy/-/http-proxy-1.0.3.tgz
+408 silly lockFile fb5bd11a--http-proxy-http-proxy-1-0-3-tgz https://registry.npmjs.org/http-proxy/-/http-proxy-1.0.3.tgz
+409 silly lockFile aebf6a91-http-proxy-1-0-3 http-proxy@1.0.3
+410 silly lockFile aebf6a91-http-proxy-1-0-3 http-proxy@1.0.3
+411 silly lockFile 71ed2df3-http-proxy-1-0-3 http-proxy@~1.0.3
+412 silly lockFile 71ed2df3-http-proxy-1-0-3 http-proxy@~1.0.3
+413 silly resolved [ { name: 'commander',
+413 silly resolved     version: '2.1.0',
+413 silly resolved     description: 'the complete solution for node.js command-line programs',
+413 silly resolved     keywords: [ 'command', 'option', 'parser', 'prompt', 'stdin' ],
+413 silly resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+413 silly resolved     repository:
+413 silly resolved      { type: 'git',
+413 silly resolved        url: 'https://github.com/visionmedia/commander.js.git' },
+413 silly resolved     devDependencies: { should: '>= 0.0.1' },
+413 silly resolved     scripts: { test: 'make test' },
+413 silly resolved     main: 'index',
+413 silly resolved     engines: { node: '>= 0.6.x' },
+413 silly resolved     files: [ 'index.js' ],
+413 silly resolved     bugs: { url: 'https://github.com/visionmedia/commander.js/issues' },
+413 silly resolved     homepage: 'https://github.com/visionmedia/commander.js',
+413 silly resolved     _id: 'commander@2.1.0',
+413 silly resolved     dist:
+413 silly resolved      { shasum: 'd121bbae860d9992a3d517ba96f56588e47c6781',
+413 silly resolved        tarball: 'http://registry.npmjs.org/commander/-/commander-2.1.0.tgz' },
+413 silly resolved     _from: 'commander@~2.1.0',
+413 silly resolved     _npmVersion: '1.3.14',
+413 silly resolved     _npmUser: { name: 'tjholowaychuk', email: 'tj@vision-media.ca' },
+413 silly resolved     maintainers: [ [Object] ],
+413 silly resolved     directories: {},
+413 silly resolved     _shasum: 'd121bbae860d9992a3d517ba96f56588e47c6781',
+413 silly resolved     _resolved: 'https://registry.npmjs.org/commander/-/commander-2.1.0.tgz' },
+413 silly resolved   { name: 'shell-quote',
+413 silly resolved     version: '1.4.3',
+413 silly resolved     description: 'quote and parse shell commands',
+413 silly resolved     main: 'index.js',
+413 silly resolved     devDependencies: { tape: '~2.3.0' },
+413 silly resolved     scripts: { test: 'tape test/*.js' },
+413 silly resolved     repository:
+413 silly resolved      { type: 'git',
+413 silly resolved        url: 'http://github.com/substack/node-shell-quote.git' },
+413 silly resolved     keywords: [ 'shell', 'command', 'quote', 'parse' ],
+413 silly resolved     testling: { files: 'test/*.js', browsers: [Object] },
+413 silly resolved     author:
+413 silly resolved      { name: 'James Halliday',
+413 silly resolved        email: 'mail@substack.net',
+413 silly resolved        url: 'http://substack.net' },
+413 silly resolved     license: 'MIT',
+413 silly resolved     dependencies:
+413 silly resolved      { jsonify: '~0.0.0',
+413 silly resolved        'array-filter': '~0.0.0',
+413 silly resolved        'array-reduce': '~0.0.0',
+413 silly resolved        'array-map': '~0.0.0' },
+413 silly resolved     gitHead: '88c9b82e446c32bf782461059d2cb8b147e037d8',
+413 silly resolved     bugs: { url: 'https://github.com/substack/node-shell-quote/issues' },
+413 silly resolved     homepage: 'https://github.com/substack/node-shell-quote',
+413 silly resolved     _id: 'shell-quote@1.4.3',
+413 silly resolved     _shasum: '952c44e0b1ed9013ef53958179cc643e8777466b',
+413 silly resolved     _from: 'shell-quote@~1.4.2',
+413 silly resolved     _npmVersion: '2.3.0',
+413 silly resolved     _nodeVersion: '0.12.0',
+413 silly resolved     _npmUser: { name: 'substack', email: 'mail@substack.net' },
+413 silly resolved     maintainers: [ [Object] ],
+413 silly resolved     dist:
+413 silly resolved      { shasum: '952c44e0b1ed9013ef53958179cc643e8777466b',
+413 silly resolved        tarball: 'http://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz' },
+413 silly resolved     directories: {},
+413 silly resolved     _resolved: 'https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz' },
+413 silly resolved   { name: 'mu2',
+413 silly resolved     description: 'A Mustache template engine for Node.js',
+413 silly resolved     keywords: [ 'template', 'mustache' ],
+413 silly resolved     version: '0.5.20',
+413 silly resolved     homepage: 'http://github.com/raycmorgan/mu',
+413 silly resolved     author: { name: 'RayMorgan', email: 'ray@rumgr.com' },
+413 silly resolved     main: 'lib/mu',
+413 silly resolved     licenses: [ [Object] ],
+413 silly resolved     readme: '# Mu - a fast, streaming Node.js Mustache engine\n\nWarning: This version is not API compatible with 0.1.\n\n## Install\n\nI have had some issues with my npm auth and got it in a bit of a rut, so for\nnow you have to:\n\n    npm install mu2\n\n## Issues\n\nCurrently mu does not support changing the tag form ({{ }} to say <% %>).\n\n## Usage\n\nThere are a few ways to use mu 0.5. Here is the simplest:\n```javascript\nvar mu = require(\'mu2\'); // notice the "2" which matches the npm repo, sorry..\n\nmu.root = __dirname + \'/templates\'\nmu.compileAndRender(\'index.html\', {name: "john"})\n  .on(\'data\', function (data) {\n    console.log(data.toString());\n  });\n```\nHere is an example mixing it with the http module:\n```javascript\nvar http = require(\'http\')\n  , util = require(\'util\')\n  , mu   = require(\'mu2\');\n\nmu.root = __dirname + \'/templates\';\n\n  http.createServer(function (req, res) {\n\n  var stream = mu.compileAndRender(\'index.html\', {name: "john"});\n  util.pump(stream, res);\n\n}).listen(8000);\n```\nTaking that last example here is a little trick to always compile the templates\nin development mode (so the changes are immediately reflected).\n```javascript\nvar http = require(\'http\')\n  , util = require(\'util\')\n  , mu   = require(\'mu2\');\n\nmu.root = __dirname + \'/templates\';\n\nhttp.createServer(function (req, res) {\n\n  if (process.env.NODE_ENV == \'DEVELOPMENT\') {\n    mu.clearCache();\n  }\n\n  var stream = mu.compileAndRender(\'index.html\', {name: "john"});\n  util.pump(stream, res);\n\n}).listen(8000);\n```\n## API\n\n    mu.root\n\n      A path to lookup templates from. Defaults to the working directory.\n\n\n    mu.compileAndRender(String templateName, Object view)\n\n      Returns: Stream\n\n      The first time this function is called with a specific template name, the\n      template will be compiled and then rendered to the stream. Subsequent\n      calls with the same template name will use a cached version of the compiled\n      template to improve performance (a lot).\n\n\n    mu.compile(filename, callback)\n\n      Returns nil\n      Callback (Error err, Any CompiledTemplate)\n\n      This function is used to compile a template. Usually you will not use it\n      directly but when doing wierd things, this might work for you. Does not\n      use the internal cache when called multiple times, though it does add the\n      compiled form to the cache.\n\n\n    mu.compileText(String name, String template, Function callback)\n\n      Returns nil\n      Callback (err, CompiledTemplate)\n\n      Similar to mu.compile except it taks in a name and the actual string of the\n      template. Does not do disk io. Does not auto-compile partials either.\n\n\n    mu.render(Mixed filenameOrCompiledTemplate, Object view)\n\n      Returns Stream\n\n      The brother of mu.compile. This function takes either a name of a template\n      previously compiled (in the cache) or the result of the mu.compile step.\n\n      This function is responsible for transforming the compiled template into the\n      proper output give the input view data.\n\n\n    mu.renderText(String template, Object view, Object partials)\n\n      Returns Stream\n\n      Like render, except takes a template as a string and an object for the partials.\n      This is not a very performant way to use mu, so only use this for dev/testing.\n\n\n    mu.clearCache(String templateNameOrNull)\n\n      Clears the cache for a specific template. If the name is omitted, clears all cache.\n\n\n\n',
+413 silly resolved     readmeFilename: 'README.md',
+413 silly resolved     _id: 'mu2@0.5.20',
+413 silly resolved     dist:
+413 silly resolved      { shasum: '6f573ac30da85202e814b0b37ea507a2d59cbd0a',
+413 silly resolved        tarball: 'http://registry.npmjs.org/mu2/-/mu2-0.5.20.tgz' },
+413 silly resolved     _from: 'mu2@~0.5.20',
+413 silly resolved     _npmVersion: '1.3.5',
+413 silly resolved     _npmUser: { name: 'raymorgan2', email: 'ray@rumgr.com' },
+413 silly resolved     maintainers: [ [Object] ],
+413 silly resolved     directories: {},
+413 silly resolved     _shasum: '6f573ac30da85202e814b0b37ea507a2d59cbd0a',
+413 silly resolved     _resolved: 'https://registry.npmjs.org/mu2/-/mu2-0.5.20.tgz' },
+413 silly resolved   { name: 'http-proxy',
+413 silly resolved     version: '1.0.3',
+413 silly resolved     repository:
+413 silly resolved      { type: 'git',
+413 silly resolved        url: 'https://github.com/nodejitsu/node-http-proxy.git' },
+413 silly resolved     description: 'HTTP proxying for the masses',
+413 silly resolved     author: { name: 'Nodejitsu Inc.', email: 'info@nodejitsu.com' },
+413 silly resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+413 silly resolved     main: 'index.js',
+413 silly resolved     dependencies: { eventemitter3: '*' },
+413 silly resolved     devDependencies:
+413 silly resolved      { mocha: '*',
+413 silly resolved        'expect.js': '*',
+413 silly resolved        dox: '*',
+413 silly resolved        coveralls: '*',
+413 silly resolved        'mocha-lcov-reporter': '*',
+413 silly resolved        blanket: '*',
+413 silly resolved        ws: '*',
+413 silly resolved        'socket.io': '*',
+413 silly resolved        'socket.io-client': '*',
+413 silly resolved        async: '*' },
+413 silly resolved     scripts:
+413 silly resolved      { coveralls: 'mocha --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js',
+413 silly resolved        test: 'mocha -R landing test/*-test.js',
+413 silly resolved        'test-cov': 'mocha --require blanket -R html-cov > cov/coverage.html' },
+413 silly resolved     engines: { node: '>=0.10.0' },
+413 silly resolved     license: 'MIT',
+413 silly resolved     bugs: { url: 'https://github.com/nodejitsu/node-http-proxy/issues' },
+413 silly resolved     homepage: 'https://github.com/nodejitsu/node-http-proxy',
+413 silly resolved     _id: 'http-proxy@1.0.3',
+413 silly resolved     dist:
+413 silly resolved      { shasum: '3867396ab7d8fc70855fa72b55a527cc13427ea5',
+413 silly resolved        tarball: 'http://registry.npmjs.org/http-proxy/-/http-proxy-1.0.3.tgz' },
+413 silly resolved     _from: 'http-proxy@~1.0.3',
+413 silly resolved     _npmVersion: '1.4.4',
+413 silly resolved     _npmUser: { name: 'jcrugzz', email: 'jcrugzz@gmail.com' },
+413 silly resolved     directories: {},
+413 silly resolved     _shasum: '3867396ab7d8fc70855fa72b55a527cc13427ea5',
+413 silly resolved     _resolved: 'https://registry.npmjs.org/http-proxy/-/http-proxy-1.0.3.tgz' } ]
+414 info install commander@2.1.0 into C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman
+415 info install shell-quote@1.4.3 into C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman
+416 info install mu2@0.5.20 into C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman
+417 info install http-proxy@1.0.3 into C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman
+418 info installOne commander@2.1.0
+419 info installOne shell-quote@1.4.3
+420 info installOne mu2@0.5.20
+421 info installOne http-proxy@1.0.3
+422 verbose node_modules\foreman\node_modules\shell-quote unbuild
+423 verbose node_modules\foreman\node_modules\mu2 unbuild
+424 verbose tar unpack C:\Users\Dmitryy\AppData\Roaming\npm-cache\shell-quote\1.4.3\package.tgz
+425 silly lockFile ab22931d-foreman-node-modules-shell-quote tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote
+426 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote C:\Users\Dmitryy\AppData\Roaming\npm-cache\ab22931d-foreman-node-modules-shell-quote.lock
+427 silly lockFile b2dca9b5-he-shell-quote-1-4-3-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\shell-quote\1.4.3\package.tgz
+428 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\shell-quote\1.4.3\package.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\b2dca9b5-he-shell-quote-1-4-3-package-tgz.lock
+429 verbose tar unpack C:\Users\Dmitryy\AppData\Roaming\npm-cache\mu2\0.5.20\package.tgz
+430 silly lockFile dab730f1-modules-foreman-node-modules-mu2 tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\mu2
+431 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\mu2 C:\Users\Dmitryy\AppData\Roaming\npm-cache\dab730f1-modules-foreman-node-modules-mu2.lock
+432 silly lockFile f91c0b46-npm-cache-mu2-0-5-20-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\mu2\0.5.20\package.tgz
+433 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\mu2\0.5.20\package.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\f91c0b46-npm-cache-mu2-0-5-20-package-tgz.lock
+434 verbose node_modules\foreman\node_modules\commander unbuild
+435 verbose node_modules\foreman\node_modules\http-proxy unbuild
+436 silly gunzTarPerm modes [ '777', '666' ]
+437 silly gunzTarPerm modes [ '777', '666' ]
+438 verbose tar unpack C:\Users\Dmitryy\AppData\Roaming\npm-cache\commander\2.1.0\package.tgz
+439 silly lockFile 65c8b032-s-foreman-node-modules-commander tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\commander
+440 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\commander C:\Users\Dmitryy\AppData\Roaming\npm-cache\65c8b032-s-foreman-node-modules-commander.lock
+441 silly lockFile 0db8f108-ache-commander-2-1-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\commander\2.1.0\package.tgz
+442 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\commander\2.1.0\package.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\0db8f108-ache-commander-2-1-0-package-tgz.lock
+443 verbose tar unpack C:\Users\Dmitryy\AppData\Roaming\npm-cache\http-proxy\1.0.3\package.tgz
+444 silly lockFile 7cc271e0--foreman-node-modules-http-proxy tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy
+445 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy C:\Users\Dmitryy\AppData\Roaming\npm-cache\7cc271e0--foreman-node-modules-http-proxy.lock
+446 silly lockFile 29dd23c1-che-http-proxy-1-0-3-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\http-proxy\1.0.3\package.tgz
+447 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\http-proxy\1.0.3\package.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\29dd23c1-che-http-proxy-1-0-3-package-tgz.lock
+448 silly gunzTarPerm modes [ '777', '666' ]
+449 silly gunzTarPerm modes [ '777', '666' ]
+450 silly gunzTarPerm extractEntry package.json
+451 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+452 silly gunzTarPerm extractEntry package.json
+453 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+454 silly gunzTarPerm extractEntry package.json
+455 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+456 silly gunzTarPerm extractEntry LICENSE
+457 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+458 silly gunzTarPerm extractEntry index.js
+459 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+460 silly gunzTarPerm extractEntry .npmignore
+461 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+462 silly gunzTarPerm extractEntry README.md
+463 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+464 silly gunzTarPerm extractEntry package.json
+465 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+466 silly gunzTarPerm extractEntry index.js
+467 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+468 silly gunzTarPerm extractEntry Readme.md
+469 silly gunzTarPerm modified mode [ 'Readme.md', 420, 438 ]
+470 silly gunzTarPerm extractEntry .npmignore
+471 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+472 silly gunzTarPerm extractEntry README.md
+473 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+474 silly gunzTarPerm extractEntry LICENSE
+475 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+476 silly gunzTarPerm extractEntry index.js
+477 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+478 silly gunzTarPerm extractEntry .travis.yml
+479 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+480 silly gunzTarPerm extractEntry example/env.js
+481 silly gunzTarPerm modified mode [ 'example/env.js', 420, 438 ]
+482 silly gunzTarPerm extractEntry LICENSE
+483 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+484 silly gunzTarPerm extractEntry index.js
+485 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+486 silly gunzTarPerm extractEntry lib/mu-cli.js
+487 silly gunzTarPerm modified mode [ 'lib/mu-cli.js', 493, 511 ]
+488 silly gunzTarPerm extractEntry lib/mu.js
+489 silly gunzTarPerm modified mode [ 'lib/mu.js', 420, 438 ]
+490 silly gunzTarPerm extractEntry example/op.js
+491 silly gunzTarPerm modified mode [ 'example/op.js', 420, 438 ]
+492 silly gunzTarPerm extractEntry example/parse.js
+493 silly gunzTarPerm modified mode [ 'example/parse.js', 420, 438 ]
+494 silly gunzTarPerm extractEntry UPGRADING.md
+495 silly gunzTarPerm modified mode [ 'UPGRADING.md', 420, 438 ]
+496 silly gunzTarPerm extractEntry .travis.yml
+497 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+498 silly gunzTarPerm extractEntry doc/logo.png
+499 silly gunzTarPerm modified mode [ 'doc/logo.png', 420, 438 ]
+500 silly gunzTarPerm extractEntry examples/package.json
+501 silly gunzTarPerm modified mode [ 'examples/package.json', 420, 438 ]
+502 silly gunzTarPerm extractEntry examples/balancer/simple-balancer-with-websockets.js
+503 silly gunzTarPerm modified mode [ 'examples/balancer/simple-balancer-with-websockets.js',
+503 silly gunzTarPerm   420,
+503 silly gunzTarPerm   438 ]
+504 silly gunzTarPerm extractEntry examples/balancer/simple-balancer.js
+505 silly gunzTarPerm modified mode [ 'examples/balancer/simple-balancer.js', 420, 438 ]
+506 silly gunzTarPerm extractEntry examples/helpers/store.js
+507 silly gunzTarPerm modified mode [ 'examples/helpers/store.js', 420, 438 ]
+508 silly gunzTarPerm extractEntry examples/http/basic-proxy.js
+509 silly gunzTarPerm modified mode [ 'examples/http/basic-proxy.js', 420, 438 ]
+510 silly gunzTarPerm extractEntry examples/http/custom-proxy-error.js
+511 silly gunzTarPerm modified mode [ 'examples/http/custom-proxy-error.js', 420, 438 ]
+512 silly gunzTarPerm extractEntry examples/http/error-handling.js
+513 silly gunzTarPerm modified mode [ 'examples/http/error-handling.js', 420, 438 ]
+514 silly gunzTarPerm extractEntry examples/http/forward-and-target-proxy.js
+515 silly gunzTarPerm modified mode [ 'examples/http/forward-and-target-proxy.js', 420, 438 ]
+516 silly gunzTarPerm extractEntry examples/http/concurrent-proxy.js
+517 silly gunzTarPerm modified mode [ 'examples/http/concurrent-proxy.js', 420, 438 ]
+518 silly gunzTarPerm extractEntry examples/http/latent-proxy.js
+519 silly gunzTarPerm modified mode [ 'examples/http/latent-proxy.js', 420, 438 ]
+520 silly gunzTarPerm extractEntry examples/http/proxy-http-to-https.js
+521 silly gunzTarPerm modified mode [ 'examples/http/proxy-http-to-https.js', 420, 438 ]
+522 silly gunzTarPerm extractEntry examples/http/proxy-https-to-http.js
+523 silly gunzTarPerm modified mode [ 'examples/http/proxy-https-to-http.js', 420, 438 ]
+524 silly gunzTarPerm extractEntry examples/http/proxy-https-to-https.js
+525 silly gunzTarPerm modified mode [ 'examples/http/proxy-https-to-https.js', 420, 438 ]
+526 silly gunzTarPerm extractEntry examples/http/standalone-proxy.js
+527 silly gunzTarPerm modified mode [ 'examples/http/standalone-proxy.js', 420, 438 ]
+528 silly gunzTarPerm extractEntry examples/http/forward-proxy.js
+529 silly gunzTarPerm modified mode [ 'examples/http/forward-proxy.js', 420, 438 ]
+530 silly gunzTarPerm extractEntry examples/middleware/bodyDecoder-middleware.js
+531 silly gunzTarPerm modified mode [ 'examples/middleware/bodyDecoder-middleware.js', 420, 438 ]
+532 silly gunzTarPerm extractEntry examples/middleware/gzip-middleware.js
+533 silly gunzTarPerm modified mode [ 'examples/middleware/gzip-middleware.js', 420, 438 ]
+534 silly gunzTarPerm extractEntry examples/middleware/modifyResponse-middleware.js
+535 silly gunzTarPerm modified mode [ 'examples/middleware/modifyResponse-middleware.js', 420, 438 ]
+536 silly gunzTarPerm extractEntry examples/websocket/latent-websocket-proxy.js
+537 silly gunzTarPerm modified mode [ 'examples/websocket/latent-websocket-proxy.js', 420, 438 ]
+538 silly gunzTarPerm extractEntry examples/websocket/standalone-websocket-proxy.js
+539 silly gunzTarPerm modified mode [ 'examples/websocket/standalone-websocket-proxy.js', 420, 438 ]
+540 silly gunzTarPerm extractEntry examples/websocket/websocket-proxy.js
+541 silly gunzTarPerm modified mode [ 'examples/websocket/websocket-proxy.js', 420, 438 ]
+542 silly gunzTarPerm extractEntry test/examples-test.js
+543 silly gunzTarPerm modified mode [ 'test/examples-test.js', 420, 438 ]
+544 silly gunzTarPerm extractEntry test/lib-http-proxy-common-test.js
+545 silly gunzTarPerm modified mode [ 'test/lib-http-proxy-common-test.js', 420, 438 ]
+546 silly gunzTarPerm extractEntry test/lib-http-proxy-passes-web-incoming-test.js
+547 silly gunzTarPerm modified mode [ 'test/lib-http-proxy-passes-web-incoming-test.js', 420, 438 ]
+548 silly gunzTarPerm extractEntry test/lib-http-proxy-passes-web-outgoing-test.js
+549 silly gunzTarPerm modified mode [ 'test/lib-http-proxy-passes-web-outgoing-test.js', 420, 438 ]
+550 silly gunzTarPerm extractEntry test/lib-http-proxy-passes-ws-incoming-test.js
+551 silly gunzTarPerm modified mode [ 'test/lib-http-proxy-passes-ws-incoming-test.js', 420, 438 ]
+552 silly gunzTarPerm extractEntry test/lib-http-proxy-test.js
+553 silly gunzTarPerm modified mode [ 'test/lib-http-proxy-test.js', 420, 438 ]
+554 silly gunzTarPerm extractEntry test/lib-https-proxy-test.js
+555 silly gunzTarPerm modified mode [ 'test/lib-https-proxy-test.js', 420, 438 ]
+556 silly gunzTarPerm extractEntry test/fixtures/agent2-cert.pem
+557 silly gunzTarPerm modified mode [ 'test/fixtures/agent2-cert.pem', 420, 438 ]
+558 silly gunzTarPerm extractEntry test/fixtures/agent2-csr.pem
+559 silly gunzTarPerm modified mode [ 'test/fixtures/agent2-csr.pem', 420, 438 ]
+560 silly gunzTarPerm extractEntry test/fixtures/agent2-key.pem
+561 silly gunzTarPerm modified mode [ 'test/fixtures/agent2-key.pem', 420, 438 ]
+562 silly gunzTarPerm extractEntry test/fixtures/agent2.cnf
+563 silly gunzTarPerm modified mode [ 'test/fixtures/agent2.cnf', 420, 438 ]
+564 silly gunzTarPerm extractEntry lib/http-proxy.js
+565 silly gunzTarPerm modified mode [ 'lib/http-proxy.js', 420, 438 ]
+566 silly gunzTarPerm extractEntry lib/http-proxy/common.js
+567 silly gunzTarPerm modified mode [ 'lib/http-proxy/common.js', 420, 438 ]
+568 silly gunzTarPerm extractEntry lib/http-proxy/index.js
+569 silly gunzTarPerm modified mode [ 'lib/http-proxy/index.js', 420, 438 ]
+570 silly gunzTarPerm extractEntry lib/http-proxy/passes/web-incoming.js
+571 silly gunzTarPerm modified mode [ 'lib/http-proxy/passes/web-incoming.js', 420, 438 ]
+572 silly gunzTarPerm extractEntry lib/http-proxy/passes/web-outgoing.js
+573 silly gunzTarPerm modified mode [ 'lib/http-proxy/passes/web-outgoing.js', 420, 438 ]
+574 silly gunzTarPerm extractEntry lib/http-proxy/passes/ws-incoming.js
+575 silly gunzTarPerm modified mode [ 'lib/http-proxy/passes/ws-incoming.js', 420, 438 ]
+576 silly gunzTarPerm extractEntry CHANGELOG.md
+577 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 438 ]
+578 silly gunzTarPerm extractEntry benchmark/README.md
+579 silly gunzTarPerm modified mode [ 'benchmark/README.md', 420, 438 ]
+580 silly gunzTarPerm extractEntry benchmark/scripts/hello.js
+581 silly gunzTarPerm modified mode [ 'benchmark/scripts/hello.js', 420, 438 ]
+582 silly gunzTarPerm extractEntry benchmark/scripts/proxy.js
+583 silly gunzTarPerm modified mode [ 'benchmark/scripts/proxy.js', 420, 438 ]
+584 silly gunzTarPerm extractEntry benchmark/scripts/websockets-throughput.js
+585 silly gunzTarPerm modified mode [ 'benchmark/scripts/websockets-throughput.js', 420, 438 ]
+586 silly gunzTarPerm extractEntry lib/mu/errors.js
+587 silly gunzTarPerm modified mode [ 'lib/mu/errors.js', 420, 438 ]
+588 silly gunzTarPerm extractEntry example/quote.js
+589 silly gunzTarPerm modified mode [ 'example/quote.js', 420, 438 ]
+590 silly gunzTarPerm extractEntry readme.markdown
+591 silly gunzTarPerm modified mode [ 'readme.markdown', 420, 438 ]
+592 silly gunzTarPerm extractEntry test/env.js
+593 silly gunzTarPerm modified mode [ 'test/env.js', 420, 438 ]
+594 silly gunzTarPerm extractEntry lib/mu/parser.js
+595 silly gunzTarPerm modified mode [ 'lib/mu/parser.js', 420, 438 ]
+596 silly gunzTarPerm extractEntry lib/mu/renderer.js
+597 silly gunzTarPerm modified mode [ 'lib/mu/renderer.js', 420, 438 ]
+598 silly gunzTarPerm extractEntry lib/mu/stream.js
+599 silly gunzTarPerm modified mode [ 'lib/mu/stream.js', 420, 438 ]
+600 silly gunzTarPerm extractEntry test/bench.js
+601 silly gunzTarPerm modified mode [ 'test/bench.js', 420, 438 ]
+602 silly gunzTarPerm extractEntry test/env_fn.js
+603 silly gunzTarPerm modified mode [ 'test/env_fn.js', 420, 438 ]
+604 silly gunzTarPerm extractEntry test/op.js
+605 silly gunzTarPerm modified mode [ 'test/op.js', 420, 438 ]
+606 silly gunzTarPerm extractEntry test/parse.js
+607 silly gunzTarPerm modified mode [ 'test/parse.js', 420, 438 ]
+608 silly gunzTarPerm extractEntry test/quote.js
+609 silly gunzTarPerm modified mode [ 'test/quote.js', 420, 438 ]
+610 silly gunzTarPerm extractEntry test/run_examples_test.js
+611 silly gunzTarPerm modified mode [ 'test/run_examples_test.js', 420, 438 ]
+612 silly gunzTarPerm extractEntry test/examples/unescaped.js
+613 silly gunzTarPerm modified mode [ 'test/examples/unescaped.js', 420, 438 ]
+614 silly lockFile 65c8b032-s-foreman-node-modules-commander tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\commander
+615 silly lockFile 65c8b032-s-foreman-node-modules-commander tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\commander
+616 silly lockFile 0db8f108-ache-commander-2-1-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\commander\2.1.0\package.tgz
+617 silly lockFile 0db8f108-ache-commander-2-1-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\commander\2.1.0\package.tgz
+618 info preinstall commander@2.1.0
+619 silly gunzTarPerm extractEntry test/set.js
+620 silly gunzTarPerm modified mode [ 'test/set.js', 420, 438 ]
+621 verbose readDependencies using package.json deps
+622 verbose readDependencies using package.json deps
+623 silly resolved []
+624 verbose about to build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\commander
+625 info build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\commander
+626 verbose linkStuff [ true,
+626 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules',
+626 verbose linkStuff   false,
+626 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules\\foreman\\node_modules' ]
+627 info linkStuff commander@2.1.0
+628 silly gunzTarPerm extractEntry test/examples/dot_notation.js
+629 silly gunzTarPerm modified mode [ 'test/examples/dot_notation.js', 420, 438 ]
+630 silly gunzTarPerm extractEntry test/examples/error_not_found.js
+631 silly gunzTarPerm modified mode [ 'test/examples/error_not_found.js', 420, 438 ]
+632 verbose linkBins commander@2.1.0
+633 verbose linkMans commander@2.1.0
+634 verbose rebuildBundles commander@2.1.0
+635 info install commander@2.1.0
+636 silly gunzTarPerm extractEntry test/examples/escaped.js
+637 silly gunzTarPerm modified mode [ 'test/examples/escaped.js', 420, 438 ]
+638 silly gunzTarPerm extractEntry test/examples/delimiters.js
+639 silly gunzTarPerm modified mode [ 'test/examples/delimiters.js', 420, 438 ]
+640 info postinstall commander@2.1.0
+641 silly gunzTarPerm extractEntry test/examples/hash_instead_of_array.js
+642 silly gunzTarPerm modified mode [ 'test/examples/hash_instead_of_array.js', 420, 438 ]
+643 silly gunzTarPerm extractEntry test/examples/inverted.js
+644 silly gunzTarPerm modified mode [ 'test/examples/inverted.js', 420, 438 ]
+645 silly gunzTarPerm extractEntry test/examples/partial.js
+646 silly gunzTarPerm modified mode [ 'test/examples/partial.js', 420, 438 ]
+647 silly gunzTarPerm extractEntry test/examples/recursion_with_same_names.js
+648 silly gunzTarPerm modified mode [ 'test/examples/recursion_with_same_names.js', 420, 438 ]
+649 silly gunzTarPerm extractEntry test/examples/reuse_of_enumerables.js
+650 silly gunzTarPerm modified mode [ 'test/examples/reuse_of_enumerables.js', 420, 438 ]
+651 silly gunzTarPerm extractEntry test/examples/deep_partial.js
+652 silly gunzTarPerm modified mode [ 'test/examples/deep_partial.js', 420, 438 ]
+653 silly gunzTarPerm extractEntry test/examples/simple.js
+654 silly gunzTarPerm modified mode [ 'test/examples/simple.js', 420, 438 ]
+655 silly gunzTarPerm extractEntry test/examples/date.js
+656 silly gunzTarPerm modified mode [ 'test/examples/date.js', 420, 438 ]
+657 silly lockFile ab22931d-foreman-node-modules-shell-quote tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote
+658 silly lockFile ab22931d-foreman-node-modules-shell-quote tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote
+659 silly lockFile b2dca9b5-he-shell-quote-1-4-3-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\shell-quote\1.4.3\package.tgz
+660 silly lockFile b2dca9b5-he-shell-quote-1-4-3-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\shell-quote\1.4.3\package.tgz
+661 silly gunzTarPerm extractEntry test/examples/tenthousand.js
+662 silly gunzTarPerm modified mode [ 'test/examples/tenthousand.js', 420, 438 ]
+663 silly gunzTarPerm extractEntry test/examples/complex.js
+664 silly gunzTarPerm modified mode [ 'test/examples/complex.js', 420, 438 ]
+665 info preinstall shell-quote@1.4.3
+666 verbose readDependencies using package.json deps
+667 verbose readDependencies using package.json deps
+668 silly gunzTarPerm extractEntry test/examples/twice.js
+669 silly gunzTarPerm modified mode [ 'test/examples/twice.js', 420, 438 ]
+670 silly gunzTarPerm extractEntry test/examples/comments.js
+671 silly gunzTarPerm modified mode [ 'test/examples/comments.js', 420, 438 ]
+672 silly gunzTarPerm extractEntry test/examples/two_in_a_row.js
+673 silly gunzTarPerm modified mode [ 'test/examples/two_in_a_row.js', 420, 438 ]
+674 silly gunzTarPerm extractEntry test/examples/carriage_return.js
+675 silly gunzTarPerm modified mode [ 'test/examples/carriage_return.js', 420, 438 ]
+676 silly gunzTarPerm extractEntry test/examples/boolean.js
+677 silly gunzTarPerm modified mode [ 'test/examples/boolean.js', 420, 438 ]
+678 silly gunzTarPerm extractEntry test/examples/hash_instead_of_array.html
+679 silly gunzTarPerm modified mode [ 'test/examples/hash_instead_of_array.html', 420, 438 ]
+680 silly gunzTarPerm extractEntry test/examples/dot_notation.html
+681 silly gunzTarPerm modified mode [ 'test/examples/dot_notation.html', 420, 438 ]
+682 silly gunzTarPerm extractEntry test/examples/boolean.txt
+683 silly gunzTarPerm modified mode [ 'test/examples/boolean.txt', 420, 438 ]
+684 verbose cache add [ 'jsonify@~0.0.0', null ]
+685 verbose cache add name=undefined spec="jsonify@~0.0.0" args=["jsonify@~0.0.0",null]
+686 verbose parsed url { protocol: null,
+686 verbose parsed url   slashes: null,
+686 verbose parsed url   auth: null,
+686 verbose parsed url   host: null,
+686 verbose parsed url   port: null,
+686 verbose parsed url   hostname: null,
+686 verbose parsed url   hash: null,
+686 verbose parsed url   search: null,
+686 verbose parsed url   query: null,
+686 verbose parsed url   pathname: 'jsonify@~0.0.0',
+686 verbose parsed url   path: 'jsonify@~0.0.0',
+686 verbose parsed url   href: 'jsonify@~0.0.0' }
+687 verbose cache add [ 'array-filter@~0.0.0', null ]
+688 verbose cache add name=undefined spec="array-filter@~0.0.0" args=["array-filter@~0.0.0",null]
+689 verbose parsed url { protocol: null,
+689 verbose parsed url   slashes: null,
+689 verbose parsed url   auth: null,
+689 verbose parsed url   host: null,
+689 verbose parsed url   port: null,
+689 verbose parsed url   hostname: null,
+689 verbose parsed url   hash: null,
+689 verbose parsed url   search: null,
+689 verbose parsed url   query: null,
+689 verbose parsed url   pathname: 'array-filter@~0.0.0',
+689 verbose parsed url   path: 'array-filter@~0.0.0',
+689 verbose parsed url   href: 'array-filter@~0.0.0' }
+690 verbose cache add [ 'array-reduce@~0.0.0', null ]
+691 verbose cache add name=undefined spec="array-reduce@~0.0.0" args=["array-reduce@~0.0.0",null]
+692 verbose parsed url { protocol: null,
+692 verbose parsed url   slashes: null,
+692 verbose parsed url   auth: null,
+692 verbose parsed url   host: null,
+692 verbose parsed url   port: null,
+692 verbose parsed url   hostname: null,
+692 verbose parsed url   hash: null,
+692 verbose parsed url   search: null,
+692 verbose parsed url   query: null,
+692 verbose parsed url   pathname: 'array-reduce@~0.0.0',
+692 verbose parsed url   path: 'array-reduce@~0.0.0',
+692 verbose parsed url   href: 'array-reduce@~0.0.0' }
+693 verbose cache add [ 'array-map@~0.0.0', null ]
+694 verbose cache add name=undefined spec="array-map@~0.0.0" args=["array-map@~0.0.0",null]
+695 verbose parsed url { protocol: null,
+695 verbose parsed url   slashes: null,
+695 verbose parsed url   auth: null,
+695 verbose parsed url   host: null,
+695 verbose parsed url   port: null,
+695 verbose parsed url   hostname: null,
+695 verbose parsed url   hash: null,
+695 verbose parsed url   search: null,
+695 verbose parsed url   query: null,
+695 verbose parsed url   pathname: 'array-map@~0.0.0',
+695 verbose parsed url   path: 'array-map@~0.0.0',
+695 verbose parsed url   href: 'array-map@~0.0.0' }
+696 verbose cache add name="jsonify" spec="~0.0.0" args=["jsonify","~0.0.0"]
+697 verbose parsed url { protocol: null,
+697 verbose parsed url   slashes: null,
+697 verbose parsed url   auth: null,
+697 verbose parsed url   host: null,
+697 verbose parsed url   port: null,
+697 verbose parsed url   hostname: null,
+697 verbose parsed url   hash: null,
+697 verbose parsed url   search: null,
+697 verbose parsed url   query: null,
+697 verbose parsed url   pathname: '~0.0.0',
+697 verbose parsed url   path: '~0.0.0',
+697 verbose parsed url   href: '~0.0.0' }
+698 verbose addNamed [ 'jsonify', '~0.0.0' ]
+699 verbose addNamed [ null, '>=0.0.0-0 <0.1.0-0' ]
+700 silly lockFile 6f82df5c-jsonify-0-0-0 jsonify@~0.0.0
+701 verbose lock jsonify@~0.0.0 C:\Users\Dmitryy\AppData\Roaming\npm-cache\6f82df5c-jsonify-0-0-0.lock
+702 verbose cache add name="array-filter" spec="~0.0.0" args=["array-filter","~0.0.0"]
+703 verbose parsed url { protocol: null,
+703 verbose parsed url   slashes: null,
+703 verbose parsed url   auth: null,
+703 verbose parsed url   host: null,
+703 verbose parsed url   port: null,
+703 verbose parsed url   hostname: null,
+703 verbose parsed url   hash: null,
+703 verbose parsed url   search: null,
+703 verbose parsed url   query: null,
+703 verbose parsed url   pathname: '~0.0.0',
+703 verbose parsed url   path: '~0.0.0',
+703 verbose parsed url   href: '~0.0.0' }
+704 verbose addNamed [ 'array-filter', '~0.0.0' ]
+705 verbose addNamed [ null, '>=0.0.0-0 <0.1.0-0' ]
+706 silly lockFile 9ddec165-array-filter-0-0-0 array-filter@~0.0.0
+707 verbose lock array-filter@~0.0.0 C:\Users\Dmitryy\AppData\Roaming\npm-cache\9ddec165-array-filter-0-0-0.lock
+708 verbose cache add name="array-reduce" spec="~0.0.0" args=["array-reduce","~0.0.0"]
+709 verbose parsed url { protocol: null,
+709 verbose parsed url   slashes: null,
+709 verbose parsed url   auth: null,
+709 verbose parsed url   host: null,
+709 verbose parsed url   port: null,
+709 verbose parsed url   hostname: null,
+709 verbose parsed url   hash: null,
+709 verbose parsed url   search: null,
+709 verbose parsed url   query: null,
+709 verbose parsed url   pathname: '~0.0.0',
+709 verbose parsed url   path: '~0.0.0',
+709 verbose parsed url   href: '~0.0.0' }
+710 verbose addNamed [ 'array-reduce', '~0.0.0' ]
+711 verbose addNamed [ null, '>=0.0.0-0 <0.1.0-0' ]
+712 silly lockFile ba3d3adc-array-reduce-0-0-0 array-reduce@~0.0.0
+713 verbose lock array-reduce@~0.0.0 C:\Users\Dmitryy\AppData\Roaming\npm-cache\ba3d3adc-array-reduce-0-0-0.lock
+714 verbose cache add name="array-map" spec="~0.0.0" args=["array-map","~0.0.0"]
+715 verbose parsed url { protocol: null,
+715 verbose parsed url   slashes: null,
+715 verbose parsed url   auth: null,
+715 verbose parsed url   host: null,
+715 verbose parsed url   port: null,
+715 verbose parsed url   hostname: null,
+715 verbose parsed url   hash: null,
+715 verbose parsed url   search: null,
+715 verbose parsed url   query: null,
+715 verbose parsed url   pathname: '~0.0.0',
+715 verbose parsed url   path: '~0.0.0',
+715 verbose parsed url   href: '~0.0.0' }
+716 verbose addNamed [ 'array-map', '~0.0.0' ]
+717 verbose addNamed [ null, '>=0.0.0-0 <0.1.0-0' ]
+718 silly lockFile a057d804-array-map-0-0-0 array-map@~0.0.0
+719 verbose lock array-map@~0.0.0 C:\Users\Dmitryy\AppData\Roaming\npm-cache\a057d804-array-map-0-0-0.lock
+720 silly gunzTarPerm extractEntry test/examples/dot_notation.txt
+721 silly gunzTarPerm modified mode [ 'test/examples/dot_notation.txt', 420, 438 ]
+722 silly gunzTarPerm extractEntry test/examples/error_not_found.html
+723 silly gunzTarPerm modified mode [ 'test/examples/error_not_found.html', 420, 438 ]
+724 silly addNameRange { name: 'jsonify', range: '>=0.0.0-0 <0.1.0-0', hasData: false }
+725 silly addNameRange { name: 'array-filter',
+725 silly addNameRange   range: '>=0.0.0-0 <0.1.0-0',
+725 silly addNameRange   hasData: false }
+726 silly addNameRange { name: 'array-map',
+726 silly addNameRange   range: '>=0.0.0-0 <0.1.0-0',
+726 silly addNameRange   hasData: false }
+727 silly addNameRange { name: 'array-reduce',
+727 silly addNameRange   range: '>=0.0.0-0 <0.1.0-0',
+727 silly addNameRange   hasData: false }
+728 verbose request where is /jsonify
+729 verbose request registry https://registry.npmjs.org/
+730 verbose url raw /jsonify
+731 verbose url resolving [ 'https://registry.npmjs.org/', './jsonify' ]
+732 verbose url resolved https://registry.npmjs.org/jsonify
+733 verbose request where is https://registry.npmjs.org/jsonify
+734 info trying registry request attempt 1 at 14:44:02
+735 http GET https://registry.npmjs.org/jsonify
+736 verbose request where is /array-filter
+737 verbose request registry https://registry.npmjs.org/
+738 verbose url raw /array-filter
+739 verbose url resolving [ 'https://registry.npmjs.org/', './array-filter' ]
+740 verbose url resolved https://registry.npmjs.org/array-filter
+741 verbose request where is https://registry.npmjs.org/array-filter
+742 info trying registry request attempt 1 at 14:44:02
+743 http GET https://registry.npmjs.org/array-filter
+744 verbose request where is /array-map
+745 verbose request registry https://registry.npmjs.org/
+746 verbose url raw /array-map
+747 verbose url resolving [ 'https://registry.npmjs.org/', './array-map' ]
+748 verbose url resolved https://registry.npmjs.org/array-map
+749 verbose request where is https://registry.npmjs.org/array-map
+750 info trying registry request attempt 1 at 14:44:02
+751 http GET https://registry.npmjs.org/array-map
+752 verbose request where is /array-reduce
+753 verbose request registry https://registry.npmjs.org/
+754 verbose url raw /array-reduce
+755 verbose url resolving [ 'https://registry.npmjs.org/', './array-reduce' ]
+756 verbose url resolved https://registry.npmjs.org/array-reduce
+757 verbose request where is https://registry.npmjs.org/array-reduce
+758 info trying registry request attempt 1 at 14:44:02
+759 http GET https://registry.npmjs.org/array-reduce
+760 silly gunzTarPerm extractEntry test/examples/comments.txt
+761 silly gunzTarPerm modified mode [ 'test/examples/comments.txt', 420, 438 ]
+762 silly gunzTarPerm extractEntry test/examples/error_not_found.txt
+763 silly gunzTarPerm modified mode [ 'test/examples/error_not_found.txt', 420, 438 ]
+764 silly gunzTarPerm extractEntry test/examples/escaped.html
+765 silly gunzTarPerm modified mode [ 'test/examples/escaped.html', 420, 438 ]
+766 silly gunzTarPerm extractEntry test/examples/complex.html
+767 silly gunzTarPerm modified mode [ 'test/examples/complex.html', 420, 438 ]
+768 silly gunzTarPerm extractEntry test/examples/escaped.txt
+769 silly gunzTarPerm modified mode [ 'test/examples/escaped.txt', 420, 438 ]
+770 silly gunzTarPerm extractEntry test/examples/carriage_return.html
+771 silly gunzTarPerm modified mode [ 'test/examples/carriage_return.html', 420, 438 ]
+772 silly gunzTarPerm extractEntry test/examples/complex.txt
+773 silly gunzTarPerm modified mode [ 'test/examples/complex.txt', 420, 438 ]
+774 silly gunzTarPerm extractEntry test/examples/hash_instead_of_array.txt
+775 silly gunzTarPerm modified mode [ 'test/examples/hash_instead_of_array.txt', 420, 438 ]
+776 silly gunzTarPerm extractEntry test/examples/inner_partial.html
+777 silly gunzTarPerm modified mode [ 'test/examples/inner_partial.html', 420, 438 ]
+778 silly gunzTarPerm extractEntry test/examples/inverted.html
+779 silly gunzTarPerm modified mode [ 'test/examples/inverted.html', 420, 438 ]
+780 silly gunzTarPerm extractEntry test/examples/date.html
+781 silly gunzTarPerm modified mode [ 'test/examples/date.html', 420, 438 ]
+782 silly gunzTarPerm extractEntry test/examples/inverted.txt
+783 silly gunzTarPerm modified mode [ 'test/examples/inverted.txt', 420, 438 ]
+784 silly gunzTarPerm extractEntry test/examples/partial.html
+785 silly gunzTarPerm modified mode [ 'test/examples/partial.html', 420, 438 ]
+786 silly gunzTarPerm extractEntry test/examples/boolean.html
+787 silly gunzTarPerm modified mode [ 'test/examples/boolean.html', 420, 438 ]
+788 silly gunzTarPerm extractEntry test/examples/partial.txt
+789 silly gunzTarPerm modified mode [ 'test/examples/partial.txt', 420, 438 ]
+790 silly gunzTarPerm extractEntry test/examples/recursion_with_same_names.html
+791 silly gunzTarPerm modified mode [ 'test/examples/recursion_with_same_names.html', 420, 438 ]
+792 silly gunzTarPerm extractEntry test/examples/date.txt
+793 silly gunzTarPerm modified mode [ 'test/examples/date.txt', 420, 438 ]
+794 silly gunzTarPerm extractEntry test/examples/recursion_with_same_names.txt
+795 silly gunzTarPerm modified mode [ 'test/examples/recursion_with_same_names.txt', 420, 438 ]
+796 silly gunzTarPerm extractEntry test/examples/reuse_of_enumerables.html
+797 silly gunzTarPerm modified mode [ 'test/examples/reuse_of_enumerables.html', 420, 438 ]
+798 silly gunzTarPerm extractEntry test/examples/deep_partial.html
+799 silly gunzTarPerm modified mode [ 'test/examples/deep_partial.html', 420, 438 ]
+800 silly gunzTarPerm extractEntry test/examples/reuse_of_enumerables.txt
+801 silly gunzTarPerm modified mode [ 'test/examples/reuse_of_enumerables.txt', 420, 438 ]
+802 silly gunzTarPerm extractEntry test/examples/simple.html
+803 silly gunzTarPerm modified mode [ 'test/examples/simple.html', 420, 438 ]
+804 silly gunzTarPerm extractEntry test/examples/carriage_return.txt
+805 silly gunzTarPerm modified mode [ 'test/examples/carriage_return.txt', 420, 438 ]
+806 silly gunzTarPerm extractEntry test/examples/simple.txt
+807 silly gunzTarPerm modified mode [ 'test/examples/simple.txt', 420, 438 ]
+808 silly gunzTarPerm extractEntry test/examples/tenthousand.html
+809 silly gunzTarPerm modified mode [ 'test/examples/tenthousand.html', 420, 438 ]
+810 silly gunzTarPerm extractEntry test/examples/deep_partial.txt
+811 silly gunzTarPerm modified mode [ 'test/examples/deep_partial.txt', 420, 438 ]
+812 silly gunzTarPerm extractEntry test/examples/tenthousand.txt
+813 silly gunzTarPerm modified mode [ 'test/examples/tenthousand.txt', 420, 438 ]
+814 silly gunzTarPerm extractEntry test/examples/twice.html
+815 silly gunzTarPerm modified mode [ 'test/examples/twice.html', 420, 438 ]
+816 silly gunzTarPerm extractEntry test/examples/delimiters.html
+817 silly gunzTarPerm modified mode [ 'test/examples/delimiters.html', 420, 438 ]
+818 silly gunzTarPerm extractEntry test/examples/twice.txt
+819 silly gunzTarPerm modified mode [ 'test/examples/twice.txt', 420, 438 ]
+820 silly gunzTarPerm extractEntry test/examples/two_in_a_row.html
+821 silly gunzTarPerm modified mode [ 'test/examples/two_in_a_row.html', 420, 438 ]
+822 silly gunzTarPerm extractEntry test/examples/comments.html
+823 silly gunzTarPerm modified mode [ 'test/examples/comments.html', 420, 438 ]
+824 silly gunzTarPerm extractEntry test/examples/two_in_a_row.txt
+825 silly gunzTarPerm modified mode [ 'test/examples/two_in_a_row.txt', 420, 438 ]
+826 silly gunzTarPerm extractEntry test/examples/unescaped.html
+827 silly gunzTarPerm modified mode [ 'test/examples/unescaped.html', 420, 438 ]
+828 silly gunzTarPerm extractEntry test/examples/delimiters.txt
+829 silly gunzTarPerm modified mode [ 'test/examples/delimiters.txt', 420, 438 ]
+830 silly gunzTarPerm extractEntry test/examples/unescaped.txt
+831 silly gunzTarPerm modified mode [ 'test/examples/unescaped.txt', 420, 438 ]
+832 silly gunzTarPerm extractEntry test.sh
+833 silly gunzTarPerm modified mode [ 'test.sh', 493, 511 ]
+834 silly lockFile 7cc271e0--foreman-node-modules-http-proxy tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy
+835 silly lockFile 7cc271e0--foreman-node-modules-http-proxy tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy
+836 silly lockFile 29dd23c1-che-http-proxy-1-0-3-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\http-proxy\1.0.3\package.tgz
+837 silly lockFile 29dd23c1-che-http-proxy-1-0-3-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\http-proxy\1.0.3\package.tgz
+838 info preinstall http-proxy@1.0.3
+839 verbose readDependencies using package.json deps
+840 verbose readDependencies using package.json deps
+841 silly lockFile dab730f1-modules-foreman-node-modules-mu2 tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\mu2
+842 silly lockFile dab730f1-modules-foreman-node-modules-mu2 tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\mu2
+843 verbose cache add [ 'eventemitter3@*', null ]
+844 verbose cache add name=undefined spec="eventemitter3@*" args=["eventemitter3@*",null]
+845 verbose parsed url { protocol: null,
+845 verbose parsed url   slashes: null,
+845 verbose parsed url   auth: null,
+845 verbose parsed url   host: null,
+845 verbose parsed url   port: null,
+845 verbose parsed url   hostname: null,
+845 verbose parsed url   hash: null,
+845 verbose parsed url   search: null,
+845 verbose parsed url   query: null,
+845 verbose parsed url   pathname: 'eventemitter3@*',
+845 verbose parsed url   path: 'eventemitter3@*',
+845 verbose parsed url   href: 'eventemitter3@*' }
+846 silly lockFile f91c0b46-npm-cache-mu2-0-5-20-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\mu2\0.5.20\package.tgz
+847 silly lockFile f91c0b46-npm-cache-mu2-0-5-20-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\mu2\0.5.20\package.tgz
+848 verbose cache add name="eventemitter3" spec="*" args=["eventemitter3","*"]
+849 verbose parsed url { protocol: null,
+849 verbose parsed url   slashes: null,
+849 verbose parsed url   auth: null,
+849 verbose parsed url   host: null,
+849 verbose parsed url   port: null,
+849 verbose parsed url   hostname: null,
+849 verbose parsed url   hash: null,
+849 verbose parsed url   search: null,
+849 verbose parsed url   query: null,
+849 verbose parsed url   pathname: '*',
+849 verbose parsed url   path: '*',
+849 verbose parsed url   href: '*' }
+850 verbose addNamed [ 'eventemitter3', '*' ]
+851 verbose addNamed [ null, '*' ]
+852 silly lockFile 33ba0664-eventemitter3 eventemitter3@*
+853 verbose lock eventemitter3@* C:\Users\Dmitryy\AppData\Roaming\npm-cache\33ba0664-eventemitter3.lock
+854 silly addNameRange { name: 'eventemitter3', range: '*', hasData: false }
+855 verbose request where is /eventemitter3
+856 verbose request registry https://registry.npmjs.org/
+857 verbose url raw /eventemitter3
+858 verbose url resolving [ 'https://registry.npmjs.org/', './eventemitter3' ]
+859 verbose url resolved https://registry.npmjs.org/eventemitter3
+860 verbose request where is https://registry.npmjs.org/eventemitter3
+861 info trying registry request attempt 1 at 14:44:03
+862 http GET https://registry.npmjs.org/eventemitter3
+863 info preinstall mu2@0.5.20
+864 verbose readDependencies using package.json deps
+865 verbose readDependencies using package.json deps
+866 silly resolved []
+867 verbose about to build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\mu2
+868 info build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\mu2
+869 verbose linkStuff [ true,
+869 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules',
+869 verbose linkStuff   false,
+869 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules\\foreman\\node_modules' ]
+870 info linkStuff mu2@0.5.20
+871 verbose linkBins mu2@0.5.20
+872 verbose linkMans mu2@0.5.20
+873 verbose rebuildBundles mu2@0.5.20
+874 info install mu2@0.5.20
+875 info postinstall mu2@0.5.20
+876 http 200 https://registry.npmjs.org/jsonify
+877 silly registry.get cb [ 200,
+877 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+877 silly registry.get     etag: '"2FCTXRPP4H152KNABZ4FUHTXI"',
+877 silly registry.get     'content-type': 'application/json',
+877 silly registry.get     'cache-control': 'max-age=60',
+877 silly registry.get     'content-length': '1321',
+877 silly registry.get     'accept-ranges': 'bytes',
+877 silly registry.get     date: 'Mon, 04 May 2015 11:44:04 GMT',
+877 silly registry.get     via: '1.1 varnish',
+877 silly registry.get     age: '46',
+877 silly registry.get     connection: 'keep-alive',
+877 silly registry.get     'x-served-by': 'cache-fra1244-FRA',
+877 silly registry.get     'x-cache': 'HIT',
+877 silly registry.get     'x-cache-hits': '3',
+877 silly registry.get     'x-timer': 'S1430739844.317422,VS0,VE0',
+877 silly registry.get     vary: 'Accept' } ]
+878 silly addNameRange number 2 { name: 'jsonify', range: '>=0.0.0-0 <0.1.0-0', hasData: true }
+879 silly addNameRange versions [ 'jsonify', [ '0.0.0' ] ]
+880 verbose addNamed [ 'jsonify', '0.0.0' ]
+881 verbose addNamed [ '0.0.0', '0.0.0' ]
+882 silly lockFile e3f559e0-jsonify-0-0-0 jsonify@0.0.0
+883 verbose lock jsonify@0.0.0 C:\Users\Dmitryy\AppData\Roaming\npm-cache\e3f559e0-jsonify-0-0-0.lock
+884 silly lockFile 17156bc0-js-org-jsonify-jsonify-0-0-0-tgz https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz
+885 verbose lock https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\17156bc0-js-org-jsonify-jsonify-0-0-0-tgz.lock
+886 verbose addRemoteTarball [ 'https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz',
+886 verbose addRemoteTarball   '2c74b6ee41d93ca51b7b5aaee8f503631d252a73' ]
+887 info retry fetch attempt 1 at 14:44:03
+888 verbose fetch to= C:\Users\Dmitryy\AppData\Local\Temp\npm-3684-Vq7Wu2OY\registry.npmjs.org\jsonify\-\jsonify-0.0.0.tgz
+889 http GET https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz
+890 http 200 https://registry.npmjs.org/array-filter
+891 silly registry.get cb [ 200,
+891 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+891 silly registry.get     etag: '"5BWRJVIOIMPVTO5WAUJS5JH9E"',
+891 silly registry.get     'content-type': 'application/json',
+891 silly registry.get     'cache-control': 'max-age=60',
+891 silly registry.get     'content-length': '14626',
+891 silly registry.get     'accept-ranges': 'bytes',
+891 silly registry.get     date: 'Mon, 04 May 2015 11:44:04 GMT',
+891 silly registry.get     via: '1.1 varnish',
+891 silly registry.get     age: '31',
+891 silly registry.get     connection: 'keep-alive',
+891 silly registry.get     'x-served-by': 'cache-fra1234-FRA',
+891 silly registry.get     'x-cache': 'HIT',
+891 silly registry.get     'x-cache-hits': '1',
+891 silly registry.get     'x-timer': 'S1430739844.318304,VS0,VE0',
+891 silly registry.get     vary: 'Accept' } ]
+892 silly addNameRange number 2 { name: 'array-filter',
+892 silly addNameRange   range: '>=0.0.0-0 <0.1.0-0',
+892 silly addNameRange   hasData: true }
+893 silly addNameRange versions [ 'array-filter', [ '0.0.0', '0.0.1', '0.1.0', '0.2.0' ] ]
+894 verbose addNamed [ 'array-filter', '0.0.1' ]
+895 verbose addNamed [ '0.0.1', '0.0.1' ]
+896 silly lockFile 037658bd-array-filter-0-0-1 array-filter@0.0.1
+897 verbose lock array-filter@0.0.1 C:\Users\Dmitryy\AppData\Roaming\npm-cache\037658bd-array-filter-0-0-1.lock
+898 silly lockFile 1eb91624-ay-filter-array-filter-0-0-1-tgz https://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz
+899 verbose lock https://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\1eb91624-ay-filter-array-filter-0-0-1-tgz.lock
+900 verbose addRemoteTarball [ 'https://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz',
+900 verbose addRemoteTarball   '7da8cf2e26628ed732803581fd21f67cacd2eeec' ]
+901 info retry fetch attempt 1 at 14:44:03
+902 verbose fetch to= C:\Users\Dmitryy\AppData\Local\Temp\npm-3684-Vq7Wu2OY\registry.npmjs.org\array-filter\-\array-filter-0.0.1.tgz
+903 http GET https://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz
+904 http 200 https://registry.npmjs.org/array-map
+905 silly registry.get cb [ 200,
+905 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+905 silly registry.get     etag: '"2IB91QD4KHMWOUJDOTWREDI5I"',
+905 silly registry.get     'content-type': 'application/json',
+905 silly registry.get     'cache-control': 'max-age=60',
+905 silly registry.get     'content-length': '3124',
+905 silly registry.get     'accept-ranges': 'bytes',
+905 silly registry.get     date: 'Mon, 04 May 2015 11:44:04 GMT',
+905 silly registry.get     via: '1.1 varnish',
+905 silly registry.get     age: '0',
+905 silly registry.get     connection: 'keep-alive',
+905 silly registry.get     'x-served-by': 'cache-fra1224-FRA',
+905 silly registry.get     'x-cache': 'HIT',
+905 silly registry.get     'x-cache-hits': '1',
+905 silly registry.get     'x-timer': 'S1430739844.319979,VS0,VE105',
+905 silly registry.get     vary: 'Accept' } ]
+906 silly addNameRange number 2 { name: 'array-map', range: '>=0.0.0-0 <0.1.0-0', hasData: true }
+907 silly addNameRange versions [ 'array-map', [ '0.0.0' ] ]
+908 verbose addNamed [ 'array-map', '0.0.0' ]
+909 verbose addNamed [ '0.0.0', '0.0.0' ]
+910 silly lockFile 837fdf2d-array-map-0-0-0 array-map@0.0.0
+911 verbose lock array-map@0.0.0 C:\Users\Dmitryy\AppData\Roaming\npm-cache\837fdf2d-array-map-0-0-0.lock
+912 silly lockFile dfa57376-rg-array-map-array-map-0-0-0-tgz https://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz
+913 verbose lock https://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\dfa57376-rg-array-map-array-map-0-0-0-tgz.lock
+914 verbose addRemoteTarball [ 'https://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz',
+914 verbose addRemoteTarball   '88a2bab73d1cf7bcd5c1b118a003f66f665fa662' ]
+915 http 200 https://registry.npmjs.org/eventemitter3
+916 silly registry.get cb [ 200,
+916 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+916 silly registry.get     etag: '"CA5O144O2RSG6NKX7XEKL5399"',
+916 silly registry.get     'content-type': 'application/json',
+916 silly registry.get     'cache-control': 'max-age=60',
+916 silly registry.get     'content-length': '18375',
+916 silly registry.get     'accept-ranges': 'bytes',
+916 silly registry.get     date: 'Mon, 04 May 2015 11:44:04 GMT',
+916 silly registry.get     via: '1.1 varnish',
+916 silly registry.get     age: '38',
+916 silly registry.get     connection: 'keep-alive',
+916 silly registry.get     'x-served-by': 'cache-fra1242-FRA',
+916 silly registry.get     'x-cache': 'HIT',
+916 silly registry.get     'x-cache-hits': '2',
+916 silly registry.get     'x-timer': 'S1430739844.389925,VS0,VE0',
+916 silly registry.get     vary: 'Accept' } ]
+917 info retry fetch attempt 1 at 14:44:03
+918 verbose fetch to= C:\Users\Dmitryy\AppData\Local\Temp\npm-3684-Vq7Wu2OY\registry.npmjs.org\array-map\-\array-map-0.0.0.tgz
+919 http GET https://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz
+920 silly addNameRange number 2 { name: 'eventemitter3', range: '*', hasData: true }
+921 silly addNameRange versions [ 'eventemitter3',
+921 silly addNameRange   [ '0.0.0',
+921 silly addNameRange     '0.0.1',
+921 silly addNameRange     '0.1.0',
+921 silly addNameRange     '0.1.1',
+921 silly addNameRange     '0.1.2',
+921 silly addNameRange     '0.1.3',
+921 silly addNameRange     '0.1.4',
+921 silly addNameRange     '0.1.5',
+921 silly addNameRange     '0.1.6',
+921 silly addNameRange     '1.0.0',
+921 silly addNameRange     '1.0.1' ] ]
+922 verbose addNamed [ 'eventemitter3', '1.0.1' ]
+923 verbose addNamed [ '1.0.1', '1.0.1' ]
+924 silly lockFile 3631c5fa-eventemitter3-1-0-1 eventemitter3@1.0.1
+925 verbose lock eventemitter3@1.0.1 C:\Users\Dmitryy\AppData\Roaming\npm-cache\3631c5fa-eventemitter3-1-0-1.lock
+926 silly lockFile 987345ee-emitter3-eventemitter3-1-0-1-tgz https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.1.tgz
+927 verbose lock https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.1.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\987345ee-emitter3-eventemitter3-1-0-1-tgz.lock
+928 verbose addRemoteTarball [ 'https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.1.tgz',
+928 verbose addRemoteTarball   '75a110a2e1bcc5de7999fead1910fcb058f51a14' ]
+929 info retry fetch attempt 1 at 14:44:03
+930 verbose fetch to= C:\Users\Dmitryy\AppData\Local\Temp\npm-3684-Vq7Wu2OY\registry.npmjs.org\eventemitter3\-\eventemitter3-1.0.1.tgz
+931 http GET https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.1.tgz
+932 http 200 https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz
+933 http 200 https://registry.npmjs.org/array-reduce
+934 silly registry.get cb [ 200,
+934 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+934 silly registry.get     etag: '"D0HABZTTDFMICFSVY2K76UWZ5"',
+934 silly registry.get     'content-type': 'application/json',
+934 silly registry.get     'cache-control': 'max-age=60',
+934 silly registry.get     'content-length': '3384',
+934 silly registry.get     'accept-ranges': 'bytes',
+934 silly registry.get     date: 'Mon, 04 May 2015 11:44:04 GMT',
+934 silly registry.get     via: '1.1 varnish',
+934 silly registry.get     age: '0',
+934 silly registry.get     connection: 'keep-alive',
+934 silly registry.get     'x-served-by': 'cache-fra1234-FRA',
+934 silly registry.get     'x-cache': 'HIT',
+934 silly registry.get     'x-cache-hits': '1',
+934 silly registry.get     'x-timer': 'S1430739844.320310,VS0,VE176',
+934 silly registry.get     vary: 'Accept' } ]
+935 silly lockFile 17156bc0-js-org-jsonify-jsonify-0-0-0-tgz https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz
+936 silly lockFile 17156bc0-js-org-jsonify-jsonify-0-0-0-tgz https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz
+937 silly lockFile e3f559e0-jsonify-0-0-0 jsonify@0.0.0
+938 silly lockFile e3f559e0-jsonify-0-0-0 jsonify@0.0.0
+939 silly addNameRange number 2 { name: 'array-reduce',
+939 silly addNameRange   range: '>=0.0.0-0 <0.1.0-0',
+939 silly addNameRange   hasData: true }
+940 silly addNameRange versions [ 'array-reduce', [ '0.0.0' ] ]
+941 verbose addNamed [ 'array-reduce', '0.0.0' ]
+942 verbose addNamed [ '0.0.0', '0.0.0' ]
+943 silly lockFile 41042851-array-reduce-0-0-0 array-reduce@0.0.0
+944 verbose lock array-reduce@0.0.0 C:\Users\Dmitryy\AppData\Roaming\npm-cache\41042851-array-reduce-0-0-0.lock
+945 silly lockFile 6f82df5c-jsonify-0-0-0 jsonify@~0.0.0
+946 silly lockFile 6f82df5c-jsonify-0-0-0 jsonify@~0.0.0
+947 silly lockFile d8d255c7-ay-reduce-array-reduce-0-0-0-tgz https://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz
+948 verbose lock https://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\d8d255c7-ay-reduce-array-reduce-0-0-0-tgz.lock
+949 verbose addRemoteTarball [ 'https://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz',
+949 verbose addRemoteTarball   '173899d3ffd1c7d9383e4479525dbe278cab5f2b' ]
+950 info retry fetch attempt 1 at 14:44:03
+951 verbose fetch to= C:\Users\Dmitryy\AppData\Local\Temp\npm-3684-Vq7Wu2OY\registry.npmjs.org\array-reduce\-\array-reduce-0.0.0.tgz
+952 http GET https://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz
+953 http 200 https://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz
+954 silly lockFile 1eb91624-ay-filter-array-filter-0-0-1-tgz https://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz
+955 silly lockFile 1eb91624-ay-filter-array-filter-0-0-1-tgz https://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz
+956 silly lockFile 037658bd-array-filter-0-0-1 array-filter@0.0.1
+957 silly lockFile 037658bd-array-filter-0-0-1 array-filter@0.0.1
+958 silly lockFile 9ddec165-array-filter-0-0-0 array-filter@~0.0.0
+959 silly lockFile 9ddec165-array-filter-0-0-0 array-filter@~0.0.0
+960 http 200 https://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz
+961 silly lockFile dfa57376-rg-array-map-array-map-0-0-0-tgz https://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz
+962 silly lockFile dfa57376-rg-array-map-array-map-0-0-0-tgz https://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz
+963 silly lockFile 837fdf2d-array-map-0-0-0 array-map@0.0.0
+964 silly lockFile 837fdf2d-array-map-0-0-0 array-map@0.0.0
+965 http 200 https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.1.tgz
+966 silly lockFile a057d804-array-map-0-0-0 array-map@~0.0.0
+967 silly lockFile a057d804-array-map-0-0-0 array-map@~0.0.0
+968 silly lockFile 987345ee-emitter3-eventemitter3-1-0-1-tgz https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.1.tgz
+969 silly lockFile 987345ee-emitter3-eventemitter3-1-0-1-tgz https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.1.tgz
+970 silly lockFile 3631c5fa-eventemitter3-1-0-1 eventemitter3@1.0.1
+971 silly lockFile 3631c5fa-eventemitter3-1-0-1 eventemitter3@1.0.1
+972 silly lockFile 33ba0664-eventemitter3 eventemitter3@*
+973 silly lockFile 33ba0664-eventemitter3 eventemitter3@*
+974 silly resolved [ { name: 'eventemitter3',
+974 silly resolved     version: '1.0.1',
+974 silly resolved     description: 'EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.',
+974 silly resolved     main: 'index.js',
+974 silly resolved     scripts:
+974 silly resolved      { test: 'mocha test.js',
+974 silly resolved        coverage: 'istanbul cover ./node_modules/.bin/_mocha -- test.js',
+974 silly resolved        'test-travis': 'istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js' },
+974 silly resolved     repository:
+974 silly resolved      { type: 'git',
+974 silly resolved        url: 'git://github.com/primus/EventEmitter3.git' },
+974 silly resolved     keywords:
+974 silly resolved      [ 'EventEmitter',
+974 silly resolved        'EventEmitter2',
+974 silly resolved        'EventEmitter3',
+974 silly resolved        'Events',
+974 silly resolved        'addEventListener',
+974 silly resolved        'addListener',
+974 silly resolved        'emit',
+974 silly resolved        'emits',
+974 silly resolved        'emitter',
+974 silly resolved        'event',
+974 silly resolved        'once',
+974 silly resolved        'pub/sub',
+974 silly resolved        'publish',
+974 silly resolved        'reactor',
+974 silly resolved        'subscribe' ],
+974 silly resolved     author: { name: 'Arnout Kazemier' },
+974 silly resolved     license: 'MIT',
+974 silly resolved     bugs: { url: 'https://github.com/primus/EventEmitter3/issues' },
+974 silly resolved     devDependencies:
+974 silly resolved      { assume: '1.2.x',
+974 silly resolved        istanbul: '0.3.x',
+974 silly resolved        mocha: '2.2.x',
+974 silly resolved        'pre-commit': '1.0.x' },
+974 silly resolved     gitHead: 'cd22a430db13950f3c16a72f943f61a96c9663ce',
+974 silly resolved     homepage: 'https://github.com/primus/EventEmitter3',
+974 silly resolved     _id: 'eventemitter3@1.0.1',
+974 silly resolved     _shasum: '75a110a2e1bcc5de7999fead1910fcb058f51a14',
+974 silly resolved     _from: 'eventemitter3@*',
+974 silly resolved     _npmVersion: '2.7.5',
+974 silly resolved     _nodeVersion: '0.10.35',
+974 silly resolved     _npmUser: { name: '3rdeden', email: 'npm@3rd-Eden.com' },
+974 silly resolved     maintainers: [ [Object], [Object] ],
+974 silly resolved     dist:
+974 silly resolved      { shasum: '75a110a2e1bcc5de7999fead1910fcb058f51a14',
+974 silly resolved        tarball: 'http://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.1.tgz' },
+974 silly resolved     directories: {},
+974 silly resolved     _resolved: 'https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.1.tgz' } ]
+975 info install eventemitter3@1.0.1 into C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy
+976 info installOne eventemitter3@1.0.1
+977 verbose node_modules\foreman\node_modules\http-proxy\node_modules\eventemitter3 unbuild
+978 verbose tar unpack C:\Users\Dmitryy\AppData\Roaming\npm-cache\eventemitter3\1.0.1\package.tgz
+979 silly lockFile 1643b89b-proxy-node-modules-eventemitter3 tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy\node_modules\eventemitter3
+980 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy\node_modules\eventemitter3 C:\Users\Dmitryy\AppData\Roaming\npm-cache\1643b89b-proxy-node-modules-eventemitter3.lock
+981 silly lockFile aa72994f--eventemitter3-1-0-1-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\eventemitter3\1.0.1\package.tgz
+982 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\eventemitter3\1.0.1\package.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\aa72994f--eventemitter3-1-0-1-package-tgz.lock
+983 silly gunzTarPerm modes [ '777', '666' ]
+984 silly gunzTarPerm extractEntry package.json
+985 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+986 silly gunzTarPerm extractEntry README.md
+987 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+988 silly gunzTarPerm extractEntry LICENSE
+989 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+990 silly gunzTarPerm extractEntry index.js
+991 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+992 silly lockFile 1643b89b-proxy-node-modules-eventemitter3 tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy\node_modules\eventemitter3
+993 silly lockFile 1643b89b-proxy-node-modules-eventemitter3 tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy\node_modules\eventemitter3
+994 silly lockFile aa72994f--eventemitter3-1-0-1-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\eventemitter3\1.0.1\package.tgz
+995 silly lockFile aa72994f--eventemitter3-1-0-1-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\eventemitter3\1.0.1\package.tgz
+996 info preinstall eventemitter3@1.0.1
+997 verbose readDependencies using package.json deps
+998 verbose readDependencies using package.json deps
+999 silly resolved []
+1000 verbose about to build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy\node_modules\eventemitter3
+1001 info build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy\node_modules\eventemitter3
+1002 verbose linkStuff [ true,
+1002 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules',
+1002 verbose linkStuff   false,
+1002 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules\\foreman\\node_modules\\http-proxy\\node_modules' ]
+1003 info linkStuff eventemitter3@1.0.1
+1004 verbose linkBins eventemitter3@1.0.1
+1005 verbose linkMans eventemitter3@1.0.1
+1006 verbose rebuildBundles eventemitter3@1.0.1
+1007 info install eventemitter3@1.0.1
+1008 info postinstall eventemitter3@1.0.1
+1009 verbose about to build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy
+1010 info build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\http-proxy
+1011 verbose linkStuff [ true,
+1011 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules',
+1011 verbose linkStuff   false,
+1011 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules\\foreman\\node_modules' ]
+1012 info linkStuff http-proxy@1.0.3
+1013 verbose linkBins http-proxy@1.0.3
+1014 verbose linkMans http-proxy@1.0.3
+1015 verbose rebuildBundles http-proxy@1.0.3
+1016 verbose rebuildBundles [ 'eventemitter3' ]
+1017 info install http-proxy@1.0.3
+1018 info postinstall http-proxy@1.0.3
+1019 http 200 https://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz
+1020 silly lockFile d8d255c7-ay-reduce-array-reduce-0-0-0-tgz https://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz
+1021 silly lockFile d8d255c7-ay-reduce-array-reduce-0-0-0-tgz https://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz
+1022 silly lockFile 41042851-array-reduce-0-0-0 array-reduce@0.0.0
+1023 silly lockFile 41042851-array-reduce-0-0-0 array-reduce@0.0.0
+1024 silly lockFile ba3d3adc-array-reduce-0-0-0 array-reduce@~0.0.0
+1025 silly lockFile ba3d3adc-array-reduce-0-0-0 array-reduce@~0.0.0
+1026 silly resolved [ { name: 'jsonify',
+1026 silly resolved     version: '0.0.0',
+1026 silly resolved     description: 'JSON without touching any globals',
+1026 silly resolved     main: 'index.js',
+1026 silly resolved     directories: { lib: '.', test: 'test' },
+1026 silly resolved     devDependencies: { tap: '0.0.x', garbage: '0.0.x' },
+1026 silly resolved     scripts: { test: 'tap test' },
+1026 silly resolved     repository: { type: 'git', url: 'git://github.com/substack/jsonify.git' },
+1026 silly resolved     keywords: [ 'json', 'browser' ],
+1026 silly resolved     author: { name: 'Douglas Crockford', url: 'http://crockford.com/' },
+1026 silly resolved     license: 'Public Domain',
+1026 silly resolved     _id: 'jsonify@0.0.0',
+1026 silly resolved     dependencies: {},
+1026 silly resolved     engines: { node: '*' },
+1026 silly resolved     _engineSupported: true,
+1026 silly resolved     _npmVersion: '1.0.10',
+1026 silly resolved     _nodeVersion: 'v0.5.0-pre',
+1026 silly resolved     _defaultsLoaded: true,
+1026 silly resolved     dist:
+1026 silly resolved      { shasum: '2c74b6ee41d93ca51b7b5aaee8f503631d252a73',
+1026 silly resolved        tarball: 'http://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz' },
+1026 silly resolved     maintainers: [ [Object] ],
+1026 silly resolved     _shasum: '2c74b6ee41d93ca51b7b5aaee8f503631d252a73',
+1026 silly resolved     _from: 'jsonify@~0.0.0',
+1026 silly resolved     _resolved: 'https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz' },
+1026 silly resolved   { name: 'array-filter',
+1026 silly resolved     description: 'Array#filter for older browsers.',
+1026 silly resolved     version: '0.0.1',
+1026 silly resolved     repository:
+1026 silly resolved      { type: 'git',
+1026 silly resolved        url: 'git://github.com/juliangruber/array-filter.git' },
+1026 silly resolved     homepage: 'https://github.com/juliangruber/array-filter',
+1026 silly resolved     main: 'index.js',
+1026 silly resolved     scripts: { test: 'tape test/*.js' },
+1026 silly resolved     dependencies: {},
+1026 silly resolved     devDependencies: { tape: '~2.3.2' },
+1026 silly resolved     keywords: [ 'array', 'filter', 'browser', 'html', 'browserify' ],
+1026 silly resolved     author:
+1026 silly resolved      { name: 'Julian Gruber',
+1026 silly resolved        email: 'mail@juliangruber.com',
+1026 silly resolved        url: 'http://juliangruber.com' },
+1026 silly resolved     license: 'MIT',
+1026 silly resolved     testling: { files: 'test/*.js', browsers: [Object] },
+1026 silly resolved     readme: '\n# array-filter\n\n`Array#filter` for older browsers.\n\n[![testling badge](https://ci.testling.com/juliangruber/array-filter.png)](https://ci.testling.com/juliangruber/array-filter)\n\n[![build status](https://secure.travis-ci.org/juliangruber/array-filter.png)](http://travis-ci.org/juliangruber/array-filter)\n\n## Usage\n\n```js\nvar filter = require(\'array-filter\');\n\nvar array = [1, 2, 3];\nconsole.log(filter(array, function (el, i, arr) {\n  return false; // I throw it on the ground!\n}));\n// => []\n```\n\n## Installation\n\nWith [npm](http://npmjs.org) do\n\n```bash\n$ npm install array-filter\n```\n\nThen bundle for the browser with [browserify](https://github.com/substack/browserify).\n\n## License\n\n(MIT)\n\nCopyright (c) 2013 Julian Gruber &lt;julian@juliangruber.com&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the "Software"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\nof the Software, and to permit persons to whom the Software is furnished to do\nso, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n',
+1026 silly resolved     readmeFilename: 'README.md',
+1026 silly resolved     bugs: { url: 'https://github.com/juliangruber/array-filter/issues' },
+1026 silly resolved     _id: 'array-filter@0.0.1',
+1026 silly resolved     dist:
+1026 silly resolved      { shasum: '7da8cf2e26628ed732803581fd21f67cacd2eeec',
+1026 silly resolved        tarball: 'http://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz' },
+1026 silly resolved     _from: 'array-filter@~0.0.0',
+1026 silly resolved     _npmVersion: '1.3.11',
+1026 silly resolved     _npmUser: { name: 'juliangruber', email: 'julian@juliangruber.com' },
+1026 silly resolved     maintainers: [ [Object] ],
+1026 silly resolved     directories: {},
+1026 silly resolved     _shasum: '7da8cf2e26628ed732803581fd21f67cacd2eeec',
+1026 silly resolved     _resolved: 'https://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz' },
+1026 silly resolved   { name: 'array-map',
+1026 silly resolved     version: '0.0.0',
+1026 silly resolved     description: '`[].map(f)` for older browsers',
+1026 silly resolved     main: 'index.js',
+1026 silly resolved     devDependencies: { tape: '~2.3.2' },
+1026 silly resolved     scripts: { test: 'tape test/*.js' },
+1026 silly resolved     repository: { type: 'git', url: 'git://github.com/substack/array-map.git' },
+1026 silly resolved     homepage: 'https://github.com/substack/array-map',
+1026 silly resolved     keywords: [ 'array', 'map', 'browser', 'es5', 'shim', 'ie6', 'ie7', 'ie8' ],
+1026 silly resolved     author:
+1026 silly resolved      { name: 'James Halliday',
+1026 silly resolved        email: 'mail@substack.net',
+1026 silly resolved        url: 'http://substack.net' },
+1026 silly resolved     license: 'MIT',
+1026 silly resolved     testling: { files: 'test/*.js', browsers: [Object] },
+1026 silly resolved     readme: '# array-map\n\n`[].map(f)` for older browsers\n\n[![testling badge](https://ci.testling.com/substack/array-map.png)](https://ci.testling.com/substack/array-map)\n\n[![build status](https://secure.travis-ci.org/substack/array-map.png)](http://travis-ci.org/substack/array-map)\n\n# example\n\n``` js\nvar map = require(\'array-map\');\nvar letters = map([97,98,99], function (c) {\n    return String.fromCharCode(c);\n});\nconsole.log(letters.join(\'\'));\n```\n\noutput:\n\n```\nabc\n```\n\n# methods\n\n``` js\nvar map = require(\'array-map\')\n```\n\n## var ys = map(xs, f)\n\nCreate a new array `ys` by applying `f(xs[i], i, xs)` to each element in `xs` at\nindex `i`.\n\n# install\n\nWith [npm](https://npmjs.org) do:\n\n```\nnpm install array-map\n```\n\n# license\n\nMIT\n',
+1026 silly resolved     readmeFilename: 'readme.markdown',
+1026 silly resolved     bugs: { url: 'https://github.com/substack/array-map/issues' },
+1026 silly resolved     _id: 'array-map@0.0.0',
+1026 silly resolved     dist:
+1026 silly resolved      { shasum: '88a2bab73d1cf7bcd5c1b118a003f66f665fa662',
+1026 silly resolved        tarball: 'http://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz' },
+1026 silly resolved     _from: 'array-map@~0.0.0',
+1026 silly resolved     _npmVersion: '1.3.21',
+1026 silly resolved     _npmUser: { name: 'substack', email: 'mail@substack.net' },
+1026 silly resolved     maintainers: [ [Object] ],
+1026 silly resolved     directories: {},
+1026 silly resolved     _shasum: '88a2bab73d1cf7bcd5c1b118a003f66f665fa662',
+1026 silly resolved     _resolved: 'https://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz' },
+1026 silly resolved   { name: 'array-reduce',
+1026 silly resolved     version: '0.0.0',
+1026 silly resolved     description: '`[].reduce()` for old browsers',
+1026 silly resolved     main: 'index.js',
+1026 silly resolved     devDependencies: { tape: '~2.3.2' },
+1026 silly resolved     scripts: { test: 'tape test/*.js' },
+1026 silly resolved     repository:
+1026 silly resolved      { type: 'git',
+1026 silly resolved        url: 'git://github.com/substack/array-reduce.git' },
+1026 silly resolved     homepage: 'https://github.com/substack/array-reduce',
+1026 silly resolved     keywords: [ 'array', 'reduce', 'es5', 'ie6', 'ie7', 'ie8', 'fold' ],
+1026 silly resolved     author:
+1026 silly resolved      { name: 'James Halliday',
+1026 silly resolved        email: 'mail@substack.net',
+1026 silly resolved        url: 'http://substack.net' },
+1026 silly resolved     license: 'MIT',
+1026 silly resolved     testling: { files: 'test/*.js', browsers: [Object] },
+1026 silly resolved     readme: '# array-reduce\n\n`[].reduce()` for old browsers\n\n[![testling badge](https://ci.testling.com/substack/array-reduce.png)](https://ci.testling.com/substack/array-reduce)\n\n[![build status](https://secure.travis-ci.org/substack/array-reduce.png)](http://travis-ci.org/substack/array-reduce)\n\n# example\n\n```\nvar reduce = require(\'array-reduce\');\nvar xs = [ 1, 2, 3, 4 ];\nvar sum = reduce(xs, function (acc, x) { return acc + x }, 0);\nconsole.log(sum);\n```\n\noutput:\n\n```\n10\n```\n\n# methods\n\n``` js\nvar reduce = require(\'array-reduce\')\n```\n\n## var res = reduce(xs, f, init)\n\nCreate a result `res` by folding `acc = f(acc, xs[i], i)` over each element in\nthe array `xs` at element `i`. If `init` is given, the first `acc` value is\n`init`, otherwise `xs[0]` is used.\n\n# install\n\nWith [npm](https://npmjs.org) do:\n\n```\nnpm install array-reduce\n```\n\n# license\n\nMIT\n',
+1026 silly resolved     readmeFilename: 'readme.markdown',
+1026 silly resolved     bugs: { url: 'https://github.com/substack/array-reduce/issues' },
+1026 silly resolved     _id: 'array-reduce@0.0.0',
+1026 silly resolved     dist:
+1026 silly resolved      { shasum: '173899d3ffd1c7d9383e4479525dbe278cab5f2b',
+1026 silly resolved        tarball: 'http://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz' },
+1026 silly resolved     _from: 'array-reduce@~0.0.0',
+1026 silly resolved     _npmVersion: '1.3.21',
+1026 silly resolved     _npmUser: { name: 'substack', email: 'mail@substack.net' },
+1026 silly resolved     maintainers: [ [Object] ],
+1026 silly resolved     directories: {},
+1026 silly resolved     _shasum: '173899d3ffd1c7d9383e4479525dbe278cab5f2b',
+1026 silly resolved     _resolved: 'https://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz' } ]
+1027 info install jsonify@0.0.0 into C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote
+1028 info install array-filter@0.0.1 into C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote
+1029 info install array-map@0.0.0 into C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote
+1030 info install array-reduce@0.0.0 into C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote
+1031 info installOne jsonify@0.0.0
+1032 info installOne array-filter@0.0.1
+1033 info installOne array-map@0.0.0
+1034 info installOne array-reduce@0.0.0
+1035 verbose node_modules\foreman\node_modules\shell-quote\node_modules\array-reduce unbuild
+1036 verbose node_modules\foreman\node_modules\shell-quote\node_modules\array-map unbuild
+1037 verbose node_modules\foreman\node_modules\shell-quote\node_modules\array-filter unbuild
+1038 verbose node_modules\foreman\node_modules\shell-quote\node_modules\jsonify unbuild
+1039 verbose tar unpack C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-reduce\0.0.0\package.tgz
+1040 silly lockFile 9b413275--quote-node-modules-array-reduce tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-reduce
+1041 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-reduce C:\Users\Dmitryy\AppData\Roaming\npm-cache\9b413275--quote-node-modules-array-reduce.lock
+1042 silly lockFile aa4aa3e7-e-array-reduce-0-0-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-reduce\0.0.0\package.tgz
+1043 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-reduce\0.0.0\package.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\aa4aa3e7-e-array-reduce-0-0-0-package-tgz.lock
+1044 verbose tar unpack C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-map\0.0.0\package.tgz
+1045 silly lockFile ec9bc076-ell-quote-node-modules-array-map tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-map
+1046 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-map C:\Users\Dmitryy\AppData\Roaming\npm-cache\ec9bc076-ell-quote-node-modules-array-map.lock
+1047 silly lockFile b661414d-ache-array-map-0-0-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-map\0.0.0\package.tgz
+1048 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-map\0.0.0\package.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\b661414d-ache-array-map-0-0-0-package-tgz.lock
+1049 verbose tar unpack C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-filter\0.0.1\package.tgz
+1050 silly lockFile 0ae8ed43--quote-node-modules-array-filter tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-filter
+1051 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-filter C:\Users\Dmitryy\AppData\Roaming\npm-cache\0ae8ed43--quote-node-modules-array-filter.lock
+1052 silly lockFile 127d2056-e-array-filter-0-0-1-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-filter\0.0.1\package.tgz
+1053 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-filter\0.0.1\package.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\127d2056-e-array-filter-0-0-1-package-tgz.lock
+1054 verbose tar unpack C:\Users\Dmitryy\AppData\Roaming\npm-cache\jsonify\0.0.0\package.tgz
+1055 silly lockFile e430bc42-shell-quote-node-modules-jsonify tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\jsonify
+1056 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\jsonify C:\Users\Dmitryy\AppData\Roaming\npm-cache\e430bc42-shell-quote-node-modules-jsonify.lock
+1057 silly lockFile 4293eaf6--cache-jsonify-0-0-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\jsonify\0.0.0\package.tgz
+1058 verbose lock tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\jsonify\0.0.0\package.tgz C:\Users\Dmitryy\AppData\Roaming\npm-cache\4293eaf6--cache-jsonify-0-0-0-package-tgz.lock
+1059 silly gunzTarPerm modes [ '777', '666' ]
+1060 silly gunzTarPerm modes [ '777', '666' ]
+1061 silly gunzTarPerm modes [ '777', '666' ]
+1062 silly gunzTarPerm modes [ '777', '666' ]
+1063 silly gunzTarPerm extractEntry package.json
+1064 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+1065 silly gunzTarPerm extractEntry package.json
+1066 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+1067 silly gunzTarPerm extractEntry package.json
+1068 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+1069 silly gunzTarPerm extractEntry index.js
+1070 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+1071 silly gunzTarPerm extractEntry LICENSE
+1072 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+1073 silly gunzTarPerm extractEntry index.js
+1074 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+1075 silly gunzTarPerm extractEntry LICENSE
+1076 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+1077 silly gunzTarPerm extractEntry index.js
+1078 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+1079 silly gunzTarPerm extractEntry .npmignore
+1080 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+1081 silly gunzTarPerm extractEntry README.md
+1082 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+1083 silly gunzTarPerm extractEntry package.json
+1084 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+1085 silly gunzTarPerm extractEntry README.markdown
+1086 silly gunzTarPerm modified mode [ 'README.markdown', 420, 438 ]
+1087 silly gunzTarPerm extractEntry .travis.yml
+1088 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+1089 silly gunzTarPerm extractEntry example/sum.js
+1090 silly gunzTarPerm modified mode [ 'example/sum.js', 420, 438 ]
+1091 silly gunzTarPerm extractEntry test/stringify.js
+1092 silly gunzTarPerm modified mode [ 'test/stringify.js', 420, 438 ]
+1093 silly gunzTarPerm extractEntry test/parse.js
+1094 silly gunzTarPerm modified mode [ 'test/parse.js', 420, 438 ]
+1095 silly gunzTarPerm extractEntry .travis.yml
+1096 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+1097 silly gunzTarPerm extractEntry example/map.js
+1098 silly gunzTarPerm modified mode [ 'example/map.js', 420, 438 ]
+1099 silly gunzTarPerm extractEntry index.js
+1100 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+1101 silly gunzTarPerm extractEntry .travis.yml
+1102 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+1103 silly gunzTarPerm extractEntry readme.markdown
+1104 silly gunzTarPerm modified mode [ 'readme.markdown', 420, 438 ]
+1105 silly gunzTarPerm extractEntry test/reduce.js
+1106 silly gunzTarPerm modified mode [ 'test/reduce.js', 420, 438 ]
+1107 silly gunzTarPerm extractEntry lib/stringify.js
+1108 silly gunzTarPerm modified mode [ 'lib/stringify.js', 420, 438 ]
+1109 silly gunzTarPerm extractEntry lib/parse.js
+1110 silly gunzTarPerm modified mode [ 'lib/parse.js', 420, 438 ]
+1111 silly gunzTarPerm extractEntry readme.markdown
+1112 silly gunzTarPerm modified mode [ 'readme.markdown', 420, 438 ]
+1113 silly gunzTarPerm extractEntry test/map.js
+1114 silly gunzTarPerm modified mode [ 'test/map.js', 420, 438 ]
+1115 silly gunzTarPerm extractEntry test/filter.js
+1116 silly gunzTarPerm modified mode [ 'test/filter.js', 420, 438 ]
+1117 silly gunzTarPerm extractEntry test/holes.js
+1118 silly gunzTarPerm modified mode [ 'test/holes.js', 420, 438 ]
+1119 silly lockFile e430bc42-shell-quote-node-modules-jsonify tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\jsonify
+1120 silly lockFile e430bc42-shell-quote-node-modules-jsonify tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\jsonify
+1121 silly lockFile ec9bc076-ell-quote-node-modules-array-map tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-map
+1122 silly lockFile ec9bc076-ell-quote-node-modules-array-map tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-map
+1123 silly lockFile 4293eaf6--cache-jsonify-0-0-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\jsonify\0.0.0\package.tgz
+1124 silly lockFile 4293eaf6--cache-jsonify-0-0-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\jsonify\0.0.0\package.tgz
+1125 silly lockFile 9b413275--quote-node-modules-array-reduce tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-reduce
+1126 silly lockFile 9b413275--quote-node-modules-array-reduce tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-reduce
+1127 silly lockFile b661414d-ache-array-map-0-0-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-map\0.0.0\package.tgz
+1128 silly lockFile b661414d-ache-array-map-0-0-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-map\0.0.0\package.tgz
+1129 silly lockFile aa4aa3e7-e-array-reduce-0-0-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-reduce\0.0.0\package.tgz
+1130 silly lockFile aa4aa3e7-e-array-reduce-0-0-0-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-reduce\0.0.0\package.tgz
+1131 silly lockFile 0ae8ed43--quote-node-modules-array-filter tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-filter
+1132 silly lockFile 0ae8ed43--quote-node-modules-array-filter tar://C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-filter
+1133 silly lockFile 127d2056-e-array-filter-0-0-1-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-filter\0.0.1\package.tgz
+1134 silly lockFile 127d2056-e-array-filter-0-0-1-package-tgz tar://C:\Users\Dmitryy\AppData\Roaming\npm-cache\array-filter\0.0.1\package.tgz
+1135 info preinstall jsonify@0.0.0
+1136 info preinstall array-map@0.0.0
+1137 info preinstall array-reduce@0.0.0
+1138 info preinstall array-filter@0.0.1
+1139 verbose readDependencies using package.json deps
+1140 verbose readDependencies using package.json deps
+1141 verbose readDependencies using package.json deps
+1142 verbose readDependencies using package.json deps
+1143 silly resolved []
+1144 verbose about to build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-map
+1145 info build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-map
+1146 verbose linkStuff [ true,
+1146 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules',
+1146 verbose linkStuff   false,
+1146 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules\\foreman\\node_modules\\shell-quote\\node_modules' ]
+1147 info linkStuff array-map@0.0.0
+1148 verbose linkBins array-map@0.0.0
+1149 verbose linkMans array-map@0.0.0
+1150 verbose rebuildBundles array-map@0.0.0
+1151 verbose readDependencies using package.json deps
+1152 silly resolved []
+1153 verbose about to build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\jsonify
+1154 info build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\jsonify
+1155 verbose linkStuff [ true,
+1155 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules',
+1155 verbose linkStuff   false,
+1155 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules\\foreman\\node_modules\\shell-quote\\node_modules' ]
+1156 info linkStuff jsonify@0.0.0
+1157 verbose linkBins jsonify@0.0.0
+1158 verbose linkMans jsonify@0.0.0
+1159 verbose rebuildBundles jsonify@0.0.0
+1160 verbose readDependencies using package.json deps
+1161 silly resolved []
+1162 verbose about to build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-reduce
+1163 info build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-reduce
+1164 verbose linkStuff [ true,
+1164 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules',
+1164 verbose linkStuff   false,
+1164 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules\\foreman\\node_modules\\shell-quote\\node_modules' ]
+1165 info linkStuff array-reduce@0.0.0
+1166 verbose linkBins array-reduce@0.0.0
+1167 verbose linkMans array-reduce@0.0.0
+1168 verbose rebuildBundles array-reduce@0.0.0
+1169 info install array-map@0.0.0
+1170 verbose readDependencies using package.json deps
+1171 info install jsonify@0.0.0
+1172 info install array-reduce@0.0.0
+1173 verbose readDependencies using package.json deps
+1174 silly resolved []
+1175 verbose about to build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-filter
+1176 info build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote\node_modules\array-filter
+1177 verbose linkStuff [ true,
+1177 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules',
+1177 verbose linkStuff   false,
+1177 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules\\foreman\\node_modules\\shell-quote\\node_modules' ]
+1178 info linkStuff array-filter@0.0.1
+1179 verbose linkBins array-filter@0.0.1
+1180 verbose linkMans array-filter@0.0.1
+1181 verbose rebuildBundles array-filter@0.0.1
+1182 info postinstall array-map@0.0.0
+1183 info install array-filter@0.0.1
+1184 info postinstall jsonify@0.0.0
+1185 info postinstall array-reduce@0.0.0
+1186 info postinstall array-filter@0.0.1
+1187 verbose about to build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote
+1188 info build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman\node_modules\shell-quote
+1189 verbose linkStuff [ true,
+1189 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules',
+1189 verbose linkStuff   false,
+1189 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules\\foreman\\node_modules' ]
+1190 info linkStuff shell-quote@1.4.3
+1191 verbose linkBins shell-quote@1.4.3
+1192 verbose linkMans shell-quote@1.4.3
+1193 verbose rebuildBundles shell-quote@1.4.3
+1194 verbose rebuildBundles [ 'array-filter', 'array-map', 'array-reduce', 'jsonify' ]
+1195 info install shell-quote@1.4.3
+1196 info postinstall shell-quote@1.4.3
+1197 verbose about to build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman
+1198 info build C:\Users\Dmitryy\AppData\Roaming\npm\node_modules\foreman
+1199 verbose linkStuff [ true,
+1199 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules',
+1199 verbose linkStuff   true,
+1199 verbose linkStuff   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm\\node_modules' ]
+1200 info linkStuff foreman@1.3.0
+1201 verbose linkBins foreman@1.3.0
+1202 verbose link bins [ { nf: 'nf.js' },
+1202 verbose link bins   'C:\\Users\\Dmitryy\\AppData\\Roaming\\npm',
+1202 verbose link bins   true ]
+1203 verbose linkMans foreman@1.3.0
+1204 verbose rebuildBundles foreman@1.3.0
+1205 verbose rebuildBundles [ 'commander', 'http-proxy', 'mu2', 'shell-quote' ]
+1206 info install foreman@1.3.0
+1207 info postinstall foreman@1.3.0
+1208 error peerinvalid The package karma does not satisfy its siblings' peerDependencies requirements!
+1208 error peerinvalid Peer grunt-karma@0.6.2 wants karma@~0.10.0
+1208 error peerinvalid Peer karma-chrome-launcher@0.1.5 wants karma@>=0.9.3
+1208 error peerinvalid Peer karma-html2js-preprocessor@0.1.0 wants karma@>=0.9
+1208 error peerinvalid Peer karma-mocha@0.1.9 wants karma@>=0.12.8
+1208 error peerinvalid Peer karma-phantomjs-launcher@0.1.4 wants karma@>=0.9
+1208 error peerinvalid Peer karma-script-launcher@0.1.0 wants karma@>=0.9
+1208 error peerinvalid Peer karma-jasmine@0.1.5 wants karma@>=0.9
+1208 error peerinvalid Peer karma-firefox-launcher@0.1.3 wants karma@>=0.9
+1208 error peerinvalid Peer karma-requirejs@0.2.2 wants karma@>=0.9
+1208 error peerinvalid Peer karma-coffee-preprocessor@0.1.3 wants karma@>=0.9
+1209 error System Windows_NT 6.2.9200
+1210 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "foreman"
+1211 error cwd c:\Work\roadpolizei-api
+1212 error node -v v0.10.32
+1213 error npm -v 1.4.28
+1214 error code EPEERINVALID
+1215 verbose exit [ 1, true ]
