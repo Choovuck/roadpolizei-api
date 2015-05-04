@@ -13,7 +13,7 @@ conn.once('open', function () {
 });
 
 exports.create = function(req, res) {
-	var request = req;
+	var request = req; // in case of closures
 	//var data = JSON.parse(req.body.data);
 	console.log(gridfs);
 	var report = new Report({
@@ -27,8 +27,7 @@ exports.create = function(req, res) {
 
 	for (var i = 0; i < request.files.files.length; i++) {
 		var file = request.files.files[i];
-	//for (var file in request.files.files) {
-		console.log(file);
+
 		if (!(file.mimetype.match('image/*') || file.mimetype.match('video/*'))) {
 			request.sendStatus(415);
 		}

@@ -4,12 +4,10 @@
   "dependencies": {
     "express": "latest",
     "mongoose": "latest",
-    "imagemin": "latest",
     "ejs": "latest",
     "multer": "latest",
     "mongoose-fs": "latest",
     "gridfs-stream": "latest",
-    "streamifier": "latest",
     "lodash": "latest"
   },
   "scripts": {
