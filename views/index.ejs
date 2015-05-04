@@ -1,7 +1,8 @@
-<form name="fileUplaod" method="post" action="/api/report" enctype="multipart/form-data">
-    <input type="file" name="data">
+<form name="multiUpload" method="post" action="/api/test/report" enctype="multipart/form-data">
+    <input type="file" name="files" multiple />
+
     <input type="submit" class="">
-    <input type="text" value="{&quot;latitude&quot; : &quot;123123123&quot;, &quot;longitude&quot; : &quot;123123123&quot;}" name="location">
+    <input type="text" value="{&quot;latitude&quot; : &quot;12&quot;, &quot;longitude&quot; : &quot;12&quot;}" name="location">
     <input type="hidden" value="1429916194291" name="fixationTime">
     <input type="hidden" value="This guy parks like a complete douche! Pls ban" name="description">
     <input type="text" name="deviceId">
