@@ -7,4 +7,5 @@ module.exports = function(app) {
 	app.get('/api/report/:id', controller.getById);
 	app.get('/api/reports/query', controller.getByQuery);
 	app.get('/api/export/:id', controller.exportById);
+	app.get('/api/test/', controller.requestTest);
 }
