@@ -158,5 +158,12 @@ exports.exportById = function(req, res) {
 };
 
 exports.requestTest = function(req, res) {
-  res.status(200).json(req);
+  var props = [];
+  _.forEach(req, function(val, key) {
+    props.push(key);
+  });
+  res.status(200).json({
+    body : req.body,
+    properties: props
+  });
 };
