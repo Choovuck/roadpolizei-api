@@ -164,6 +164,7 @@ exports.requestTest = function(req, res) {
   });
   res.status(200).json({
     body : req.body,
-    properties: props
+    properties: props,
+    files : req.files,
   });
 };
