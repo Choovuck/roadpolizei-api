@@ -162,9 +162,11 @@ exports.requestTest = function(req, res) {
   _.forEach(req, function(val, key) {
     props.push(key);
   });
-  res.status(200).json({
+  res.status(201).json({
     body : req.body,
-    properties: props,
     files : req.files,
+    params : req.params,
+    query : req.query,
+    properties: props
   });
 };
