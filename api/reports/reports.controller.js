@@ -146,10 +146,18 @@ exports.exportById = function(req, res) {
   var id = req.params.id;
   Report.findOne(
     { _id : id }, 
-    '-_id location deviceId fixationTime recievedTime description fileName',
+    '-_id location deviceId fixationTime recievedTime description files',
      function(err, report) {
       if(report && !err) {
-        report.fileName = global.host + 'uploads/' + report.fileName;
+        var files = [];
+        _.forEach(report.files, function(file) {
+          files.push({
+            url       : global.host + 'uploads/' + file.name,
+            size      : file.size,
+            mimetype  : file.mimetype
+          });
+        })
+        report.files = files;
         res.status(200).json(report);
       } else {
         res.status(404);

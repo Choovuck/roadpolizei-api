@@ -11,6 +11,6 @@ var ReportSchema = new mongoose.Schema({
  description : String,
  files : [Schema.Types.Mixed]
 });
-// file => { filename: String, gridfsId : ObjectId, mimetype : String, size : Number}
+// file => { fileName: String, gridfsId : ObjectId, mimetype : String, size : Number}
 
 module.exports = mongoose.model('TestReport', ReportSchema);
