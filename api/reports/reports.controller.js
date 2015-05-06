@@ -178,3 +178,24 @@ exports.requestTest = function(req, res) {
     properties: props
   });
 };
+
+exports.getAllShort = function(req, res) {
+  Report.find(
+    {}, 
+    '_id location',
+    function(err, reports) {
+      var info = [];
+      _.forEach(reports, function(report) {
+        info.push({
+          _id       : report._id,
+          location  : report.location,
+          exportUrl : global.host + 'api/export/' + report._id
+        });
+      });
+      if (err) { 
+        res.status(404); 
+      } else { 
+        res.status(200).json(info);
+      }
+  });
+};

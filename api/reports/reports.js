@@ -9,4 +9,5 @@ module.exports = function(app) {
 	app.get('/api/export/:id', controller.exportById);
 	app.get('/api/test/', controller.requestTest);
 	app.post('/api/test/', controller.requestTest);
+	app.get('/api/reports/short', controller.getAllShort);
 }
