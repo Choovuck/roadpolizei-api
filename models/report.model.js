@@ -13,4 +13,4 @@ var ReportSchema = new mongoose.Schema({
 });
 // file => { fileName: String, gridfsId : ObjectId, mimetype : String, size : Number}
 
-module.exports = mongoose.model('TestReport', ReportSchema);
+module.exports = mongoose.model('Report', ReportSchema);

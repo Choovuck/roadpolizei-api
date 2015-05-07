@@ -15,7 +15,6 @@ conn.once('open', function () {
 exports.create = function(req, res) {
 	var request = req; // in case of closures
 	//var data = JSON.parse(req.body.data);
-	console.log(gridfs);
 	var report = new Report({
 		location : JSON.parse(req.body.location),
 		deviceId : req.body.deviceId,
