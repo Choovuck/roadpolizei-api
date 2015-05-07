@@ -8,18 +8,21 @@
   </script>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
+  <link rel="stylesheet" type="text/css" href="./mainClient.css">
 
   <script type="text/javascript">
 
   function createInfoWindow() {
     var infoWindow = new google.maps.InfoWindow();
     infoWindow.setContent([
-      '<div class = "rp-gallery" width = "400px" height = "400px">',
+      '<div class = "rp-gallery">',
         '<div class = "rp-item"></div>',
         '<span class = "rp-item-info"></span>',
-        '<button class = "rp-button-next">Next</button>',
-        '<p class = "rp-counter"></p>',
-        '<button class = "rp-button-prev">Prev</button>',
+        '<div class = "rp-button-container">',
+          '<button class = "rp-button-next">Next</button>',
+          '<p class = "rp-counter"> 0/0 </p>',
+          '<button class = "rp-button-prev">Prev</button>',
+        '</div>',
       '</div>'
     ].join(""));
 
@@ -32,12 +35,12 @@
           $content.html('<img class = "rp-item-img" src="' + item.url + '"/>');
         } else {
           $content.html([
-            '<video controls>',
+            '<video class = "rp-item-vid" controls>',
               '<source src="' + item.url + '" type="' + item.mimetype + '">',
             '</video>'
           ].join(''));
         }
-        console.log($content);
+        //console.log($content);
       },
 
       adjustCounter : function() {
@@ -51,7 +54,11 @@
       },
 
       prevItem : function() {
-        this.index = (this.index - 1) % (this.count + 1);
+        
+        this.index = (this.index - 1) % this.count;
+        if(this.index === -1)
+          this.index = this.count - 1;
+     
         this.setItem(this.files[this.index]);
         this.adjustCounter();
       },
@@ -59,6 +66,7 @@
       init : function() {
         this.index = 0;
         this.setItem(this.files[0]);
+        this.adjustCounter();
       }
     };
 
@@ -76,6 +84,54 @@
     return infoWindow;
   }
 
+function putMarkers(infoWindow, map, roadpolizeiAPI, parametrs){
+  $.getJSON( roadpolizeiAPI, {}).done(function( data ) {       
+
+    
+    for (var i = 0; i < data.length; i++) {
+      var item = data[i];
+      //console.log(item);
+
+      var marker = new google.maps.Marker({
+        position:  new google.maps.LatLng(item.location.latitude, item.location.longitude),
+        map: map,
+      });
+
+      marker.exportUrl = item.exportUrl;
+      // process multiple info windows
+      // add click event
+      google.maps.event.addListener(marker, 'click', function() {
+        
+        infoWindow.close();
+        var self = this;
+        $.getJSON(self.exportUrl).done(function(data) {
+        //console.log(data);
+        infoWindow.roadpolizei.files = [];
+        infoWindow.roadpolizei.count = data.files.length;
+        infoWindow.roadpolizei.index = 0;
+
+        for(var j = 0; j < data.files.length; j++) {
+          var file = data.files[j];
+          if (file.mimetype.match("image/*") || file.mimetype.match("video/*")) {
+            infoWindow.roadpolizei.files.push({ mimetype : file.mimetype, url : file.url });
+          }
+        }
+
+        $('.rp-item-info').text([
+          '<p>' + data.description + '</p>',
+          '<br><p>Date:</p>',
+          '<p>' + data.fixationTime + '</p>'
+        ].join(''));
+
+        //console.log(infoWindow);
+        infoWindow.open(map, self);
+
+        });
+      });
+    }
+  });
+}
+
   $(document).ready(function(){
     function initialize() {
       var mapOptions = {
@@ -87,54 +143,11 @@
 
       // init map
       map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-
+      var infoWindow = createInfoWindow();
       var roadpolizeiAPI = "http://localhost:8080/api/reports/short";
-      $.getJSON( roadpolizeiAPI, {}).done(function( data ) {       
 
-        var infoWindow = createInfoWindow();
-
-        for (var i = 0; i < data.length; i++) {
-          var item = data[i];
-          //console.log(item);
-
-          var marker = new google.maps.Marker({
-            position:  new google.maps.LatLng(item.location.latitude, item.location.longitude),
-            map: map,
-          });
-
-          marker.exportUrl = item.exportUrl;
-          // process multiple info windows
-          // add click event
-          google.maps.event.addListener(marker, 'click', function() {
-
-            infoWindow.close();
-
-            $.getJSON(marker.exportUrl).done(function(data) {
-              console.log(data);
-              infoWindow.roadpolizei.files = [];
-              infoWindow.roadpolizei.count = data.files.length;
-              infoWindow.roadpolizei.index = 0;
-
-              for(var j = 0; j < data.files.length; j++) {
-                var file = data.files[j];
-                if (file.mimetype.match("image/*") || file.mimetype.match("video/*")) {
-                  infoWindow.roadpolizei.files.push({ mimetype : file.mimetype, url : file.url });
-                }
-              }
-
-              $('.rp-item-info').text([
-                '<p>' + data.description + '</p>',
-                '<br><p>Date:</p>',
-                '<p>' + data.fixationTime + '</p>'
-              ].join(''));
-
-              console.log(infoWindow);
-              infoWindow.open(map, marker);
-
-            });
-          });
-        }
-      });
+      putMarkers(infoWindow, map, roadpolizeiAPI);
+      
     }
     
     
@@ -144,6 +157,9 @@
 </script>
 </head>
 <body>
-   <div id="map_canvas" style="width: 100%; height:500px;"></div>
+   <div id="map_canvas" style="width: 100%; height: 500px;"></div>
+   <div id="searchForm" style="width: 100%; height: 200px">
+
+   </div>
 </body>
 </html>

@@ -14,11 +14,13 @@ var port = process.env.PORT || 8080; // set our port
 var host = 'http://localhost:8080/';
 global.host = host;
 
-mongoose.connect("mongodb://server:nicepassword@ds049219.mongolab.com:49219/road_polizei_uploads");
+mongoose.connect("mongodb://server:nicepassword@ds063870.mongolab.com:63870/road_polizei_uploads");
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/views', 'html'));
+app.use(express.static(__dirname + '/css'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
+
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 

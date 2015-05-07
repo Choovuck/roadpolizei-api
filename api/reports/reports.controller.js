@@ -6,7 +6,7 @@ var fs = require('fs');
 var Grid = require('gridfs-stream');
 
 Grid.mongo = mongoose.mongo;
-var conn = mongoose.createConnection("mongodb://server:nicepassword@ds049219.mongolab.com:49219/road_polizei_uploads");
+var conn = mongoose.createConnection("mongodb://server:nicepassword@ds063870.mongolab.com:63870/road_polizei_uploads");
 conn.once('open', function () {
   var gfs = Grid(conn.db);
   gridfs = gfs;
@@ -24,6 +24,8 @@ exports.create = function(req, res) {
 		fbId : req.body.fbId,
 	});
 
+  if(request.files.files !== undefined && request.files.files.length === undefined)
+    request.files.files = [request.files.files];
 	for (var i = 0; i < request.files.files.length; i++) {
 		var file = request.files.files[i];
 
