@@ -20,7 +20,7 @@ mongoose.connect("mongodb://server:nicepassword@ds063870.mongolab.com:63870/road
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/views', 'html'));
 app.use(express.static(__dirname + '/css'));
-app.use(express.static(__dirname + '/assets'));
+app.use(express.static(__dirname + '/assets', 'assets'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 

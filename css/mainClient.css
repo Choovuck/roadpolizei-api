@@ -7,7 +7,11 @@
 	text-align: center;
 	height: 45px;
 }
-.rp-item , .rp-gallery {
+.rp-gallery {
+	width : 350px;
+	height: 350px;
+}
+.rp-item {
   	width: 310px; 
 	height: 310px;
 }
