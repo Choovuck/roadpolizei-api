@@ -137,7 +137,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
         }
 
           infoWindow.open(map, self);
-          infoWindow.setInfo(data.description, data.fbId, data.fixationTime);
+          infoWindow.roadpolizei.setInfo(data.description, data.fbId, data.fixationTime);
         });
       });
     }
