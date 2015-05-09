@@ -89,13 +89,15 @@
 
 function putMarkers(map, markers, roadpolizeiAPI){
   $.getJSON( roadpolizeiAPI, {}).done(function( data ) {       
-    console.log(data);
     for (var i = 0; i < data.length; i++) {
       var item = data[i];
       //console.log(item);
 
       var marker = new google.maps.Marker({
-        position:  new google.maps.LatLng(item.location.latitude, item.location.longitude),
+        position:  new google.maps.LatLng(
+          item.location.lat,
+          item.location.lng
+          ),
         map: map,
       });
       marker.exportUrl = item.exportUrl;
