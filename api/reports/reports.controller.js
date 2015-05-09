@@ -98,7 +98,7 @@ exports.exportById = function(req, res) {
   var id = req.params.id;
   Report.findOne(
     { _id : id }, 
-    '-_id location deviceId fixationTime recievedTime description files',
+    //'-_id location deviceId fixationTime recievedTime description fbId files',
      function(err, report) {
       if(report && !err) {
         var files = [];

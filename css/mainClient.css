@@ -1,6 +1,5 @@
 .rp-item-info {
-	padding-left: 20px;
-	width: 290px;
+	width: 300px;
 	margin-bottom: 10px;
 }
 .rp-button-container {
@@ -12,7 +11,7 @@
 	overflow: hidden;
 }
 .rp-item {
-  	width: 310px; 
+  	width: 333px; 
 	height: 310px;
 }
 .rp-item-img, .rp-item-vid {
