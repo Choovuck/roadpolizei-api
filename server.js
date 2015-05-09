@@ -11,8 +11,9 @@ app.use(multer({ dest: './uploads/', //upload dir
   }}));
 
 var port = process.env.PORT || 8080; // set our port
-var host = 'http://localhost:8080/';
-global.host = host;
+var localhost = 'http://localhost:8080/';
+var herokuhost = 'https://roadpolizei.herokuapp.com/';
+global.host = localhost;
 
 mongoose.connect("mongodb://server:nicepassword@ds063870.mongolab.com:63870/road_polizei_uploads");
 
