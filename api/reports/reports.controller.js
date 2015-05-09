@@ -228,11 +228,23 @@ exports.search = function(req, res) {
           filtered,
           { lat : params.lat, lng : params.lng, rad : params.rad},
           function(closeEnough) {
-           res.status(200).json(closeEnough); 
+           res.status(200).json(makeShort(closeEnough)); 
         });
       } else {
-        res.status(200).json(filtered);
+        res.status(200).json(makeShort(filtered));
       }
     }
   })
+}
+
+exports.deleteEverything = function(req, res) {
+  Report.find({}, function(reports) {
+    _.forEach(reports, function(report) {
+      _.forEach(reports.files, function(file) {
+        fs.unlink(file.fileName);
+      });
+    });
+    reports.remove();
+
+  });
 }
