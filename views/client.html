@@ -78,10 +78,12 @@
       },
 
       setInfo : function(description, fbUrl, date) {
+        var d = new Date(date);
+        var dateString = '' + d.getFullYear() + d.getMonth() + d.getDate();
         $('.rp-item-info').html([
           '<p>' + description + '</p>',
           '<br><p>Date:</p>',
-          '<p>' + new Date(date).format('yyyy-mm-dd') + '</p>',
+          '<p>' + dateString + '</p>',
           '<a href="' + fbUrl + '">Author</a>'
           ].join(''));
       }
