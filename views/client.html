@@ -154,12 +154,37 @@ function putMarkers(infoWindow, map, roadpolizeiAPI, parametrs){
     initialize();
   })
 
+  function customGetClick(){
+    
+  }
+
 </script>
 </head>
 <body>
    <div id="map_canvas" style="width: 100%; height: 500px;"></div>
+   <br>
    <div id="searchForm" style="width: 100%; height: 200px">
-
+      <form name = "querySearchForm" method="get" action="/api/reports/query" enctype="multipart/form-data">
+        <input type ="text" value="SearchQuery" name="searchQuery">
+        <input type ="submit" name ="querySearchSubmit" value="Search">
+      </form>
+      <p>
+      <form name = "radiusSearchForm" method="get" action="/api/reports/:lat/:lng/:rad" enctype="multipart/form-data">
+        <input type="text" value="lat" name="lat">
+        <input type="text" value="lng" name="lng">
+        <input type="text" value="Rad" name="rad">
+        <button name ="radiusFilterSubmit" click="customGetClick">Filter</button>
+      </form>
+      <p>
+      <form>
+        <input type="text" value="fixationStart" name="fixationTimeStart"> <p>
+        <input type="text" value="fixationEnd" name="fixationEnd"> <p>
+        <input type="text" value="Description" name="description"> <p>
+        <input type="text" value="FacebookID"name="facebookID">
+        <input type ="submit" name ="otherFilterSubmit" value="Filter">
+      </form>
+        
+      
    </div>
 </body>
 </html>

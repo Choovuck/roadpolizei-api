@@ -87,6 +87,7 @@ exports.getById = function(req, res) {
 exports.getByDistance = function(req, res) {
   var point = { lat : parseInt(req.params.lat), lng : parseInt(req.params.lng)};
   var radius = parseInt(req.params.rad);
+  console.log(req.body);
   console.log(req.params);
   console.log(point);
   console.log(radius);
