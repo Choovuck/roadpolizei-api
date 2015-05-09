@@ -14,21 +14,23 @@ conn.once('open', function () {
 
 exports.create = function(req, res) {
 	var request = req; // in case of closures
-	//var data = JSON.parse(req.body.data);
-	var report = new Report({
-		location : JSON.parse(req.body.location),
-		deviceId : req.body.deviceId,
-		fixationTime : req.body.fixationTime,
-		description : req.body.description,
-		carNumber : req.body.carNumber,
-		fbId : req.body.fbId,
-	});
+	var data = JSON.parse(req.body.JSONMF);
 
-  if(request.files.files !== undefined && request.files.files.length === undefined)
-    request.files.files = [request.files.files];
-	for (var i = 0; i < request.files.files.length; i++) {
-		var file = request.files.files[i];
+  var report = new Report({
+    location : { data.geoLocation.latitude, data.geoLocation.longitude},
+    carNumber : data.number,
+    description : data.violations.join(', '),
+    fbId : data.facebookProfile,
+    fixationTime : data.timeStamp
+  });
 
+	//for (var i = 0; i < request.files.files.length; i++) {
+	//	var file = request.files.files[i];
+  for (var key in data.files) {
+    if (!data.files.hasOwnProperty(key)) {
+      continue;
+    }
+    var file = data.files[key];
 		if (!(file.mimetype.match('image/*') || file.mimetype.match('video/*'))) {
 			request.sendStatus(415);
 		}
