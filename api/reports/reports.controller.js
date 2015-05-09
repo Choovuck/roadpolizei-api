@@ -35,6 +35,9 @@ exports.create = function(req, res) {
       return;
     }
     var file = value;
+    console.log(value);
+    console.log(data.files[key]);
+    console.log(key);
 		if (!(file.mimetype.match('image/*') || file.mimetype.match('video/*'))) {
 			request.sendStatus(415);
 		}
