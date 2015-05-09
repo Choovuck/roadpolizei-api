@@ -30,10 +30,8 @@ exports.create = function(req, res) {
   //for (var key in data.files) {
   //  if (!data.files.hasOwnProperty(key)) {
   //    continue;
+  console.log(data.files);
   _.forEach(data.files, function(value, key) {
-    if (!data.files.hasOwnProperty(key)) {
-      return;
-    }
     var file = value;
     console.log(value);
     console.log(data.files[key]);
