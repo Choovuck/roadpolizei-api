@@ -28,11 +28,19 @@ input[type=text] {
 input[type=text]:focus {
 	border-color:#333; 
 }
-input[type=submit] {
-	padding:5px 15px; 
-	background:#ccc; 
-	border:0 none;
-	cursor:pointer;
-	-webkit-border-radius: 5px;
-	border-radius: 5px; 
+.searchButton {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 16px;
+  background: #00bfff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.searchButton:hover {
+  background: #ff7b00;
+  text-decoration: none;
 }
