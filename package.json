@@ -8,7 +8,8 @@
     "multer": "latest",
     "mongoose-fs": "latest",
     "gridfs-stream": "latest",
-    "lodash": "latest"
+    "lodash": "latest",
+    "mimetype" : "latest"
   },
   "scripts": {
     "start": "node server.js"

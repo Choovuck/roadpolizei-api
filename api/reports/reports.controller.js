@@ -4,6 +4,7 @@ var _ = require('lodash');
 var gridfs;
 var fs = require('fs');
 var Grid = require('gridfs-stream');
+var mimetype = require('mimetype');
 
 Grid.mongo = mongoose.mongo;
 var conn = mongoose.createConnection("mongodb://server:nicepassword@ds063870.mongolab.com:63870/road_polizei_uploads");
@@ -36,6 +37,7 @@ exports.create = function(req, res) {
     console.log(value);
     console.log(req.files[key]);
     console.log(key);
+    file.mimetype = mimetype.lookup(file.name);
 		if (!(file.mimetype.match('image/*') || file.mimetype.match('video/*'))) {
 			request.sendStatus(415);
 		}
