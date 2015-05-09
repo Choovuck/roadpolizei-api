@@ -1,10 +1,14 @@
-.rp-item-info {background: blue; padding-left: 20px; width: 290px; margin-bottom: 10px;}
-.rp-button-container {background: blue; text-align: center; height: 45px;}
-
-
-.rp-item {background: blue; }
+.rp-item-info {
+	padding-left: 20px;
+	width: 290px;
+	margin-bottom: 10px;
+}
+.rp-button-container {
+	text-align: center;
+	height: 45px;
+}
 .rp-item , .rp-gallery {
-  width: 310px; 
+  	width: 310px; 
 	height: 310px;
 }
 .rp-item-img, .rp-item-vid {
@@ -13,19 +17,19 @@
 }
 
 .rp-button-next, .rp-button-prev{
-background-size:   cover;       
+	background-size:   cover;       
     background-position: center center;  
-  background-repeat: no-repeat;
+ 	background-repeat: no-repeat;
     border-radius: 20px;
     padding: 20px 20px 20px 20px;
 }
 
 .rp-button-next{
-  background-image: url('./next.jpg');
+  	background-image: url('./next.png');
 	float: right;
 }
 .rp-button-prev{
-    background-image: url('./prev.jpg');
+    background-image: url('./prev.png');
 	float: left;
 }
 .rp-counter {
