@@ -77,7 +77,7 @@
         this.adjustCounter();
       },
 
-      info : function(description, fbUrl, date) {
+      setInfo : function(description, fbUrl, date) {
         $('.rp-item-info').html([
           '<p>' + description + '</p>',
           '<br><p>Date:</p>',
@@ -137,7 +137,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
         }
 
           infoWindow.open(map, self);
-          infoWindow.info(data.description, data.fbId, data.fixationTime);
+          infoWindow.setInfo(data.description, data.fbId, data.fixationTime);
         });
       });
     }
