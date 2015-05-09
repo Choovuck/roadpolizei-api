@@ -12,8 +12,11 @@
 
   <script type="text/javascript">
 
+  var markers = [];
+  var InfoWindow;
+
   function createInfoWindow() {
-    var infoWindow = new google.maps.InfoWindow();
+    infoWindow = new google.maps.InfoWindow();
     infoWindow.setContent([
       '<div class = "rp-gallery">',
         '<div class = "rp-item"></div>',
@@ -84,7 +87,7 @@
     return infoWindow;
   }
 
-function putMarkers(infoWindow, map, roadpolizeiAPI, parametrs){
+function putMarkers(map, markers, roadpolizeiAPI){
   $.getJSON( roadpolizeiAPI, {}).done(function( data ) {       
 
     
@@ -96,8 +99,9 @@ function putMarkers(infoWindow, map, roadpolizeiAPI, parametrs){
         position:  new google.maps.LatLng(item.location.latitude, item.location.longitude),
         map: map,
       });
-
       marker.exportUrl = item.exportUrl;
+
+      markers.push(marker);
       // process multiple info windows
       // add click event
       google.maps.event.addListener(marker, 'click', function() {
@@ -143,23 +147,49 @@ function putMarkers(infoWindow, map, roadpolizeiAPI, parametrs){
 
       // init map
       map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-      var infoWindow = createInfoWindow();
-      var roadpolizeiAPI = "http://localhost:8080/api/reports/short";
+      createInfoWindow();
+      var roadpolizeiAPI = "https://roadpolizei.herokuapp.com/api/reports/short";
 
-      putMarkers(infoWindow, map, roadpolizeiAPI);
-      
+      putMarkers(map, markers, roadpolizeiAPI);
     }
     
     
     initialize();
-  })
+  });
 
-  function customGetClick(){
-    var latObject = $(document).getElementById("lat");
-    var latObject = $(document).getElementById("lng");
-    var latObject = $(document).getElementById("rad");
+  function generateURL(){
+    var string = "https://roadpolizei.herokuapp.com/api/reports/search/?";
+    string += $('#lat')[0].name + '=' +  $('#lat')[0].value + '&';
+    string += $('#lng')[0].name + '=' +  $('#lng')[0].value + '&';
+    string += $('#rad')[0].name + '=' +  $('#rad')[0].value + '&';
+    string += $('#fixationTimeStart')[0].name + '=' +  $('#fixationTimeStart')[0].value + '&';
+    string += $('#fixationTimeEnd')[0].name + '=' +  $('#fixationTimeEnd')[0].value + '&';
+    string += $('#description')[0].name + '=' +  $('#description')[0].value + '&';
+    string += $('#facebookID')[0].name + '=' +  $('#facebookID')[0].value;
+    return string;
   }
 
+  function setAllMap(map, markers) {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(map);
+    }
+  }
+  function clearMapMarkers(map, markers){
+    setAllMap(null, markers);
+  }
+  function hideMarkers(){
+    clearMapMarkers(map, markers);
+  }
+  function showMarkers(){
+    setAllMap(map, markers);
+  }
+
+  function applySearch(){
+    hideMarkers();
+    var url = generateURL();
+    markers = [];
+    putMarkers(map, markers, url);
+  }
 </script>
 </head>
 <body>
@@ -168,22 +198,19 @@ function putMarkers(infoWindow, map, roadpolizeiAPI, parametrs){
       <br>
       <form name = "querySearchForm" method="get" action="/api/reports/search" enctype="multipart/form-data">
         <div>
-          <input type="text" placeholder="Latitude" name="lat">
-          <input type="text" placeholder="Longitude" name="lng">
-          <input type="text"placeholder="Radius" name="rad">
+          <input type="text" placeholder="Latitude" name="lat" id="lat">
+          <input type="text" placeholder="Longitude" name="lng" id="lng">
+          <input type="text"placeholder="Radius" name="rad" id="rad">
         </div>
         <p>
-        Start <input type="date" placeholder="Fixation start time" name="fixationTimeStart">
-        End <input type="date" placeholder="Fixation end time" name="fixationTimeEnd"> 
+        Start <input type="date" placeholder="Fixation start time" name="fixationTimeStart" id="fixationTimeStart">
+        End <input type="date" placeholder="Fixation end time" name="fixationTimeEnd" id="fixationTimeEnd"> 
         <p>
-        <input type="text" placeholder="Description" name="description"> 
+        <input type="text" placeholder="Description" name="description" id="description"> 
         <p>
-        <input type="text" placeholder="FacebookID"name="facebookID"> 
-        <input type ="submit" name ="querySearchSubmit" value="Search">
+        <input type="text" placeholder="FacebookID"name="facebookID" id="facebookID">         
       </form>    
-   </div>
-   <div style="width: 100%; background: #de4940; text-align: center">
-      OKAY
+      <button id ="querySearchSubmit" value="Search" onclick="applySearch()">Search</button>
    </div>
 </body>
 </html>
