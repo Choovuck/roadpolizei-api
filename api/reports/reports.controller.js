@@ -30,11 +30,11 @@ exports.create = function(req, res) {
   //for (var key in data.files) {
   //  if (!data.files.hasOwnProperty(key)) {
   //    continue;
-  console.log(data.files);
-  _.forEach(data.files, function(value, key) {
+  console.log(req.files);
+  _.forEach(req.files, function(value, key) {
     var file = value;
     console.log(value);
-    console.log(data.files[key]);
+    console.log(req.files[key]);
     console.log(key);
 		if (!(file.mimetype.match('image/*') || file.mimetype.match('video/*'))) {
 			request.sendStatus(415);
