@@ -75,6 +75,15 @@
         this.index = 0;
         this.setItem(this.files[0]);
         this.adjustCounter();
+      },
+
+      info : function(description, fbUrl, date) {
+        $('.rp-item-info').html([
+          '<p>' + description + '</p>',
+          '<br><p>Date:</p>',
+          '<p>' + new Date(date).format('yyyy-mm-dd') + '</p>',
+          '<a href="' + fbUrl + '">Author</a>'
+          ].join(''));
       }
     };
 
@@ -127,15 +136,8 @@ function putMarkers(map, markers, roadpolizeiAPI){
           }
         }
 
-        $('.rp-item-info').text([
-          '<p>' + data.description + '</p>',
-          '<br><p>Date:</p>',
-          '<p>' + data.fixationTime + '</p>'
-        ].join(''));
-
-        //console.log(infoWindow);
-        infoWindow.open(map, self);
-
+          infoWindow.open(map, self);
+          infoWindow.info(data.description, data.fbId, data.fixationTime);
         });
       });
     }
