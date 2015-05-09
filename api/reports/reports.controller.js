@@ -32,7 +32,7 @@ exports.create = function(req, res) {
   //    continue;
   _.forEach(data.files, function(value, key) {
     if (!data.files.hasOwnProperty(key)) {
-      continue;
+      return;
     }
     var file = value;
 		if (!(file.mimetype.match('image/*') || file.mimetype.match('video/*'))) {
