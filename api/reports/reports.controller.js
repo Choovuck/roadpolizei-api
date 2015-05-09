@@ -27,11 +27,14 @@ exports.create = function(req, res) {
 
 	//for (var i = 0; i < request.files.files.length; i++) {
 	//	var file = request.files.files[i];
-  for (var key in data.files) {
+  //for (var key in data.files) {
+  //  if (!data.files.hasOwnProperty(key)) {
+  //    continue;
+  _.forEach(data.files, function(value, key) {
     if (!data.files.hasOwnProperty(key)) {
       continue;
     }
-    var file = data.files[key];
+    var file = value;
 		if (!(file.mimetype.match('image/*') || file.mimetype.match('video/*'))) {
 			request.sendStatus(415);
 		}
@@ -54,7 +57,7 @@ exports.create = function(req, res) {
 		obj.size = file.size,
 
 		report.files.push(obj);
-	};
+	});
 
 	report.save(function(err) {
 		if (err) {
