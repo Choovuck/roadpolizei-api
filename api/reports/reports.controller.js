@@ -144,7 +144,7 @@ exports.getAllShort = function(req, res) {
 };
 
 
- function getByDistance = function(params, callback) {
+ function getByDistance(reports, params, callback) {
   var point = { lat : params.lat || 0, lng : params.lng || 0};
   var radius = params.rad || 0;
   
@@ -163,35 +163,76 @@ exports.getAllShort = function(req, res) {
     var d = R * c;
     return d; // returns the distance in meter
   };
-  var cb = callback;
-  Report.find({}, function(err, reports) {
-    if (err) { 
-      res.status(404); 
-    } else {
-      var closeEnough = _.filter(reports, function(report) {
+  var closeEnough = _.filter(reports, function(report) {
         return getDistance(
           { 
             lat : report.location.latitude,
             lng : report.location.longitude
           }, point) < radius;
       });
-      cb(closeEnough);
-    }
-  });
+   callback(closeEnough);
 };
+
+
+function makeShort(reports) {
+  var res =[];
+  _.forEach(reports, function(report) {
+    res.push({
+      _id       : report._id,
+      location  : report.location,
+      exportUrl : global.host + 'api/export/' + report._id
+    });
+  });
+  return res;
+}
 
 exports.search = function(req, res) {
   var params = req.query;
   var searchObject = {};
-  _.forEach(params, function(p) {
-
-  });
-  Report.find({}, function(err, reports) {
+  if (params.description !== '') {
+    searchObject.description = params.description;
+    console.log('filtering by description');
+  }
+  if (params.facebookID !== '') {
+    console.log('filtering by fb id');
+    searchObject.fbId = params.facebookID;
+  }
+  Report.find(searchObject, function(err, reports) {
     if (err) {
       res.status(404);
+      console.log('db error');
     } else {
-      console.log(req.query);
-      res.status(200).json(reports);
+      //console.log(req.query);
+      var filtered = reports;
+      if (params.fixationTimeStart !== '' && params.fixationTimeEnd !== '') {
+          console.log('filtering by date');
+          var bounds = { 
+           lower : new Date(params.fixationTimeStart),
+           upper : new Date(params.fixationTimeEnd)
+          };
+        //filter by date
+        filtered = _.filter(reports, function(report) {
+          var time = new Date(report.fixationTime);
+          var date = new Date(time.getFullYear(), time.getMonth(), time.getDate());
+          var inRange = date > bounds.lower && date < bounds.upper;
+          return inRange;
+        });
+      }
+
+      if (params.lat !== '' 
+        && params.lng !== ''
+        && params.rad !== '') 
+      {
+        console.log('filtering by distance');
+        getByDistance(
+          filtered,
+          { lat : params.lat, lng : params.lng, rad : params.rad},
+          function(closeEnough) {
+           res.status(200).json(closeEnough); 
+        });
+      } else {
+        res.status(200).json(filtered);
+      }
     }
   })
 }
