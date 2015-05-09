@@ -9,8 +9,7 @@
 	width: 310px;
 }
 .rp-gallery {
-	width : 350px;
-	height: 350px;
+	overflow: hidden;
 }
 .rp-item {
   	width: 310px; 
@@ -30,11 +29,11 @@
 }
 
 .rp-button-next{
-  	background-image: url('./next.png');
+  	background-image: url('./assets/next.png');
 	float: right;
 }
 .rp-button-prev{
-    background-image: url('./prev.png');
+    background-image: url('./assets/prev.png');
 	float: left;
 }
 .rp-counter {
