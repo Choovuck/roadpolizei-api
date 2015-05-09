@@ -15,16 +15,15 @@ conn.once('open', function () {
 exports.create = function(req, res) {
 	var request = req; // in case of closures
 	var data = JSON.parse(req.body.JSONMF);
-
   console.log(data);
-  res.status(200).json(data);
-  /*var report = new Report({
-    location : { data.geoLocation.latitude, data.geoLocation.longitude},
+
+  var report = new Report({
+    location : { lat : data.geoLocation.latitude, lng : data.geoLocation.longitude},
     carNumber : data.number,
     description : data.violations.join(', '),
     fbId : data.facebookProfile,
     fixationTime : data.timeStamp
-  });*/
+  });
 
 	//for (var i = 0; i < request.files.files.length; i++) {
 	//	var file = request.files.files[i];
