@@ -20,11 +20,11 @@
     infoWindow.setContent([
       '<div class = "rp-gallery">',
         '<div class = "rp-item"></div>',
-        '<span class = "rp-item-info"></span>',
+        '<div class = "rp-item-info"></div>',
         '<div class = "rp-button-container">',
-          '<button class = "rp-button-next">Next</button>',
-          '<p class = "rp-counter"> 0/0 </p>',
           '<button class = "rp-button-prev">Prev</button>',
+          '<p class = "rp-counter"> 0/0 </p>',
+          '<button class = "rp-button-next">Next</button>',
         '</div>',
       '</div>'
     ].join(""));
@@ -47,17 +47,22 @@
       },
 
       adjustCounter : function() {
-        $('.rp-counter').text('' + (this.index+1) + ' / ' + this.count);
+        if (this.count === 0) {
+          $('.rp-counter').text('No media');
+        } else {
+          $('.rp-counter').text('' + (this.index+1) + ' / ' + this.count);
+        }
       },
 
       nextItem : function() {
+        if (this.count === 0) { return; }
         this.index = (this.index + 1) % (this.count);
         this.setItem(this.files[this.index]);
         this.adjustCounter();
       },
 
       prevItem : function() {
-        
+        if (this.count === 0) { return; }
         this.index = (this.index - 1) % this.count;
         if(this.index === -1)
           this.index = this.count - 1;

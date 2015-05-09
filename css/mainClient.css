@@ -1,24 +1,37 @@
-.rp-item-img {
+.rp-item-info {background: blue; padding-left: 20px; width: 290px; margin-bottom: 10px;}
+.rp-button-container {background: blue; text-align: center; height: 45px;}
+
+
+.rp-item {background: blue; }
+.rp-item , .rp-gallery {
+  width: 310px; 
+	height: 310px;
+}
+.rp-item-img, .rp-item-vid {
 	width: 300px; 
 	height: 300px;
 }
-.rp-item-vid{
-	width: 300px;
-	height: 300px;
+
+.rp-button-next, .rp-button-prev{
+background-size:   cover;       
+    background-position: center center;  
+  background-repeat: no-repeat;
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px;
 }
-.gallery {
-	width: 400px;
-	height: 400px;
-}
+
 .rp-button-next{
+  background-image: url('./next.jpg');
 	float: right;
 }
 .rp-button-prev{
+    background-image: url('./prev.jpg');
 	float: left;
 }
-.rp-counter{
-	text-align:center;
+.rp-counter {
+	display: inline-block;
 }
+
 input[type=text] {
 	padding:5px; 
 	border:2px solid #ccc; 
