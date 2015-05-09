@@ -90,7 +90,7 @@
 function putMarkers(map, markers, roadpolizeiAPI){
   $.getJSON( roadpolizeiAPI, {}).done(function( data ) {       
 
-    
+    console.log(data);
     for (var i = 0; i < data.length; i++) {
       var item = data[i];
       //console.log(item);
