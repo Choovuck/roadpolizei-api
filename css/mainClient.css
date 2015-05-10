@@ -59,8 +59,24 @@ input[type=text]:focus {
   padding: 10px 20px 10px 20px;
   text-decoration: none;
 }
-
 .searchButton:hover {
   background: #ff7b00;
   text-decoration: none;
+}
+html, body{
+	height: 98%;
+	width: 99%;
+}
+.mapDiv{
+	width: 80%; 
+	height: 98%; 
+	float: left;
+	overflow: hidden;
+}
+.searchDiv{
+	width: 20%;
+	height: 98%; 
+	float: right;
+	overflow: hidden;
+	background: #15b89a;
 }
