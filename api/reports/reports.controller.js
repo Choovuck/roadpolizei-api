@@ -203,8 +203,8 @@ exports.getAllShort = function(req, res) {
   var closeEnough = _.filter(reports, function(report) {
         return getDistance(
           { 
-            lat : report.location.latitude,
-            lng : report.location.longitude
+            lat : report.location.lat,
+            lng : report.location.lng
           }, point) < radius;
       });
   console.log(closeEnough);
