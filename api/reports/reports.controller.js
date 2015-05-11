@@ -114,7 +114,7 @@ exports.exportById = function(req, res) {
             console.log(entry);
             var readStream = gridfs.createReadStream({ _id : entry.id });
             var writeStream = fs.createWriteStream('uploads/' + entry.name);
-            readstream.pipe(writeStream);
+            readStream.pipe(writeStream);
             writeStream.on('close', function() {
               self.downloadedCount++;
               console.log('stream closed: ' + self.downloadedCount);
