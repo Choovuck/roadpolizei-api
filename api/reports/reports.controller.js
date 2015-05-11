@@ -114,7 +114,7 @@ exports.exportById = function(req, res) {
             readstream.pipe(writeStream);
             writeStream.on('close', function() {
               fileStates[file.name] = true;
-              console.log('file ' + file.name + ' is ' + (alright?'good':'still missing'));
+              console.log('file ' + file.name + ' is ' + 'good');
             });
           }
           files.push({
@@ -126,8 +126,8 @@ exports.exportById = function(req, res) {
         report.files = files;
         //todo redo with event maybe?
         while(true) {
-          if (_.includes(fileStates, false)) {
-            continue;
+          if (!_.includes(fileStates, false)) {
+            break;
           }
         }
         res.status(200).json(report);
