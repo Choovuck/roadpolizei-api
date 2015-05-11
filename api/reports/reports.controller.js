@@ -103,7 +103,9 @@ exports.exportById = function(req, res) {
       if(report && !err) {
         var files = [];
         var fileStates = [];
-        _.forEach(report.files, function(file) {
+        //_.forEach(report.files, function(file) {
+        for (var i = 0; i < report.files.length; i++) {
+          var file = report.files[i];
           if (!fs.existsSync('uploads/' + file.name)) {
             console.log('file ' + file.name + ' is missing');
             fileStates[file.name] = false;
@@ -116,16 +118,13 @@ exports.exportById = function(req, res) {
               fileStates[file.name] = true;
               console.log('file ' + file.name + ' is ' + 'good');
             });
-            readstream.on('close', function() {
-              writeStream.close();
-            })
           }
           files.push({
             url       : global.host + 'uploads/' + file.name,
             size      : file.size,
             mimetype  : file.mimetype
           });
-        });
+        };
         report.files = files;
         //todo redo with event maybe?
         console.log(fileStates);
