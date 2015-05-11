@@ -109,17 +109,17 @@ exports.exportById = function(req, res) {
         fileStates.rp.downloadedCount = 0;
         fileStates.rp.download = function() {
           var self = this;
-          console.log(this);
-          _.forEach(this.rp.data, function(entry) {
+          console.log(self);
+          _.forEach(self.data, function(entry) {
             console.log(entry);
             var readStream = gridfs.createReadStream({ _id : entry.id });
             var writeStream = fs.createWriteStream('uploads/' + entry.name);
             readstream.pipe(writeStream);
             writeStream.on('close', function() {
-              self.rp.downloadedCount++;
-              console.log('stream closed: ' + self.rp.downloadedCount);
-              if (self.rp.downloadedCount === self.rp.data.length) {
-                self.emit('downloaded');
+              self.downloadedCount++;
+              console.log('stream closed: ' + self.downloadedCount);
+              if (self.downloadedCount === self.data.length) {
+                fileStates.emit('downloaded');
               }
             })
           })
