@@ -5,6 +5,7 @@ var gridfs;
 var fs = require('fs');
 var Grid = require('gridfs-stream');
 var mimetype = require('mimetype');
+var events = require('events')
 
 Grid.mongo = mongoose.mongo;
 var conn = mongoose.createConnection("mongodb://server:nicepassword@ds063870.mongolab.com:63870/road_polizei_uploads");
@@ -93,7 +94,6 @@ exports.getById = function(req, res) {
   });
 };
 
-
 exports.exportById = function(req, res) {
   var id = req.params.id;
   Report.findOne(
@@ -103,38 +103,42 @@ exports.exportById = function(req, res) {
       if(report && !err) {
         var files = [];
         var fileStates = [];
-        //_.forEach(report.files, function(file) {
-        for (var i = 0; i < report.files.length; i++) {
-          var file = report.files[i];
-          if (!fs.existsSync('uploads/' + file.name)) {
-            console.log('file ' + file.name + ' is missing');
-            fileStates[file.name] = false;
-            var readstream = gridfs.createReadStream({
-              _id : file.gridfsId
-            });
-            var writeStream = fs.createWriteStream('uploads/' + file.name);
+        fileStates.prototype = new events.EventEmitter;
+        fileStates.prototype.downloadedCount = 0;
+        fileStates.prototype.download = function() {
+          var self = this;
+          console.log(this);
+          _.forEach(this, function(entry) {
+            console.log(entry);
+            var readStream = gridfs.createReadStream({ _id : entry.gridfsId });
+            var writeStream = fs.createWriteStream('uploads/' + entry.name);
             readstream.pipe(writeStream);
             writeStream.on('close', function() {
-              fileStates[file.name] = true;
-              console.log('file ' + file.name + ' is ' + 'good');
-            });
+              self.downloadedCount++;
+              console.log('stream closed: ' + self.downloadedCount);
+              if (self.downloadedCount === self.length) {
+                self.emit('downloaded');
+              }
+            })
+          })
+        }
+
+        _.forEach(report.files, function(file) {
+          if (!fs.existsSync('uploads/' + file.name)) {
+            console.log('file ' + file.name + ' is missing');
+            fileStates.push({ name : file.name, id: file.gridfsId, missing : true });
           }
           files.push({
             url       : global.host + 'uploads/' + file.name,
             size      : file.size,
             mimetype  : file.mimetype
           });
-        };
+        });
         report.files = files;
-        //todo redo with event maybe?
-        console.log(fileStates);
-        while(true) {
-          if (!_.includes(fileStates, false)) {
-            console.log('FREE AT LAST');
-            break;
-          }
-        }
-        res.status(200).json(report);
+        fileStates.on('downloaded', function() {
+          res.status(200).json(report);
+        });
+        fileStates.download();
       } else {
         res.status(404);
       }
