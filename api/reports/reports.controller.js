@@ -112,7 +112,7 @@ exports.exportById = function(req, res) {
             readstream.pipe(writeStream);
             writeStream.on('close', function() {
               var alright = fs.existsSync('uploads/' + file.name);
-              console.log('file ' + file.name ' is ' + alright?'good':'still missing');
+              console.log('file ' + file.name + ' is ' + alright?'good':'still missing');
             });
           }
           files.push({
