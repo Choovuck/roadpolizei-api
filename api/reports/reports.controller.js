@@ -106,7 +106,7 @@ exports.exportById = function(req, res) {
         _.forEach(report.files, function(file) {
           if (!fs.existsSync('uploads/' + file.name)) {
             console.log('file ' + file.name + ' is missing');
-            fileStates.push[file.name] = false;
+            fileStates[file.name] = false;
             var readstream = gridfs.createReadStream({
               _id : file.gridfsId
             });
