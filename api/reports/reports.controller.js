@@ -226,10 +226,16 @@ function makeShort(reports) {
 
 exports.search = function(req, res) {
   var params = req.query;
+  console.log(params);
   var searchObject = {};
+  // todo string . contains
   if (params.description !== '') {
     searchObject.description = params.description;
     console.log('filtering by description');
+  }
+  if (params.carNumber !== '') {
+    searchObject.carNumber = params.carNumber;
+    console.log('filtering by car number');
   }
   if (params.facebookID !== '') {
     console.log('filtering by fb id');
@@ -269,6 +275,7 @@ exports.search = function(req, res) {
            res.status(200).json(makeShort(closeEnough)); 
         });
       } else {
+        console.log('no filters');
         res.status(200).json(makeShort(filtered));
       }
     }
