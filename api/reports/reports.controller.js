@@ -102,17 +102,19 @@ exports.exportById = function(req, res) {
      function(err, report) {
       if(report && !err) {
         var files = [];
+        var fileStates = [];
         _.forEach(report.files, function(file) {
           if (!fs.existsSync('uploads/' + file.name)) {
             console.log('file ' + file.name + ' is missing');
+            fileStates.push[file.name] = false;
             var readstream = gridfs.createReadStream({
               _id : file.gridfsId
             });
             var writeStream = fs.createWriteStream('uploads/' + file.name);
             readstream.pipe(writeStream);
             writeStream.on('close', function() {
-              var alright = fs.existsSync('uploads/' + file.name);
-              console.log('file ' + file.name + ' is ' + alright?'good':'still missing');
+              fileStates[file.name] = true;
+              console.log('file ' + file.name + ' is ' + (alright?'good':'still missing'));
             });
           }
           files.push({
@@ -120,8 +122,14 @@ exports.exportById = function(req, res) {
             size      : file.size,
             mimetype  : file.mimetype
           });
-        })
+        });
         report.files = files;
+        //todo redo with event maybe?
+        while(true) {
+          if (_.includes(fileStates, false)) {
+            continue;
+          }
+        }
         res.status(200).json(report);
       } else {
         res.status(404);
