@@ -103,6 +103,9 @@ exports.exportById = function(req, res) {
       if(report && !err) {
         var files = [];
         _.forEach(report.files, function(file) {
+          if (!fs.existsSync('uploads/' + file.name)) {
+            console.log('file ' + file.name + ' is missing');
+          }
           files.push({
             url       : global.host + 'uploads/' + file.name,
             size      : file.size,
