@@ -125,6 +125,7 @@ exports.exportById = function(req, res) {
         });
         report.files = files;
         //todo redo with event maybe?
+        console.log(fileStates);
         while(true) {
           if (!_.includes(fileStates, false)) {
             break;
