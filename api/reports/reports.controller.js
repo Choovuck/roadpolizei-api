@@ -109,9 +109,7 @@ exports.exportById = function(req, res) {
         fileStates.rp.downloadedCount = 0;
         fileStates.rp.download = function() {
           var self = this;
-          console.log(self);
           _.forEach(self.data, function(entry) {
-            console.log(entry);
             var readStream = gridfs.createReadStream({ _id : entry.id });
             var writeStream = fs.createWriteStream('uploads/' + entry.name);
             readStream.pipe(writeStream);
@@ -127,7 +125,6 @@ exports.exportById = function(req, res) {
 
         _.forEach(report.files, function(file) {
           if (!fs.existsSync('uploads/' + file.name)) {
-            console.log('file ' + file.name + ' is missing');
             fileStates.rp.data.push({ name : file.name, id: file.gridfsId });
           }
           files.push({
@@ -186,6 +183,8 @@ exports.getAllShort = function(req, res) {
  function getByDistance(reports, params, callback) {
   var point = { lat : params.lat || 0, lng : params.lng || 0};
   var radius = params.rad || 0;
+  console.log('point: ' + point);
+  console.log('rad: ' + rad);
   
   var rad = function(x) {
     return x * Math.PI / 180;
