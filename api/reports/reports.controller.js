@@ -103,20 +103,21 @@ exports.exportById = function(req, res) {
       if(report && !err) {
         var files = [];
         var fileStates = [];
-        fileStates.prototype = new events.EventEmitter;
-        fileStates.prototype.downloadedCount = 0;
-        fileStates.prototype.download = function() {
+        fileStates = new events.EventEmitter();
+        fileStates.rp.data = [];
+        fileStates.rp.downloadedCount = 0;
+        fileStates.rp.download = function() {
           var self = this;
           console.log(this);
-          _.forEach(this, function(entry) {
+          _.forEach(this.rp.data, function(entry) {
             console.log(entry);
-            var readStream = gridfs.createReadStream({ _id : entry.gridfsId });
+            var readStream = gridfs.createReadStream({ _id : entry.id });
             var writeStream = fs.createWriteStream('uploads/' + entry.name);
             readstream.pipe(writeStream);
             writeStream.on('close', function() {
-              self.downloadedCount++;
-              console.log('stream closed: ' + self.downloadedCount);
-              if (self.downloadedCount === self.length) {
+              self.rp.downloadedCount++;
+              console.log('stream closed: ' + self.rp.downloadedCount);
+              if (self.rp.downloadedCount === self.rp.data.length) {
                 self.emit('downloaded');
               }
             })
@@ -126,7 +127,7 @@ exports.exportById = function(req, res) {
         _.forEach(report.files, function(file) {
           if (!fs.existsSync('uploads/' + file.name)) {
             console.log('file ' + file.name + ' is missing');
-            fileStates.push({ name : file.name, id: file.gridfsId, missing : true });
+            fileStates.rp.data.push({ name : file.name, id: file.gridfsId });
           }
           files.push({
             url       : global.host + 'uploads/' + file.name,
