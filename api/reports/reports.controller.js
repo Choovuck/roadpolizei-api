@@ -229,10 +229,6 @@ exports.search = function(req, res) {
   console.log(params);
   var searchObject = {};
   // todo string . contains
-  if (params.description !== '') {
-    searchObject.description = params.description;
-    console.log('filtering by description');
-  }
   if (params.carNumber !== '') {
     searchObject.carNumber = params.carNumber;
     console.log('filtering by car number');
@@ -248,6 +244,11 @@ exports.search = function(req, res) {
     } else {
       //console.log(req.query);
       var filtered = reports;
+      if (params.description !== '') {
+        filtered = _.filter(filtered, function(report) {
+          return _.includes(report.description, params.description);
+        });
+      }
       if (params.fixationTimeStart !== '' && params.fixationTimeEnd !== '') {
           console.log('filtering by date');
           var bounds = { 
