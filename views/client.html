@@ -203,8 +203,8 @@ function putMarkers(map, markers, roadpolizeiAPI){
 </script>
 </head>
 <body>
-   <div id="map_canvas" style="width: 100%; height: 500px;"></div>
-   <div id="searchForm" style="width: 100%; height: 200px; background: #15b89a">
+   <div id="map_canvas" class= "mapDiv"></div>
+   <div id="searchForm" class= "searchDiv">
       <br>
       <form name = "querySearchForm" method="get" action="/api/reports/search" enctype="multipart/form-data">
         <div>
@@ -214,6 +214,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
         </div>
         <p>
         Start <input type="date" placeholder="Fixation start time" name="fixationTimeStart" id="fixationTimeStart">
+        <p>
         End <input type="date" placeholder="Fixation end time" name="fixationTimeEnd" id="fixationTimeEnd"> 
         <p>
         <input type="text" placeholder="Description" name="description" id="description"> 
