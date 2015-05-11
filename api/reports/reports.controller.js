@@ -183,8 +183,8 @@ exports.getAllShort = function(req, res) {
  function getByDistance(reports, params, callback) {
   var point = { lat : params.lat || 0, lng : params.lng || 0};
   var radius = params.rad || 0;
-  console.log('point: ' + point);
-  console.log('rad: ' + rad);
+  console.log(params);
+  console.log(reports);
   
   var rad = function(x) {
     return x * Math.PI / 180;
@@ -208,6 +208,7 @@ exports.getAllShort = function(req, res) {
             lng : report.location.longitude
           }, point) < radius;
       });
+  console.log(closeEnough);
    callback(closeEnough);
 };
 

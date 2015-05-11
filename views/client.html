@@ -176,6 +176,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
     string += $('#fixationTimeEnd')[0].name + '=' +  $('#fixationTimeEnd')[0].value + '&';
     string += $('#description')[0].name + '=' +  $('#description')[0].value + '&';
     string += $('#facebookID')[0].name + '=' +  $('#facebookID')[0].value;
+    string += $('#carNumber')[0].name + '=' +  $('#carNumber')[0].value;
     return string;
   }
 
@@ -219,7 +220,9 @@ function putMarkers(map, markers, roadpolizeiAPI){
         <p>
         <input type="text" placeholder="Description" name="description" id="description"> 
         <p>
-        <input type="text" placeholder="FacebookID"name="facebookID" id="facebookID">         
+        <input type="text" placeholder="FacebookID"name="facebookID" id="facebookID">
+        <p>
+        <input type="text" placeholder="Car number" name="carNumber" id="carNumber">         
       </form>    
       <button class="searchButton" id ="querySearchSubmit" value="Search" onclick="applySearch()">Search</button>
    </div>
