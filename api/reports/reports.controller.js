@@ -104,6 +104,7 @@ exports.exportById = function(req, res) {
         var files = [];
         var fileStates = [];
         fileStates = new events.EventEmitter();
+        fileStates.rp = {};
         fileStates.rp.data = [];
         fileStates.rp.downloadedCount = 0;
         fileStates.rp.download = function() {
