@@ -268,12 +268,13 @@ exports.search = function(req, res) {
         && params.rad !== '') 
       {
         console.log('filtering by distance');
+        var p = { lat : params.lat, lng : params.lng, rad : params.rad };
         getByDistance(
           filtered,
-          { lat : params.lat, lng : params.lng, rad : params.rad},
+          p,
           function(closeEnough) {
-           res.status(200).json(makeShort(closeEnough)); 
-        });
+            res.status(200).json(makeShort(closeEnough)); 
+          });
       } else {
         console.log('no filters');
         res.status(200).json(makeShort(filtered));
