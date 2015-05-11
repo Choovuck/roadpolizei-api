@@ -116,6 +116,9 @@ exports.exportById = function(req, res) {
               fileStates[file.name] = true;
               console.log('file ' + file.name + ' is ' + 'good');
             });
+            readstream.on('close', function() {
+              writeStream.close();
+            })
           }
           files.push({
             url       : global.host + 'uploads/' + file.name,
@@ -130,8 +133,6 @@ exports.exportById = function(req, res) {
           if (!_.includes(fileStates, false)) {
             console.log('FREE AT LAST');
             break;
-          } else {
-            console.log('nope');
           }
         }
         res.status(200).json(report);
