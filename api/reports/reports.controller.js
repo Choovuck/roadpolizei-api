@@ -128,8 +128,10 @@ exports.exportById = function(req, res) {
         console.log(fileStates);
         while(true) {
           if (!_.includes(fileStates, false)) {
-            break;
             console.log('FREE AT LAST');
+            break;
+          } else {
+            console.log('nope');
           }
         }
         res.status(200).json(report);
