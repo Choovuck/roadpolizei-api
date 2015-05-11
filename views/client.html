@@ -77,11 +77,12 @@
         this.adjustCounter();
       },
 
-      setInfo : function(description, fbUrl, date) {
+      setInfo : function(description, fbUrl, date, carNumber) {
         var d = new Date(date);
         var dateString = '' + d.getFullYear() + '.' +  d.getMonth() + '.' + d.getDate();
         $('.rp-item-info').html([
           '<p>' + description + '</p>',
+          '<p>' + carNumber + '</p>',
           '<p>Date: ' + dateString + '</p>',
           '<a href="' + fbUrl + '">Author</a>'
           ].join(''));
@@ -139,7 +140,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
           console.log(data);
           console.log(data.fbId);
           infoWindow.open(map, self);
-          infoWindow.roadpolizei.setInfo(data.description, data.fbId, data.fixationTime);
+          infoWindow.roadpolizei.setInfo(data.description, data.fbId, data.fixationTime, data.carNumber);
         });
       });
     }
