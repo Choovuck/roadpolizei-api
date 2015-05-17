@@ -44,7 +44,11 @@
         if (item === undefined) { console.log('no item'); return; }
         var $content = $('.rp-item');
         if (item.mimetype.match('image/*')) {
-          $content.html('<img class = "rp-item-img" src="' + item.url + '"/>');
+          $content.html([
+            '<a href= "' + item.url + '"',
+            '<img class = "rp-item-img" src="' + item.url + '"/>',
+            '</a>'
+             ].join(''));
         } else {
           $content.html([
             '<video class = "rp-item-vid" controls>',
