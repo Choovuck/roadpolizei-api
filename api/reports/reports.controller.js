@@ -6,6 +6,7 @@ var fs = require('fs');
 var Grid = require('gridfs-stream');
 var mimetype = require('mimetype');
 var events = require('events')
+var FormData = require('form-data');
 
 Grid.mongo = mongoose.mongo;
 var conn = mongoose.createConnection("mongodb://server:nicepassword@ds063870.mongolab.com:63870/road_polizei_uploads");
@@ -57,7 +58,7 @@ function uploadFileToAmazonS3(file) {
     fd.append('AWSAccessKeyId', 'AKIAJICXUTNWLVM7NZKA');
     fd.append('policy', POLICY_JSON);
     fd.append('signature', signature);
-    fd.append("file",file);
+    fd.append("file", file); //maybe requires fs.createReadStream
 
     var xhr = getXMLHTTPObject();
 

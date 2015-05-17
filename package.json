@@ -9,7 +9,8 @@
     "mongoose-fs": "latest",
     "gridfs-stream": "latest",
     "lodash": "latest",
-    "mimetype" : "latest"
+    "mimetype" : "latest",
+    "form-data" : "latest"
   },
   "scripts": {
     "start": "node server.js"
