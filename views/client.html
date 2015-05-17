@@ -15,6 +15,7 @@
   var markers = [];
   var InfoWindow;
   var bounds;
+  var markerSettledEvent = new Event('markersSettled');
 
   function createInfoWindow() {
     infoWindow = new google.maps.InfoWindow();
@@ -147,6 +148,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
       });
     }
   });
+  document.dispatchEvent(markersSettledEvent);
 }
 
 function setBounds(){
@@ -173,7 +175,7 @@ function setBounds(){
       var roadpolizeiAPI = "https://roadpolizei.herokuapp.com/api/reports/short";
 
       putMarkers(map, markers, roadpolizeiAPI);
-      setBounds();
+      document.addEventListener('markersSettled', setBounds(), false);
     }
     
     
