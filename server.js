@@ -10,6 +10,11 @@ app.use(multer({ dest: './uploads/', //upload dir
     return filename+Date.now(); //return name
   }}));
 
+var aws = require('aws-sdk');
+aws.config.reagion('eu-central-1');
+process.env.AWS_ACCESS_KEY_ID = 'AKIAJICXUTNWLVM7NZKA';
+process.env.AWS_SECRET_ACCESS_KEY = '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';
+
 var port = process.env.PORT || 8080; // set our port
 var localhost = 'http://localhost:8080/';
 var herokuhost = 'https://roadpolizei.herokuapp.com/';

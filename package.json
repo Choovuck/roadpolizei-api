@@ -10,7 +10,7 @@
     "gridfs-stream": "latest",
     "lodash": "latest",
     "mimetype" : "latest",
-    "form-data" : "latest"
+    "aws-sdk" : "latest"
   },
   "scripts": {
     "start": "node server.js"

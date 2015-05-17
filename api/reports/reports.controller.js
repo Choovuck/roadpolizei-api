@@ -6,8 +6,7 @@ var fs = require('fs');
 var Grid = require('gridfs-stream');
 var mimetype = require('mimetype');
 var events = require('events')
-var FormData = require('form-data');
-var crypto = require('crypto');
+var aws = require('aws-sdk');
 
 Grid.mongo = mongoose.mongo;
 var conn = mongoose.createConnection("mongodb://server:nicepassword@ds063870.mongolab.com:63870/road_polizei_uploads");
@@ -16,66 +15,18 @@ conn.once('open', function () {
   gridfs = gfs;
 });
 
-  function uploadComplete(evt) {
-    /* This event is raised when the server send back a response */
-    console.log("Done - " + evt.target.responseText );
-  }
-
-  function uploadFailed(evt) {
-    console.log("There was an error attempting to upload the file." + evt);
-  }
-
-  function uploadCanceled(evt) {
-    console.log("The upload has been canceled by the user or the browser dropped the connection.");
-  }
 function uploadFileToAmazonS3(file) {
-    var fd = new FormData();
-
-    var key = file.name;
-    var bucket = 'https://s3-website.eu-central-1.amazonaws.com/roadpolizeidata';
-    var acl = 'public-read';
-    POLICY_JSON = { 
-     "expiration": "2017-12-01T12:00:00.000Z",
-      "conditions": [
-        ["eq", "$bucket", bucket],
-        ["starts-with", "$key", key],
-        {"acl": acl},
-        {"x-amz-meta-filename": file.name},
-        ["starts-with", "$Content-Type", file.mimetype]
-      ]
-    };
-
-    var secret = 'knNkfGZUaSpll98xwiFFGOo4gpDE13Tn2MUsVlEk';
-    var policyBase64 = new Buffer(JSON.stringify(POLICY_JSON)).toString('base64');
-    console.log ( policyBase64 );
-
-    //var signature = b64_hmac_sha1(secret, policyBase64);
-    var hmac = crypto.createHmac('sha1', secret);
-    hmac.setEncoding('hex');
-    hmac.write(policyBase64);
-    hmac.end();
-    var signature = hmac.read();
-
-    console.log( signature);
-
-    fd.append('key', key);
-    fd.append('acl', 'public-read'); 
-    fd.append('Content-Type', file.mimetype);      
-    fd.append('AWSAccessKeyId', 'AKIAJICXUTNWLVM7NZKA');
-    fd.append('policy', JSON.stringify(POLICY_JSON));
-    fd.append('signature', signature);
-    fd.append("file", fs.createReadStream(file.path)); //maybe requires fs.createReadStream
-
-    var xhr = getXMLHTTPObject();
-
-    xhr.addEventListener("load", uploadComplete, false);
-    xhr.addEventListener("error", uploadFailed, false);
-    xhr.addEventListener("abort", uploadCanceled, false);
-
-    xhr.open('POST', 'https://roadpolizeidata.s3.amazonaws.com/', true); //MUST BE LAST LINE BEFORE YOU SEND 
-
-    xhr.send(fd);
-  }
+    var s3 = new aws.S3({ params : { 
+      Bucket : 'roadpolizeidata',
+      Key : file.name
+    }});
+    var body = fs.createReadStream(file.path);
+    s3.upload({ Body : body })
+      .send(function(err, data) {
+        console.log(err, data);
+      })
+    });
+}
 
 exports.create = function(req, res) {
 	var request = req; // in case of closures
