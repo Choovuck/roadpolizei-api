@@ -15,7 +15,14 @@
   var markers = [];
   var InfoWindow;
   var bounds;
-  var markerSettledEvent = new Event('markersSettled');
+  var markerSettledEvent = new CustomEvent("markersSettled",
+    {
+      detail:{
+        Kappa: "u wot"
+      },
+      bubbles: false,
+      cancelable: true
+    });
 
   function createInfoWindow() {
     infoWindow = new google.maps.InfoWindow();
@@ -175,7 +182,7 @@ function setBounds(){
       var roadpolizeiAPI = "https://roadpolizei.herokuapp.com/api/reports/short";
 
       putMarkers(map, markers, roadpolizeiAPI);
-      document.addEventListener('markersSettled', setBounds(), false);
+      document.addEventListener("markersSettled", setBounds, false);
     }
     
     
