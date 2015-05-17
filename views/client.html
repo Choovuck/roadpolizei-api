@@ -233,6 +233,8 @@ function putMarkers(map, markers, roadpolizeiAPI){
    <div id="searchForm" class= "searchDiv">
       <br>
       <form name = "querySearchForm" method="get" action="/api/reports/search" enctype="multipart/form-data">
+        <input type="text" placeholder="Car number" name="carNumber" id="carNumber">
+        <p>
         <div>
           <input type="text" placeholder="Latitude" name="lat" id="lat">
           <input type="text" placeholder="Longitude" name="lng" id="lng">
@@ -245,9 +247,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
         <p>
         <input type="text" placeholder="Description" name="description" id="description"> 
         <p>
-        <input type="text" placeholder="FacebookID"name="facebookID" id="facebookID">
-        <p>
-        <input type="text" placeholder="Car number" name="carNumber" id="carNumber">         
+        <input type="text" placeholder="FacebookID"name="facebookID" id="facebookID">                 
       </form>    
       <button class="searchButton" id ="querySearchSubmit" value="Search" onclick="applySearch()">Search</button>
    </div>
