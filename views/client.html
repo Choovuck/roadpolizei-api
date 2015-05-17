@@ -169,9 +169,10 @@ function setBounds(){
   $(document).ready(function(){
     function initialize() {
       var mapOptions = {
+        center: new google.maps.LatLng(50.0641565, 36.2022325),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapTypeControl: false,
-        zoom: 20
+        zoom: 15
       };
 
       // init map
