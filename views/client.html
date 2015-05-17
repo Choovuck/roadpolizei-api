@@ -156,7 +156,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
     }
   });
   console.log("dispatching markersSettledEvent");
-  window.dispatchEvent(markersSettledEvent);
+  document.body.dispatchEvent(markersSettledEvent);
 }
 
 function setBounds(e){
@@ -185,7 +185,7 @@ function setBounds(e){
       var roadpolizeiAPI = "https://roadpolizei.herokuapp.com/api/reports/short";
 
       putMarkers(map, markers, roadpolizeiAPI);
-      window.addEventListener("markersSettled", setBounds, false);
+      document.body.addEventListener("markersSettled", setBounds, false);
     }
     
     
