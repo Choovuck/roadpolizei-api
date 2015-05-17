@@ -156,10 +156,11 @@ function putMarkers(map, markers, roadpolizeiAPI){
     }
   });
   console.log("dispatching markersSettledEvent");
-  document.dispatchEvent(markersSettledEvent);
+  document.getElementById('map_canvas').dispatchEvent(markersSettledEvent);
 }
 
-function setBounds(){
+function setBounds(e){
+  e.preventDefault();
   console.log("bounds are about to be set");
   for (var i = 0; i < markers.length; i++){
     console.log(bounds);
