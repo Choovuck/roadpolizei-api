@@ -18,7 +18,9 @@ conn.once('open', function () {
 function uploadFileToAmazonS3(file) {
     var s3 = new aws.S3({ params : { 
       Bucket : 'roadpolizeidata',
-      Key : file.name
+      Key : file.name,
+      ContentType : file.mimetype,
+      ACL : 'public-read'
     }});
     var body = fs.createReadStream(file.path);
     s3.upload({ Body : body })
