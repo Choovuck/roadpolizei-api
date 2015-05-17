@@ -31,6 +31,14 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 
+//force redirect to https to avoid problems. NOT WORKING ON LOCALHOST
+app.get('*',function(req,res,next){
+  if(req.headers['x-forwarded-proto']!='https')
+    res.redirect(['https://', req.get('Host'), req.url].join(''));
+  else
+    next(); // Continue to other routes if we're not redirecting
+})
+
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname, './views', 'client.html'));
 });
