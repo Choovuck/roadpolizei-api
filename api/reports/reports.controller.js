@@ -114,7 +114,7 @@ exports.exportById = function(req, res) {
     //'-_id location deviceId fixationTime recievedTime description fbId files',
      function(err, report) {
       if(report && !err) {
-
+        var files = [];
         _.forEach(report.files, function(file) {
           files.push({
             url       : global.mediaStorageURL + file.name,
