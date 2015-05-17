@@ -31,9 +31,9 @@
   "author": "pavel-mezentsev, dmitriy-shpetnyi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Choovuck/roadpolizei-api/issues"
+    "url": "https://github.com/dshpet/roadpolizei-api/issues"
   },
-  "homepage": "https://github.com/Choovuck/roadpolizei-api",
+  "homepage": "https://github.com/dshpet/roadpolizei-api",
   "engines":{
     "node": "0.10.x" 
   }
