@@ -7,6 +7,7 @@ var Grid = require('gridfs-stream');
 var mimetype = require('mimetype');
 var events = require('events')
 var FormData = require('form-data');
+var crypto = require('crypto');
 
 Grid.mongo = mongoose.mongo;
 var conn = mongoose.createConnection("mongodb://server:nicepassword@ds063870.mongolab.com:63870/road_polizei_uploads");
@@ -48,8 +49,13 @@ function uploadFileToAmazonS3(file) {
     var policyBase64 = Base64.encode(JSON.stringify(POLICY_JSON));
     console.log ( policyBase64 );
 
-    var signature = b64_hmac_sha1(secret, policyBase64);
-    b64_hmac_sha1(secret, policyBase64);
+    //var signature = b64_hmac_sha1(secret, policyBase64);
+    var hmac = crypto.createHmac('sha1', secret);
+    hmac.setEncoding('hex');
+    hmac.write(policyBase64);
+    hmac.end();
+    var signature = hmac.read();
+
     console.log( signature);
 
     fd.append('key', key);
