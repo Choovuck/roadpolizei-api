@@ -148,6 +148,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
     }
   });
   map.fitBounds(bounds);
+  map.center = markers[0].position;
 }
 
   $(document).ready(function(){
