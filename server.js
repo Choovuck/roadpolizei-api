@@ -32,7 +32,7 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 app.get('/', function (req, res) {
-	res.render("index.ejs");
+	res.sendFile(path.join(__dirname, './views', 'client.html'));
 });
 
 app.get('/map', function (req, res){
