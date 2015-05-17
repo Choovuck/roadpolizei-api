@@ -62,7 +62,7 @@ function uploadFileToAmazonS3(file) {
     fd.append('acl', 'public-read'); 
     fd.append('Content-Type', file.mimetype);      
     fd.append('AWSAccessKeyId', 'AKIAJICXUTNWLVM7NZKA');
-    fd.append('policy', POLICY_JSON);
+    fd.append('policy', JSON.stringify(POLICY_JSON));
     fd.append('signature', signature);
     fd.append("file", file); //maybe requires fs.createReadStream
 
