@@ -216,7 +216,9 @@ exports.search = function(req, res) {
   var searchObject = {};
   // todo string . contains
   if (params.carNumber !== '') {
-    searchObject.carNumber = params.carNumber;
+    filtered = _.filter(filtered, function(report) {
+      return _.includes(searchObject.carNumber, params.carNumber);
+    });    
     console.log('filtering by car number');
   }
   if (params.facebookID !== '') {
