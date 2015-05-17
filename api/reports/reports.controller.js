@@ -44,9 +44,6 @@ exports.create = function(req, res) {
   console.log(req.files);
   _.forEach(req.files, function(value, key) {
     var file = value;
-    console.log(value);
-    console.log(req.files[key]);
-    console.log(key);
     file.mimetype = mimetype.lookup(file.name);
 		if (!(file.mimetype.match('image/*') || file.mimetype.match('video/*'))) {
 			request.sendStatus(415);
@@ -169,7 +166,6 @@ exports.getAllShort = function(req, res) {
  function getByDistance(reports, params, callback) {
   var point = { lat : params.lat, lng : params.lng };
   var radius = params.rad;
-  console.log(params);
   
   var rad = function(x) {
     return x * Math.PI / 180;
@@ -193,7 +189,6 @@ exports.getAllShort = function(req, res) {
             lng : report.location.lng
           }, point) < radius;
       });
-  console.log(closeEnough);
    callback(closeEnough);
 };
 
@@ -212,11 +207,9 @@ function makeShort(reports) {
 
 exports.search = function(req, res) {
   var params = req.query;
-  console.log(params);
   var searchObject = {};
   // todo string . contains
   if (params.facebookID !== '') {
-    console.log('filtering by fb id');
     searchObject.fbId = params.facebookID;
   }
   Report.find(searchObject, function(err, reports) {
@@ -224,13 +217,11 @@ exports.search = function(req, res) {
       res.status(404);
       console.log('db error');
     } else {
-      //console.log(req.query);
       var filtered = reports;
       if (params.carNumber !== '') {
         filtered = _.filter(filtered, function(report){
           return _.includes(report.carNumber, params.carNumber);
         });
-        console.log('filtering by car number');
       }
       if (params.description !== '') {
         filtered = _.filter(filtered, function(report) {
@@ -238,7 +229,6 @@ exports.search = function(req, res) {
         });
       }
       if (params.fixationTimeStart !== '' && params.fixationTimeEnd !== '') {
-          console.log('filtering by date');
           var bounds = { 
            lower : new Date(params.fixationTimeStart),
            upper : new Date(params.fixationTimeEnd)
@@ -256,7 +246,6 @@ exports.search = function(req, res) {
         && params.lng !== ''
         && params.rad !== '') 
       {
-        console.log('filtering by distance');
         var p = { lat : params.lat, lng : params.lng, rad : params.rad };
         getByDistance(
           filtered,
@@ -265,7 +254,6 @@ exports.search = function(req, res) {
             res.status(200).json(makeShort(closeEnough)); 
           });
       } else {
-        console.log('no filters');
         res.status(200).json(makeShort(filtered));
       }
     }

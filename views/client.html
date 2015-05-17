@@ -90,14 +90,15 @@
         this.adjustCounter();
       },
 
-      setInfo : function(description, fbUrl, date, carNumber) {
-        var d = new Date(date);
+      setInfo : function(params) {
+        var d = new Date(params.fixationTime);
         var dateString = '' + d.getFullYear() + '.' +  d.getMonth() + '.' + d.getDate();
         $('.rp-item-info').html([
-          '<p>' + description + '</p>',
-          '<p>Car: [' + carNumber + ']</p>',
+          '<p>' + params.description + '</p>',
+          '<p>Car: [' + params.carNumber + ']</p>',
           '<p>Date: ' + dateString + '</p>',
-          '<a href="' + fbUrl + '">Author</a>'
+          '<a href="' + params.fbUrl + '">Author</a>',
+          '<a href="' + params.exportUrl + '">Export</a>'
           ].join(''));
       }
     };
@@ -157,7 +158,13 @@ function putMarkers(map, markers, roadpolizeiAPI){
           console.log(data);
           console.log(data.fbId);
           infoWindow.open(map, self);
-          infoWindow.roadpolizei.setInfo(data.description, data.fbId, data.fixationTime, data.carNumber);
+          infoWindow.roadpolizei.setInfo({
+            description: data.description,
+            fbUrl:  data.fbId,
+            fixationTime:  data.fixationTime,
+            carNumber: data.carNumber,
+            exportUrl: self.exportUrl
+          });
         });
       });
     }
@@ -239,6 +246,8 @@ function putMarkers(map, markers, roadpolizeiAPI){
       <form name = "querySearchForm" method="get" action="/api/reports/search" enctype="multipart/form-data">
         <input type="text" placeholder="Car number" name="carNumber" id="carNumber">
         <p>
+        <input type="text" placeholder="Description" name="description" id="description">
+        <p>
         <div>
           <input type="text" placeholder="Latitude" name="lat" id="lat">
           <input type="text" placeholder="Longitude" name="lng" id="lng">
@@ -248,8 +257,6 @@ function putMarkers(map, markers, roadpolizeiAPI){
         Start <input type="date" placeholder="Fixation start time" name="fixationTimeStart" id="fixationTimeStart">
         <p>
         End <input type="date" placeholder="Fixation end time" name="fixationTimeEnd" id="fixationTimeEnd"> 
-        <p>
-        <input type="text" placeholder="Description" name="description" id="description"> 
         <p>
         <input type="text" placeholder="FacebookID"name="facebookID" id="facebookID">                 
       </form>    
