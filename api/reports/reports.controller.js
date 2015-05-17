@@ -215,12 +215,6 @@ exports.search = function(req, res) {
   console.log(params);
   var searchObject = {};
   // todo string . contains
-  if (params.carNumber !== '') {
-    filtered = _.filter(filtered, function(report) {
-      return _.includes(searchObject.carNumber, params.carNumber);
-    });    
-    console.log('filtering by car number');
-  }
   if (params.facebookID !== '') {
     console.log('filtering by fb id');
     searchObject.fbId = params.facebookID;
@@ -232,6 +226,12 @@ exports.search = function(req, res) {
     } else {
       //console.log(req.query);
       var filtered = reports;
+      if (params.carNumber !== '') {
+        filtered = _.filter(filtered, function(report){
+          return _.includes(report.carNumber, params.carNumber);
+        });
+        console.log('filtering by car number');
+      }
       if (params.description !== '') {
         filtered = _.filter(filtered, function(report) {
           return _.includes(report.description, params.description);
