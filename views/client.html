@@ -113,6 +113,9 @@
   }
 
 function putMarkers(map, markers, roadpolizeiAPI){
+  var dispatchFunction = function(){
+    document.body.dispatchEvent(markersSettledEvent);
+  }
   $.getJSON( roadpolizeiAPI, {}).done(function( data ) {       
     for (var i = 0; i < data.length; i++) {
       var item = data[i];
@@ -154,10 +157,8 @@ function putMarkers(map, markers, roadpolizeiAPI){
         });
       });
     }
+    dispatchFunction();
   });
-  console.log("dispatching markersSettledEvent");
-  
-  document.body.dispatchEvent(markersSettledEvent);
 }
 
 
