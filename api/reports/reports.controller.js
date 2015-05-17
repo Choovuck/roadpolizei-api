@@ -24,9 +24,9 @@ function uploadFileToAmazonS3(file) {
     s3.upload({ Body : body })
       .send(function(err, data) {
         console.log(err, data);
-      })
-    });
-}
+      });
+};
+
 
 exports.create = function(req, res) {
 	var request = req; // in case of closures
