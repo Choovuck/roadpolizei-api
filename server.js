@@ -19,7 +19,7 @@ var port = process.env.PORT || 8080; // set our port
 var localhost = 'http://localhost:8080/';
 var herokuhost = 'https://roadpolizei.herokuapp.com/';
 global.host = herokuhost;
-
+global.mediaStorageURL = 'https://roadpolizeidata.s3.eu-central-1.amazonaws.com/';
 mongoose.connect("mongodb://server:nicepassword@ds063870.mongolab.com:63870/road_polizei_uploads");
 
 app.use(express.static(__dirname + '/public'));

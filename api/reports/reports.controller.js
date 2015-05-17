@@ -23,7 +23,7 @@ function uploadFileToAmazonS3(file) {
     var body = fs.createReadStream(file.path);
     s3.upload({ Body : body })
       .send(function(err, data) {
-        console.log(err, data);
+        console.log(err);
       });
 };
 
@@ -71,6 +71,8 @@ exports.create = function(req, res) {
 		obj.mimetype = file.mimetype,
 		obj.size = file.size,
 
+    fs.unlink(file.path); // delete the file from app location
+
 		report.files.push(obj);
 	});
 
@@ -112,34 +114,10 @@ exports.exportById = function(req, res) {
     //'-_id location deviceId fixationTime recievedTime description fbId files',
      function(err, report) {
       if(report && !err) {
-        var files = [];
-        var fileStates = [];
-        fileStates = new events.EventEmitter();
-        fileStates.rp = {};
-        fileStates.rp.data = [];
-        fileStates.rp.downloadedCount = 0;
-        fileStates.rp.download = function() {
-          var self = this;
-          _.forEach(self.data, function(entry) {
-            var readStream = gridfs.createReadStream({ _id : entry.id });
-            var writeStream = fs.createWriteStream('uploads/' + entry.name);
-            readStream.pipe(writeStream);
-            writeStream.on('close', function() {
-              self.downloadedCount++;
-              console.log('stream closed: ' + self.downloadedCount);
-              if (self.downloadedCount === self.data.length) {
-                fileStates.emit('downloaded');
-              }
-            })
-          })
-        }
 
         _.forEach(report.files, function(file) {
-          if (!fs.existsSync('uploads/' + file.name)) {
-            fileStates.rp.data.push({ name : file.name, id: file.gridfsId });
-          }
           files.push({
-            url       : global.host + 'uploads/' + file.name,
+            url       : global.mediaStorageURL + file.name,
             size      : file.size,
             mimetype  : file.mimetype
           });
