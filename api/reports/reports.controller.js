@@ -64,7 +64,7 @@ function uploadFileToAmazonS3(file) {
     fd.append('AWSAccessKeyId', 'AKIAJICXUTNWLVM7NZKA');
     fd.append('policy', JSON.stringify(POLICY_JSON));
     fd.append('signature', signature);
-    fd.append("file", file); //maybe requires fs.createReadStream
+    fd.append("file", fs.createReadStream(file.path)); //maybe requires fs.createReadStream
 
     var xhr = getXMLHTTPObject();
 
