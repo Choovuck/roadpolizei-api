@@ -188,6 +188,14 @@ function setBounds(e){
       document.body.addEventListener("markersSettled", setBounds, false);
     }
     
+    document.body.addEventListener("myEventName", doSomething, false);
+ 
+    function doSomething(e) {
+        alert("Event is called: " + e.type);
+    }
+     
+    var myEvent = new CustomEvent("myEventName");
+    document.body.dispatchEvent(myEvent);
     
     initialize();
   });
