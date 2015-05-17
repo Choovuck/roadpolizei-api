@@ -14,6 +14,62 @@ conn.once('open', function () {
   gridfs = gfs;
 });
 
+  function uploadComplete(evt) {
+    /* This event is raised when the server send back a response */
+    console.log("Done - " + evt.target.responseText );
+  }
+
+  function uploadFailed(evt) {
+    console.log("There was an error attempting to upload the file." + evt);
+  }
+
+  function uploadCanceled(evt) {
+    console.log("The upload has been canceled by the user or the browser dropped the connection.");
+  }
+function uploadFileToAmazonS3(file) {
+    var fd = new FormData();
+
+    var key = file.name;
+    var bucket = 'https://s3-website.eu-central-1.amazonaws.com/roadpolizeidata';
+    var acl = 'public-read';
+    POLICY_JSON = { 
+     "expiration": "2017-12-01T12:00:00.000Z",
+      "conditions": [
+        ["eq", "$bucket", bucket],
+        ["starts-with", "$key", key],
+        {"acl": acl},
+        {"x-amz-meta-filename": file.name},
+        ["starts-with", "$Content-Type", file.mimetype]
+      ]
+    };
+
+    var secret = this.get('knNkfGZUaSpll98xwiFFGOo4gpDE13Tn2MUsVlEk');
+    var policyBase64 = Base64.encode(JSON.stringify(POLICY_JSON));
+    console.log ( policyBase64 )
+
+    var signature = b64_hmac_sha1(secret, policyBase64);
+    b64_hmac_sha1(secret, policyBase64);
+    console.log( signature);
+
+    fd.append('key', key);
+    fd.append('acl', 'public-read'); 
+    fd.append('Content-Type', file.mimetype);      
+    fd.append('AWSAccessKeyId', 'AKIAJICXUTNWLVM7NZKA');
+    fd.append('policy', POLICY_JSON);
+    fd.append('signature', signature);
+    fd.append("file",file);
+
+    var xhr = getXMLHTTPObject();
+
+    xhr.addEventListener("load", uploadComplete, false);
+    xhr.addEventListener("error", uploadFailed, false);
+    xhr.addEventListener("abort", uploadCanceled, false);
+
+    xhr.open('POST', 'https://roadpolizeidata.s3.amazonaws.com/', true); //MUST BE LAST LINE BEFORE YOU SEND 
+
+    xhr.send(fd);
+  }
+
 exports.create = function(req, res) {
 	var request = req; // in case of closures
 	var data = JSON.parse(req.body.JSONMF);
@@ -27,11 +83,6 @@ exports.create = function(req, res) {
     fixationTime : data.timeStamp
   });
 
-	//for (var i = 0; i < request.files.files.length; i++) {
-	//	var file = request.files.files[i];
-  //for (var key in data.files) {
-  //  if (!data.files.hasOwnProperty(key)) {
-  //    continue;
   console.log(req.files);
   _.forEach(req.files, function(value, key) {
     var file = value;
@@ -43,6 +94,8 @@ exports.create = function(req, res) {
 			request.sendStatus(415);
 		}
 		var obj = {};
+
+    uploadFileToAmazonS3(file); //NEW WTUKA NEEDS TO BE TESTED
 
 		if (gridfs) {
 			var fileId = new mongoose.Types.ObjectId();
