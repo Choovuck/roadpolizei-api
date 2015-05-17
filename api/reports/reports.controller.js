@@ -123,6 +123,7 @@ exports.exportById = function(req, res) {
           });
         });
         report.files = files;
+        res.status(200).json(report);
       } else {
         res.status(404);
       }
