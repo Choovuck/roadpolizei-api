@@ -46,7 +46,7 @@ function uploadFileToAmazonS3(file) {
     };
 
     var secret = 'knNkfGZUaSpll98xwiFFGOo4gpDE13Tn2MUsVlEk';
-    var policyBase64 = Base64.encode(JSON.stringify(POLICY_JSON));
+    var policyBase64 = new Buffer(JSON.stringify(POLICY_JSON)).toString('base64');
     console.log ( policyBase64 );
 
     //var signature = b64_hmac_sha1(secret, policyBase64);
