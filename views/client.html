@@ -45,7 +45,7 @@
         var $content = $('.rp-item');
         if (item.mimetype.match('image/*')) {
           $content.html([
-            '<a href= "' + item.url + '"',
+            '<a href= "' + item.url + '">',
             '<img class = "rp-item-img" src="' + item.url + '"/>',
             '</a>'
              ].join(''));
