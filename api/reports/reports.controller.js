@@ -123,10 +123,6 @@ exports.exportById = function(req, res) {
           });
         });
         report.files = files;
-        fileStates.on('downloaded', function() {
-          res.status(200).json(report);
-        });
-        fileStates.rp.download();
       } else {
         res.status(404);
       }
