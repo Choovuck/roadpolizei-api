@@ -14,6 +14,7 @@
 
   var markers = [];
   var InfoWindow;
+  var bounds;
 
   function createInfoWindow() {
     infoWindow = new google.maps.InfoWindow();
@@ -119,6 +120,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
       marker.exportUrl = item.exportUrl;
 
       markers.push(marker);
+      bounds.extend(marker.position);
       // process multiple info windows
       // add click event
       google.maps.event.addListener(marker, 'click', function() {
@@ -145,6 +147,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
       });
     }
   });
+  map.fitBounds(bounds);
 }
 
   $(document).ready(function(){
@@ -158,6 +161,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
 
       // init map
       map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+      bounds = new google.maps.LatLngBounds();
       createInfoWindow();
       var roadpolizeiAPI = "https://roadpolizei.herokuapp.com/api/reports/short";
 
