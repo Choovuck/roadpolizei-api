@@ -15,6 +15,14 @@
   var markers = [];
   var InfoWindow;
   var bounds;
+  var markersSettledEvent = new CustomEvent("markersSettled",
+    {
+      detail:{
+        Kappa: "u wot"
+      },
+      bubbles: false,
+      cancelable: true
+    });
 
   function createInfoWindow() {
     infoWindow = new google.maps.InfoWindow();
@@ -148,14 +156,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
     }
   });
   console.log("dispatching markersSettledEvent");
-  var markersSettledEvent = new CustomEvent("markersSettled",
-    {
-      detail:{
-        Kappa: "u wot"
-      },
-      bubbles: false,
-      cancelable: true
-    });
+  
   document.body.dispatchEvent(markersSettledEvent);
 }
 
