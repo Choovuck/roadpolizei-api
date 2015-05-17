@@ -159,16 +159,10 @@ function putMarkers(map, markers, roadpolizeiAPI){
   document.body.dispatchEvent(markersSettledEvent);
 }
 
-function setBounds(e){
-  console.log("bounds are about to be set");
-  for (var i = 0; i < markers.length; i++){
-    console.log(bounds);
-    bounds.extend(markers[i].position);
-  }
-  map.fitBounds(bounds);
-}
+
 
   $(document).ready(function(){
+
     function initialize() {
       var mapOptions = {
         center: new google.maps.LatLng(50.0641565, 36.2022325),
@@ -184,17 +178,15 @@ function setBounds(e){
       var roadpolizeiAPI = "https://roadpolizei.herokuapp.com/api/reports/short";
 
       putMarkers(map, markers, roadpolizeiAPI);
-      document.body.addEventListener("markersSettled", setBounds, false);
+      document.body.addEventListener("markersSettled", function setBounds(e){
+        console.log("bounds are about to be set");
+        for (var i = 0; i < markers.length; i++){
+          console.log(bounds);
+          bounds.extend(markers[i].position);
+        }
+        map.fitBounds(bounds);
+      }, false);
     }
-    
-    document.body.addEventListener("myEventName", doSomething, false);
- 
-    function doSomething(e) {
-        alert("Event is called: " + e.type);
-    }
-     
-    var myEvent = new CustomEvent("myEventName");
-    document.body.dispatchEvent(myEvent);
     
     initialize();
   });
