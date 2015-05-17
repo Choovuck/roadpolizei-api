@@ -11,7 +11,7 @@ app.use(multer({ dest: './uploads/', //upload dir
   }}));
 
 var aws = require('aws-sdk');
-aws.config.reagion('eu-central-1');
+aws.config.region('eu-central-1');
 process.env.AWS_ACCESS_KEY_ID = 'AKIAJICXUTNWLVM7NZKA';
 process.env.AWS_SECRET_ACCESS_KEY = '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';
 
