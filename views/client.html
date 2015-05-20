@@ -177,13 +177,14 @@ function putMarkers(map, markers, roadpolizeiAPI){
 
   function drawCircle(event) {
     var center = event.latLng;
+    console.log(center);
     var radius = parseInt($('#rad')[0].value);
     if (radius === '' || radius < 100) {
       radius = 100;
       $('#rad')[0].value = '100';
     }
-    $('#lat')[0].value = '' + center.lat;
-    $('#lng')[0].value = '' + center.lng;
+    $('#lat')[0].value = center.lat();
+    $('#lng')[0].value = center.lng();
     Circle = new google.maps.Circle({
       strokeColor: '#FF0000',
       strokeOpacity: 0.8,
@@ -194,6 +195,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
       center: center,
       radius: radius
     });
+    console.log(Circle);
   }
 
 
@@ -223,6 +225,10 @@ function putMarkers(map, markers, roadpolizeiAPI){
       }, false);
 
       google.maps.event.addListener(map, 'click', drawCircle);
+
+      $('#rad').change(function() {
+        Circle.setRadius($('#rad')[0].value);
+      })
     }
     
     initialize();
