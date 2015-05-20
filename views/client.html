@@ -222,7 +222,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
         map.fitBounds(bounds);
       }, false);
 
-      google.maps.event.addEventListener(map, 'click', drawCircle);
+      google.maps.event.addListener(map, 'click', drawCircle);
     }
     
     initialize();
