@@ -221,12 +221,13 @@ function putMarkers(map, markers, roadpolizeiAPI){
 
       putMarkers(map, markers, roadpolizeiAPI);
       document.body.addEventListener("markersSettled", function setBounds(e){
-        bounds = new google.maps.LatLngBounds();
+        var b = new google.maps.LatLngBounds();
         for (var i = 0; i < markers.length; i++){
-          console.log(bounds);
-          bounds.extend(markers[i].position);
+          console.log(b);
+          b.extend(markers[i].position);
         }
-        map.fitBounds(bounds);
+        map.fitBounds(b);
+        bounds = b;
       }, false);
 
       google.maps.event.addListener(map, 'click', drawCircle);
