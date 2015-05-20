@@ -178,12 +178,12 @@ function putMarkers(map, markers, roadpolizeiAPI){
   function drawCircle(event) {
     var center = event.latLng;
     var radius = $('#rad')[0].value;
-    if (parseInt(radius) < 100) {
+    if (radius === '' || parseInt(radius) < 100) {
       radius = 100;
-      $('#rad')[0].text('100');
+      $('#rad')[0].value = '100';
     }
-    $('#lat')[0].text('' + center.lat);
-    $('#lng')[0].text('' + center.lng);
+    $('#lat')[0].value = '' + center.lat;
+    $('#lng')[0].value = '' + center.lng;
     Circle = new google.maps.Circle({
       strokeColor: '#FF0000',
       strokeOpacity: 0.8,
