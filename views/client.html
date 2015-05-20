@@ -185,6 +185,10 @@ function putMarkers(map, markers, roadpolizeiAPI){
     }
     $('#lat')[0].value = center.lat();
     $('#lng')[0].value = center.lng();
+    if (Circle !== undefined) { 
+      Circle.setMap(null);
+      Circle = null;
+    };
     Circle = new google.maps.Circle({
       strokeColor: '#FF0000',
       strokeOpacity: 0.8,
