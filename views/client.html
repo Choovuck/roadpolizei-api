@@ -197,8 +197,8 @@ function putMarkers(map, markers, roadpolizeiAPI){
       radius: radius,
       draggable : true
     });
-    google.maps.event.addListener(Circle, 'center_changed', function(event) {
-      setLatLng(event.latLng);
+    google.maps.event.addListener(Circle, 'center_changed', function() {
+      setLatLng(Circle.center);
     })
   }
 
