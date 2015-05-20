@@ -228,14 +228,14 @@ function putMarkers(map, markers, roadpolizeiAPI){
       var roadpolizeiAPI = "https://roadpolizei.herokuapp.com/api/reports/short";
 
       putMarkers(map, markers, roadpolizeiAPI);
-      document.body.addEventListener("markersSettled", function setBounds(e){
+      /*document.body.addEventListener("markersSettled", function setBounds(e){
         var b = new google.maps.LatLngBounds();
         for (var i = 0; i < markers.length; i++){
           b.extend(markers[i].position);
         }
         map.fitBounds(b);
         bounds = b;
-      }, false);
+      }, false);*/
 
       google.maps.event.addListener(map, 'click', drawCircle);
 
