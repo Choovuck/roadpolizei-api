@@ -169,6 +169,10 @@ function putMarkers(map, markers, roadpolizeiAPI){
   });
 }
 
+  function setLatLng(latLng) {
+    $('#lat')[0].value = latLng.lat();
+    $('#lng')[0].value = latLng.lng();
+  }
 
   function drawCircle(event) {
     var center = event.latLng;
@@ -177,8 +181,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
       radius = 100;
       $('#rad')[0].value = '100';
     }
-    $('#lat')[0].value = center.lat();
-    $('#lng')[0].value = center.lng();
+    setLatLng(center);
     if (Circle !== undefined) { 
       Circle.setMap(null);
       Circle = null;
@@ -191,8 +194,12 @@ function putMarkers(map, markers, roadpolizeiAPI){
       fillOpacity: 0.35,
       map: map,
       center: center,
-      radius: radius
+      radius: radius,
+      draggable : true
     });
+    google.maps.event.addEventListener(Circle, 'center_changed', function(event) {
+      setLatLng(event.latLng);
+    })
   }
 
   function centerMapOnUser() {
