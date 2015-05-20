@@ -179,7 +179,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
     var center = event.latLng;
     console.log(center);
     var radius = parseInt($('#rad')[0].value);
-    if (radius === '' || radius < 100) {
+    if (radius === NaN || radius < 100) {
       radius = 100;
       $('#rad')[0].value = '100';
     }
@@ -227,7 +227,11 @@ function putMarkers(map, markers, roadpolizeiAPI){
       google.maps.event.addListener(map, 'click', drawCircle);
 
       $('#rad').change(function() {
-        Circle.setRadius($('#rad')[0].value);
+        var radius = parseInt($('#rad')[0].value);
+        if (radius === NaN || radius < 100) {
+          radius = 100;
+        }
+        Circle.setRadius(radius);
       })
     }
     
