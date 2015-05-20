@@ -215,12 +215,13 @@ function putMarkers(map, markers, roadpolizeiAPI){
 
       // init map
       map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-      bounds = new google.maps.LatLngBounds();
+      
       createInfoWindow();
       var roadpolizeiAPI = "https://roadpolizei.herokuapp.com/api/reports/short";
 
       putMarkers(map, markers, roadpolizeiAPI);
       document.body.addEventListener("markersSettled", function setBounds(e){
+        bounds = new google.maps.LatLngBounds();
         for (var i = 0; i < markers.length; i++){
           console.log(bounds);
           bounds.extend(markers[i].position);
