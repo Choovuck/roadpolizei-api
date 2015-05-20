@@ -273,7 +273,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
   function applySearch(){
     hideMarkers();
     var url = generateURL();
-    markers = [];
+    markers.length = 0;
     putMarkers(map, markers, url);
   }
 </script>
