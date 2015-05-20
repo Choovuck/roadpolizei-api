@@ -57,7 +57,6 @@
             '</video>'
           ].join(''));
         }
-        //console.log($content);
       },
 
       adjustCounter : function() {
@@ -126,7 +125,6 @@ function putMarkers(map, markers, roadpolizeiAPI){
   $.getJSON( roadpolizeiAPI, {}).done(function( data ) {       
     for (var i = 0; i < data.length; i++) {
       var item = data[i];
-      //console.log(item);
 
       var marker = new google.maps.Marker({
         position:  new google.maps.LatLng(
@@ -146,7 +144,6 @@ function putMarkers(map, markers, roadpolizeiAPI){
         infoWindow.close();
         var self = this;
         $.getJSON(self.exportUrl).done(function(data) {
-        //console.log(data);
         infoWindow.roadpolizei.files = [];
         infoWindow.roadpolizei.count = data.files.length;
         infoWindow.roadpolizei.index = 0;
@@ -157,8 +154,6 @@ function putMarkers(map, markers, roadpolizeiAPI){
             infoWindow.roadpolizei.files.push({ mimetype : file.mimetype, url : file.url });
           }
         }
-          console.log(data);
-          console.log(data.fbId);
           infoWindow.open(map, self);
           infoWindow.roadpolizei.setInfo({
             description: data.description,
@@ -177,7 +172,6 @@ function putMarkers(map, markers, roadpolizeiAPI){
 
   function drawCircle(event) {
     var center = event.latLng;
-    console.log(center);
     var radius = parseInt($('#rad')[0].value);
     if (isNaN(radius) || radius < 100) {
       radius = 100;
@@ -199,7 +193,6 @@ function putMarkers(map, markers, roadpolizeiAPI){
       center: center,
       radius: radius
     });
-    console.log(Circle);
   }
 
 
@@ -223,7 +216,6 @@ function putMarkers(map, markers, roadpolizeiAPI){
       document.body.addEventListener("markersSettled", function setBounds(e){
         var b = new google.maps.LatLngBounds();
         for (var i = 0; i < markers.length; i++){
-          console.log(b);
           b.extend(markers[i].position);
         }
         map.fitBounds(b);
