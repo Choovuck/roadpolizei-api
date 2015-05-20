@@ -179,7 +179,7 @@ function putMarkers(map, markers, roadpolizeiAPI){
     var center = event.latLng;
     console.log(center);
     var radius = parseInt($('#rad')[0].value);
-    if (isNan(radius) || radius < 100) {
+    if (isNaN(radius) || radius < 100) {
       radius = 100;
       $('#rad')[0].value = '100';
     }
