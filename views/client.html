@@ -195,6 +195,13 @@ function putMarkers(map, markers, roadpolizeiAPI){
     });
   }
 
+  function centerMapOnUser() {
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      var latlng = new google.maps.LatLnt(pos.coords.latitude, pos.coords.longitude);
+      map.setCenter(latlng);
+      map.setZoom(10);
+    })
+  }
 
   $(document).ready(function(){
 
@@ -203,12 +210,13 @@ function putMarkers(map, markers, roadpolizeiAPI){
         center: new google.maps.LatLng(50.0641565, 36.2022325),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapTypeControl: false,
-        zoom: 15
+        zoom: 10;
       };
 
       // init map
       map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-      
+      centerMapOnUser();
+
       createInfoWindow();
       var roadpolizeiAPI = "https://roadpolizei.herokuapp.com/api/reports/short";
 
@@ -294,6 +302,8 @@ function putMarkers(map, markers, roadpolizeiAPI){
         <input type="text" placeholder="FacebookID"name="facebookID" id="facebookID">                 
       </form>    
       <button class="searchButton" id ="querySearchSubmit" value="Search" onclick="applySearch()">Search</button>
+      <p>
+      <button class="homeButton" onclick="centerMapOnUser()">Home</button>
    </div>
 </body>
 </html>
