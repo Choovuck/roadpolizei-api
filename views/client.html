@@ -177,8 +177,8 @@ function putMarkers(map, markers, roadpolizeiAPI){
 
   function drawCircle(event) {
     var center = event.latLng;
-    var radius = $('#rad')[0].value;
-    if (radius === '' || parseInt(radius) < 100) {
+    var radius = parseInt($('#rad')[0].value);
+    if (radius === '' || radius < 100) {
       radius = 100;
       $('#rad')[0].value = '100';
     }
