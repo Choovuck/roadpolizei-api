@@ -249,6 +249,12 @@ function putMarkers(map, markers, roadpolizeiAPI){
     }
     
     initialize();
+
+    //jquery datepicker
+    $(function() {
+      $( "#fixationTimeStart" ).datepicker();
+      $("#fixationTimeEnd").datepicker();
+    });
   });
 
   function generateURL(){
@@ -286,11 +292,6 @@ function putMarkers(map, markers, roadpolizeiAPI){
     putMarkers(map, markers, url);
   }
 
-  //jquery datepicker
-  $(function() {
-    $( "#fixationTimeStart" ).datepicker();
-    $("#fixationTimeEnd").datepicker();
-  });
 </script>
 </head>
 <body>
