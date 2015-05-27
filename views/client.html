@@ -258,9 +258,20 @@ function putMarkers(map, markers, roadpolizeiAPI){
       $("#fixationTimeEnd").datepicker();
     });
 
+
     //some eventHandlersMove
     $("#querySearchSubmit").onClick = applySearch();
     $("#homeButton").onclick = centerMapOnUser();
+    $('#expandButton').click(function() {
+        $('#hiddenInputs').toggle('slow', 'swing', function(){
+            var btn = $('#expandButton');
+            if (btn.text() === '+') {
+                btn.text('-');
+            } else {
+                btn.text('+');
+            }
+        });
+    });
   });
 
   function generateURL(){
@@ -307,20 +318,23 @@ function putMarkers(map, markers, roadpolizeiAPI){
       <form name = "querySearchForm" method="get" action="/api/reports/search" enctype="multipart/form-data">
         <input type="text" placeholder="Car number" name="carNumber" id="carNumber">
         <p>
-        <input type="text" placeholder="Description" name="description" id="description">
-        <p>
         <div>
           <input type="text" placeholder="Latitude" name="lat" id="lat">
           <input type="text" placeholder="Longitude" name="lng" id="lng">
           <input type="text"placeholder="Radius" name="rad" id="rad">
         </div>
-        <p>
-        Start <input type="text" placeholder="Fixation start time" name="fixationTimeStart" id="fixationTimeStart">
-        <p>
-        End <input type="text" placeholder="Fixation end time" name="fixationTimeEnd" id="fixationTimeEnd"> 
-        <p>
-        <input type="text" placeholder="FacebookID"name="facebookID" id="facebookID">                 
-      </form>    
+        <div class="hiddenInputs" id="hiddenInputs">
+          <input type="text" placeholder="Description" name="description" id="description">
+          <p>
+          Start <input type="text" placeholder="Fixation start time" name="fixationTimeStart" id="fixationTimeStart">
+          <p>
+          End <input type="text" placeholder="Fixation end time" name="fixationTimeEnd" id="fixationTimeEnd"> 
+          <p>
+          <input type="text" placeholder="FacebookID"name="facebookID" id="facebookID">
+        </div>              
+      </form>
+      <button class="searchButton" id="expandButton">+</button>
+      <p>
       <button class="searchButton" id ="querySearchSubmit" value="Search">Search</button>
       <p>
       <button class="searchButton" id ="homeButton">Home</button>
