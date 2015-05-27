@@ -285,6 +285,12 @@ function putMarkers(map, markers, roadpolizeiAPI){
     markers.length = 0;
     putMarkers(map, markers, url);
   }
+
+  //jquery datepicker
+  $(function() {
+    $( "#fixationTimeStart" ).datepicker();
+    $("#fixationTimeEnd").datepicker();
+  });
 </script>
 </head>
 <body>
@@ -302,9 +308,9 @@ function putMarkers(map, markers, roadpolizeiAPI){
           <input type="text"placeholder="Radius" name="rad" id="rad">
         </div>
         <p>
-        Start <input type="date" placeholder="Fixation start time" name="fixationTimeStart" id="fixationTimeStart">
+        Start <input type="text" placeholder="Fixation start time" name="fixationTimeStart" id="fixationTimeStart">
         <p>
-        End <input type="date" placeholder="Fixation end time" name="fixationTimeEnd" id="fixationTimeEnd"> 
+        End <input type="text" placeholder="Fixation end time" name="fixationTimeEnd" id="fixationTimeEnd"> 
         <p>
         <input type="text" placeholder="FacebookID"name="facebookID" id="facebookID">                 
       </form>    
