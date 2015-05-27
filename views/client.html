@@ -257,6 +257,10 @@ function putMarkers(map, markers, roadpolizeiAPI){
       $( "#fixationTimeStart" ).datepicker();
       $("#fixationTimeEnd").datepicker();
     });
+
+    //some eventHandlersMove
+    $("#querySearchSubmit").onClick = applySearch();
+    $("#homeButton").onclick = centerMapOnUser();
   });
 
   function generateURL(){
@@ -317,9 +321,9 @@ function putMarkers(map, markers, roadpolizeiAPI){
         <p>
         <input type="text" placeholder="FacebookID"name="facebookID" id="facebookID">                 
       </form>    
-      <button class="searchButton" id ="querySearchSubmit" value="Search" onclick="applySearch()">Search</button>
+      <button class="searchButton" id ="querySearchSubmit" value="Search">Search</button>
       <p>
-      <button class="searchButton" onclick="centerMapOnUser()">Home</button>
+      <button class="searchButton" id ="homeButton">Home</button>
    </div>
 </body>
 </html>
