@@ -260,8 +260,8 @@ function putMarkers(map, markers, roadpolizeiAPI){
 
 
     //some eventHandlersMove
-    $("#querySearchSubmit").onClick = applySearch();
-    $("#homeButton").onclick = centerMapOnUser();
+    $('#querySearchSubmit').click = applySearch();
+    $('#homeButton').click = centerMapOnUser();
     $('#expandButton').click(function() {
         $('#hiddenInputs').toggle('slow', 'swing', function(){
             var btn = $('#expandButton');
